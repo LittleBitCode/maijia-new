@@ -1,0 +1,16 @@
+/* 商家资金记录 start */
+.deposit_box{background:#fff; border:1px solid #e0e0e0; border-radius:5px; overflow:hidden; padding:10px 20px;}
+.deposit_box h1{color:#333; font-size:20px; font-weight:bold; height:40px;}
+.deposit_tab{height:35px; border-bottom:1px solid #FF8745;}
+.deposit_tab a{display:inline-block; height:34px; line-height:34px; background:#FBFBFA; color:#666; border:1px solid #E5E5E5; border-bottom:none; border-radius:5px 5px 0 0; font-size:14px; padding:0 15px;}
+.deposit_tab a.cur{border-color:#FF8745; background:#FFF3D2; color:#E95912;}
+
+.deposit_list_box{padding:10px 0;}
+.deposit_list table{width:100%;}
+.deposit_list table th{height:45px; line-height:45px; color:#555; border-bottom:1px solid #E0E0E0; font-size:14px; text-align:center;}
+.deposit_list table td{padding:10px 0 !important; line-height:20px; border-bottom:1px solid #E0E0E0; text-align:center; font-size:14px; color:#555;}
+.deposit_list table td span{color:#f00;}
+.deposit_list table td p{text-align:left;width: 100%;word-wrap:break-word; white-space:normal; word-break:break-all;}
+.deposit_list table td a{color:#10ACEE;}
+
+.deposit_list .noRecord{padding:60px; height:30px; line-height:30px; color:#666; font-size:16px; text-align:center;}

@@ -1,0 +1,50 @@
+@charset "utf-8";
+.banner_list{width:1000px; margin:0 auto;}
+
+/* 已完成的任务 */
+.task_list_box{overflow:hidden; border:1px solid #e0e0e0; background:#fff; border-radius:5px; padding:10px 20px;}
+.task_list_box h1{color:#363636; border-bottom:1px solid #E0E2E6; height:50px; line-height:50px; font-size:20px;}
+.task_list_box .task_list_tab{height:35px; border-bottom:1px solid #FF8745; margin-bottom:5px;}
+.task_list_box .task_list_tab a{display:inline-block; padding:0 15px; background:#F6F7F7; height:34px; line-height:34px; border:1px solid #C6C6C6; border-bottom:none; border-radius:5px 5px 0 0; margin-left:10px; color:#979797; font-size:14px;}
+.task_list_box .task_list_tab a.cur{background:#FFF6D9; color:#E95912; border-color:#FF8745;}
+
+.task_list_search{line-height:20px; margin:20px 0;}
+.task_list_search span{font-size:14px;}
+.task_list_search select{margin-right:15px;}
+.task_list_search .task_search{display:inline-block; width:200px; height:20px; line-height:20px; padding-left:5px; border:1px solid #CCC;}
+.task_list_search .time_start,.task_list_search .time_end{display:inline-block; width:100px; height:20px; line-height:20px; border:1px solid #ccc; margin:0 5px; padding-left:5px;}
+.task_list_search .search_sub{display:inline-block; width:60px; height:24px; line-height:20px; text-align:center; background:#4495e0; border:1px solid #4495e0; border-radius:5px; color:#fff; margin-left:30px;}
+
+.task_list{border:1px solid #C9E7F7; margin-top:15px;}
+.task_list_title{height:35px; background:#F6FBFE; line-height:35px;}
+.task_list_title span{margin-right:10px; font-weight:bold;}
+.task_list_title span a{color:#1f9cd8;}
+.task_list_info{padding:10px;}
+.task_list_info .task_info{display:inline-block; width:300px; float:left;}
+.task_list_info .task_info img{display:block; width:50px; height:50px; float:left; margin-right:5px;}
+.task_list_info .task_info p{display:inline-block; width:230px; float:left; line-height:20px; font-size:12px;}
+.task_list_info .task_fee{display:inline-block; width:185px; line-height:50px; text-align:center; font-size:14px;}
+.task_list_info .task_fee span{color:#f00;}
+.task_list_info .task_num{display:inline-block; width:150px; line-height:50px; text-align:center; font-size:14px;}
+.task_list_info .task_num span{color:#f00;}
+.task_list_info .task_type{display:inline-block; width:300px;}
+.task_list_info .task_type p{line-height:20px;}
+.task_list_info .task_type p span{color:#f00;}
+.task_list_info .task_type p em{color:#999;}
+.task_list_info .task_status{position: relative;display:inline-block; float:right; width:60px; height:60px;}
+.task_list_info .task_status img{position: absolute;right: -30px;display:block; width:60px; height:60px;}
+
+.task_list_con .task_list_no{font-size:18px; color:#808080; text-align:center; line-height:50px;}
+
+/* 待处理任务 */
+.pending_tasks{overflow:hidden; border:1px solid #e0e0e0; background:#fff; border-radius:5px; padding:10px 20px; margin:0 0 10px;}
+.pending_tasks h1{color:#363636; border-bottom:1px solid #E0E2E6; height:50px; line-height:50px; font-size:24px;}
+.taskinfo{padding:20px 0;}
+.taskinfo h3{color:#505050; font-size:18px; font-weight:500;}
+.taskinfo h3 span{font-size:14px; color:#f00; margin-left:20px;}
+.taskinfo h3 p{color:#f00; font-size:14px; padding-top:5px;}
+.taskinfo .pending_info{border-bottom:1px dashed #E0E2E6; padding-bottom:20px;}
+.taskinfo .pending_info p{width:100%; display:inline-block; margin-top:20px; font-size:14px; color:#505050; line-height:25px;}
+.taskinfo .pending_info p a{color:#00A5EC;}
+.taskinfo .pending_info p span{color:#F07A1D;}
+.taskinfo .pending_info div{color: #808080;font-size:18px;text-align:center;}

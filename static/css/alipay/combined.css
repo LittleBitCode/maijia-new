@@ -1,0 +1,48 @@
+@charset "utf-8";
+.clear{clear:both;height:10px}
+a:hover{text-decoration:underline}
+
+.headwrap{height:65px;background:#f5f5f5;border-bottom:1px solid #e9e9e9;margin-bottom:20px}
+.head_logo{float:left;width:280px;background:url(/static/imgs/alipay/logo.png) no-repeat;text-indent:-2000em}
+.head_logo a{display:block;width:280px;height:62px}.head_link{float:right;padding-top:25px;color:#666}
+.head_link a{color:#666;margin:0 10px}
+.head_link a:hover{text-decoration:underline;color:#6594c7}
+.order{margin-top: 15px;border: 1px solid #E0E0E0;border-radius: 5px;padding: 20px;background: #fff;overflow: hidden;}
+.order_content{padding:16px 64px;}
+.order_content li{float:left;padding-left:5px;height:29px;line-height:29px;font-size:14px;margin-right:40px;}
+.order_content li strong{margin-left:8px; color:#fe662b}
+.order_content.detail li{float:none}
+.order_content li.hided{display:none}
+.order_content.detail li.hided{display:block}
+.order_content li span{color:#000}
+.order_content li a{margin-left: 32px;}
+.order_content.detail li span{display:inline-block;width:90px;text-align: right}
+.order_content li ul li{line-height:18px;float:none;font-size:12px}
+
+/*.content{position:relative;clear:both;width:990px;margin:0 auto;font-size:12px;margin-top:20px;padding-top:180px}*/
+.select-tab{height:36px;line-height:36px}
+.select-tab ul li{width:160px;text-align:center;float:left;font-size:14px;font-weight:bold;margin-right:10px}
+.select-tab ul li a{display:block;background:#5993d3;color:#fff;height:36px;border-top:3px solid #5993d3;border-left:3px solid #5993d3;border-right:3px solid #5993d3}
+.select-tab ul li a:hover{color:#fff;text-decoration:none;background:#4e81b9;border-top:3px solid #4e81b9;border-left:3px solid #4e81b9;border-right:3px solid #4e81b9}
+.select-tab ul li.current a{background:#FFF;border-top:3px solid #5993d3;border-left:3px solid #5993d3;border-right:3px solid #5993d3}
+.select-tab ul li.current a,.select-tab ul li.current a:hover{color:#377cc6;text-decoration:none}
+.contentwrap{border:3px solid #5993d3}
+
+.tab-content h4{margin-bottom:10px; font-size:14px}
+.tab-content h4 span{color:#fe662b}
+.tab-content ul li{padding:12px; margin-top:8px; border-bottom:1px dashed #ccc;background:#fff;}
+.tab-content ul li strong{color:#fe662b}
+
+.tab-content .btn a{margin-left:18px ; float:left}
+.tab-content .content_left{padding: 16px; float:left; width:60%;}
+.content_right_pc{ text-align: center; padding: 16px;}
+.content_right_m{ margin: 72px;padding: 8px; float: right; background-color: #18bbf5; text-align: center; border-radius: 2px;}
+.content_right_m .botton-title {line-height: 40px;height: 32px;font-size: 16px;font-weight: bold;color: #fff;}
+.btn a{padding: 12px 28px;display:block;text-align:center;color:#fff;background-color:#18bbf5;border-radius:4px;}
+.btn a:hover{text-decoration:none;}
+
+.findetail{width:94px;height:23px;background:#f89b23;position:absolute;right:10px;bottom:-23px}
+.findetail a{color:#fff;height:24px;line-height:24px;display:block;padding-left:15px;background:url(/static/imgs/alipay/detailarrow.png) no-repeat left center;margin-left:15px}
+.findetail a:hover{text-decoration:none}
+.order_content.detail .findetail a{background:url(/static/imgs/alipay/detailarrow2.png) no-repeat left center}
+

@@ -1,0 +1,19 @@
+@charset "utf-8";
+.left{overflow:hidden; border:1px solid #E0E0E0; background:#fff; border-radius:5px; width:150px; float:left;}
+.left h3{width:130px; margin:5px auto; color:#121212; font-size:14px; height:40px; line-height:40px; font-weight:bold; }
+.left dl{width:150px; margin:5px auto; padding:5px 0; border-top:1px solid #E0E2E6;}
+.left dl dt{color:#020202; font-size:15px; font-weight:bold; height:30px; padding-left:10px; line-height:30px;}
+.left dl dd{color:#383838; padding-left:13px; padding-right:10px; font-size:14px; height:30px; line-height:30px; font-weight:bold;}
+.left dl div{color:#999; text-align:center;}
+#left_list_dd{background:#eee; color:#f07a1d;}
+#left_list_dd a{color:#f07a1d;}
+.left .left_list_dd{color:#f07a1d;}
+.left .left_list_dd a{color:#f07a1d;}
+.left .active{color:#f07a1d;}
+.left .active a{color:#f07a1d;}
+.left dl span{color:#F07A1D; font-weight:normal; display:inline-block; float:right;}
+.left dl em a{color:#00A6EC; font-weight:normal; display:inline-block; float:right;}
+.left .buy_add{color:#10ACEE; display:block; height:35px; line-height:35px; width:120px; margin:0 auto; font-size:14px;}
+.left a{color:#383838; text-decoration:none;}
+
+.right{width:840px; float:right;}

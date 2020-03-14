@@ -1,0 +1,18 @@
+/* 微信支付和支付宝支付 */
+	.pay_wrap{width: 938px;padding: 30px;}
+	.pay_title{height: 30px; margin-bottom: 30px;line-height: 30px;font-size: 28px;font-weight: 600;}
+	.all_pay_type{height: 18px;text-align: right;line-height: 18px;}
+	.all_pay_type a{font-size: 14px;color: #22A3E5;}
+	.count_down,.be_overdue{width: 700px;height: 20px;margin: 20px auto;line-height: 20px;}
+
+	.qr_code_wrap{display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;-webkit-box-pack: center;-moz-justify-content: center;-webkit-justify-content: center;justify-content: center;width: 700px;margin: 0 auto;margin-bottom: 60px;}
+	.qr_code_wrap div{width: 50%;}
+	.qr_code{text-align: center;}
+	.qr_code img:nth-child(1){width: 300px;height: 300px;margin-bottom: 10px;}
+	.pay_order{display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;-webkit-box-pack: space-between;-moz-justify-content: space-between;-webkit-justify-content: space-between;justify-content: space-between;}
+
+
+	.complete { padding:100px 0;}
+	.complete h3 { font-size:24px; text-align:center; color:#000;}
+	.complete p { text-align:center; font-size:14px; font-weight:bold; color:#555; line-height:50px;}
+	.complete p a { padding-left:15px; color:#17baf5;}

@@ -1,0 +1,46 @@
+@charset "utf-8";
+/* CSS Document */
+.binding_box{margin-top:9px;padding:20px 30px; border:1px solid #E0E0E0; border-radius:5px; background:#fff;}
+.binding_box h1{font-size:28px; color:#1F9CD8; border-bottom:1px solid #ddd; padding-bottom:15px;}
+.binding_notice{padding-top:8px; border-top:1px dashed #ddd; font-size:16px; color:#DD7D00; height:40px; line-height:40px;}
+.bind_list_box{margin-top: 64px;}
+.bind_list_box h3{font-size:16px; color:#666; margin:20px 0;}
+.bind_list_box h3 span{font-size:14px; color:#999; font-weight:normal; float:right;}
+.binding_shop{overflow:hidden;}
+.bind_shop_r h3{font-size:16px; color:#555; padding-left:25px;}
+.bind_shop_r h3 span{font-size:14px; font-weight:normal;}
+.bind_detail{padding-left:20px;}
+.bind_div_list{overflow:hidden; font-size:14px; margin-top:20px;}
+.bind_div_list label{display:inline-block;margin-top:5px; width:160px; height:32px; float:left; text-align:right; line-height:32px;}
+.bind_div_list label i{color:#f00; font-family:SimSun; margin-right:3px;}
+.bind_div_list .shop_url{width:320px;}
+.bind_div_list .shop_name{width:320px;}
+.bind_div_list .shop_id{width:180px;}
+.bind_div_list select{float:left; margin:5px 5px 0 0;}
+.bind_div_list .username{width:320px;}
+.bind_div_list .phone{width:320px;}
+.bind_div_list .shop_logo{line-height:30px;}
+.bind_div_list .shop_logo span.error{line-height:18px;}
+.bind_div_list .shop_logo p{font-size:12px; color:#666;}
+.bind_div_list .good_url{width:460px; }
+.address span.error{float:left; margin-top:7px;}
+.address_detail{margin:10px 0 0 160px;}
+.address_detail input{width:460px;}
+.phone_prompt{color:#555; font-size:14px; margin-left:160px; margin-bottom:20px; line-height:20px;}
+.bind_code span{display:inline-block; width:118px; height:34px; border:1px solid #D2D2D2; border-radius:3px; line-height:34px; text-align:center; color:red;}
+.bind_code a{display:inline-block; width:83px; height:34px; border:1px solid #D2D2D2; border-radius:3px; line-height:34px; text-align:center; color:#666; margin-left:10px;}
+.copy-code1.J_copytextok { color:#f00;}
+.code_info{margin:20px 0 20px 64px;}
+.code_info p{font-size:14px; line-height:30px;}
+.code_info .taobao{position: absolute; margin-top: 36px; margin-left: 453px; padding: 2px 0; font-weight: 700; color: #3C3C3C;white-space: nowrap;}
+.code_info .tmall{position: absolute; margin-top: 34px; margin-left: 520px; padding: 2px 0; font-size:14px; font-weight: 700; color: #000;white-space: nowrap;}
+.code_info .jd{position: absolute; margin-top: 46px; margin-left: 609px; padding: 2px; font-weight: bold; color: #666;white-space: nowrap;}
+.code_info .pdd{position: absolute;margin-top: 162px;margin-left: 125px;padding: 2px 0;font-weight: 700;color: #ff4545;white-space: nowrap;}
+.bind_prompt{margin:20px 160px; color:#f00; font-size:14px;}
+.bind_sub{display:block; width:120px; height:40px; text-align:center; line-height:35px; background:#4495e0; border:1px solid #4495e0; border-radius:5px; margin-left:180px; color:#fff; font-size:18px; cursor:pointer;}
+.label-img-taobao {background-image: url("/static/imgs/logo/taobao_active.png"); background-repeat: no-repeat; background-size: 100px; background-position:center; width: 128px; }
+.label-img-tmall {background-image: url("/static/imgs/logo/tmall_active.png"); background-repeat: no-repeat; background-size: 100px; background-position: center; width: 128px; }
+.label-img-taobao-gray {background-image: url("/static/imgs/logo/taobao_gray.png"); background-repeat: no-repeat; background-size: 100px; background-position:center; width: 128px; }
+.label-img-tmall-gray {background-image: url("/static/imgs/logo/tmall_gray.png"); background-repeat: no-repeat; background-size: 100px; background-position: center; width: 128px; }
+.label-img-jd {background-image: url("/static/imgs/logo/jd_active.png"); background-repeat: no-repeat; background-size: 100px; background-position: center; width: 128px; }
+.label-img-jd-gray {background-image: url("/static/imgs/logo/jd_gray.png"); background-repeat: no-repeat; background-size: 100px; background-position: center; width: 128px; }

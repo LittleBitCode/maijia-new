@@ -1,0 +1,225 @@
+@charset "utf-8";
+.banner_list{width:1000px; margin:0 auto;}
+.refund_prompt{width: 998px;height: 40px;margin: 0 auto;margin-bottom: 10px;border: 1px solid #FF8745;background: #FFF6D9;text-align: center;line-height: 40px;font-size: 14px;}
+.refund_prompt a{color: #00A6EC;}
+/* 个人中心顶部会员信息模块、发布任务按钮 */
+.center_top{ border:1px solid #E0E0E0; border-radius:5px; padding:20px; background:#fff; width: 68%; }
+.user_grade{width:100%; float:left;}
+.user_info{height:30px; line-height:30px; font-size:14px; color:#4E4E4E;}
+.user_info span{color:#f00; margin-right:10px;}
+.user_info a{color:#00A7E9;}
+.grade_info{height:40px; font-size:14px; color:#4E4E4E; margin:10px 0 5px;}
+.grade_info span{display:inline-block; height:40px; line-height:40px; float:left;}
+.grade_info .grade_icon{display:inline-block; margin:0 8px; font-size: 24px;color: #ff6b71;}
+.grade_info .grade_icon.disabled{color: #ccc; }
+
+.contain a.trade_click{display:block;margin: 24px auto; width:138px; height:48px; background:#ff6b71; border:1px solid #ff6b71; border-radius:5px; text-align:center; line-height:48px; font-size:22px; color:#fff; font-weight:bold; }
+.contain a.trade_click:hover{background:#ff6b71;}
+.clear{clear:both;}
+
+.deposit_box{border:1px solid #E0E0E0; border-radius:5px; padding:20px; background:#fff; margin:5px 0; width: 68%; }
+.available_deposit{color:#505050; margin-top:20px; font-size:14px; overflow:hidden; border-bottom:1px dashed #DCDCDC; padding-bottom:20px;}
+.available_deposit span{display:inline-block; margin-right:5px; color:#ff6b71;}
+.available_deposit span strong{font-size:22px;}
+.available_deposit a{color:#00A6EC; display:inline-block; float:left; margin-top:25px;}
+.available_deposit div{display:inline-block; float:left; width:140px; font-size:14px; line-height:28px; color:#56594E; text-align:center;}
+.available_deposit div.fuhao{width:40px; line-height:50px; font-size:26px; color:#555; text-align:center; font-weight:bold;}
+.available_deposit .cor{font-size:22px; color:#F98100;}
+.available_deposit .numbers{font-size:16px;}
+
+.available_points{color:#505050; margin-top:20px; font-size:14px; padding-left:10px;}
+.available_points span{display:inline-block; margin-right:5px; color:#ff6b71;}
+.available_points span strong{font-size:18px;}
+.available_points a{color:#00A6EC;}
+
+/* 资金记录 */
+.record{margin:20px 0 10px; border-top:1px solid #ddd; padding:15px 0; color:#505050; font-size:14px;}
+.record span{display:block; float:left; height:20px; line-height:20px;}
+.record .records{display:block; float:left; position:relative; z-index:91; height:20px;}
+.record .yongj,.record .benj,.record .zij,.record .flow{display:block; float:left; padding:2px 0 2px 25px; height:20px; margin-right:10px;}
+.record .yongj{background:url(/static/imgs/business/record1.jpg) no-repeat; background-position:5% 50%; position:relative; z-index:93;}
+.record .records .yongj_div{position: absolute; z-index:92; width:610px; min-height:338px; left:-90px; top:25px; overflow:hidden; background:#fff; border:1px solid #6F859E;}
+.record .records .benj_div{position: absolute; z-index:92; width:610px; min-height:338px; left:-200px; top:25px; overflow:hidden; background:#fff; border:1px solid #6F859E;}
+.record .records .zij_div{position: absolute; z-index:92; width:610px; min-height:338px; left:-200px; top:25px; overflow:hidden; background:#fff; border:1px solid #6F859E;}
+.record .records .flow_div{position: absolute; z-index:92; width:610px; min-height:338px; left:-200px; top:25px; overflow:hidden; background:#fff; border:1px solid #6F859E;}
+.recordposition{border:1px solid #808487; border-bottom:1px solid #fff; }
+.records .records_position a{display:block; float:right;  width:19px; height:19px; padding:0; background:url(/static/imgs/business/record_close.png) no-repeat;}
+.record_close{ position:relative; top:10px; left:-10px; text-decoration:none; }
+.record_close:hover{ text-decoration:none; }
+.records table{color:#505050; width:95%; margin:0 auto; margin-top:10px;}
+.records table tr{border-bottom:1px dashed #ddd;}
+.records table th{height:45px; text-align:center; line-height:45px; font-weight:normal; border-bottom:1px solid #ddd;}
+.records table td{height:45px; text-align:center; line-height:45px;}
+.records table td em{color:#F11010;}
+.records table .bgcolor td{background:#fff;}
+.records .records_position .all_records{display:block; width:100px; background:none; float:right; color:#10ACED; margin:10px 20px;}
+.record .benj{background:url(/static/imgs/business/record2.jpg) no-repeat; background-position:5% 45%; position:relative; z-index:93;}
+.record .zij{background:url(/static/imgs/business/record3.jpg) no-repeat; background-position:5% 60%; position:relative; z-index:93;}
+.record .flow{background:url(/static/imgs/business/record-flow.png) no-repeat; background-position:2% 45%; position:relative; z-index:93;}
+.record div a{color:#00A6EC; display:inline-block; background:url(/static/imgs/business/record.jpg) no-repeat; background-position:98% 50%; padding-right:20px;}
+.records table td .flowcor{color:#F93043;}
+.records table td .flowcors{color:#1BD417;}
+
+/* 问题、公告 */
+.notice_problem{ float: right; border-radius:5px; padding:15px 0; background:#fff; width: 31%; margin-top: -218px;height: 211px;}
+.notice_problem .pro_tab{height:35px; border-bottom:1px solid #FF8745; margin-bottom:5px;}
+.notice_problem .pro_tab a{display:inline-block; padding:0 28px; background:#F6F7F7; height:34px; line-height:34px; border:1px solid #C6C6C6; border-bottom:none; border-radius:5px 5px 0 0;width:50%;color:#979797; font-size:14px;text-align:center;}
+.notice_problem .pro_tab a.cur{background:#FFF6D9; color:#E95912; border-color:#FF8745;}
+.notice_problem_box div p{height:28px; line-height:28px; font-size:13px;}
+.notice_problem_box div p a{display:inline-block; width:680px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; color:#17BAF5;}
+.notice_problem_box div p span{display:inline-block; float:right; color:#333;}
+.notice_problem_box .problem_con{display:none;}
+
+/* 审核未通过任务 */
+.failed_task_box{border:1px solid #E0E0E0; border-radius:5px; padding:20px; background:#fff; margin:5px 0; width: 100%; }
+.failed_task_box h3{font-size:20px;}
+.failed_task_box h3 span{ font-size:14px; margin-left:15px; color:#555; font-weight:normal;}
+.failed_task_list{border:1px solid #C9E7F7; margin-top:15px;}
+.failed_task_list .failed_task_title{height:35px; line-height:35px;border-bottom: 1px dashed #E0E2E6;; }
+.failed_task_list .failed_task_title p{display:inline-block; float:right; color:#444; padding-right:8px; font-weight:bold;}
+
+.failed_task_info{float: left;padding: 10px;display: block;width: 42%;height: 92px;}
+.failed_task_info .task_info{display:inline-block; width:435px; float:left;}
+.failed_task_info .task_info img{display:block; width:64px; height:64px; float:left; margin-right:10px;}
+.failed_task_info .task_info p{display:inline-block; width:300px; float:left; line-height:20px; font-size:13px;}
+.failed_task_info .task_fee{display:inline-block; width:185px; line-height:50px; text-align:center; font-size:14px;}
+.failed_task_info .task_fee span{color:#f00;}
+.failed_task_info .task_num{display:inline-block; width:150px; line-height:50px; text-align:center; font-size:14px;}
+.failed_task_info .task_num span{color:#f00;}
+
+.failed_because{float: right;margin-top: -10px;padding-left: 20px;width: 58%;min-height: 92px;}
+.failed_because h5{font-size:16px; color:#ff6b71;}
+.failed_because h5 span{display:inline-block; float:right; font-size:14px; color:#333; font-weight:normal;}
+.failed_because p{font-size:14px; margin-top:5px; height:26px; line-height:26px; color:#ff6b71;border-bottom: 1px dashed #E0E2E6;}
+
+.up_reset{margin-top: 4px; margin-left: 16px; margin-bottom: 8px; display: inline-block;}
+.up_reset .failed_update{display:inline-block; width:118px; height:40px; background:#ff6b71; border:1px solid #ff6b71; border-radius:5px; text-align:center; line-height:40px; font-size:18px; color:#fff; font-weight:bold;}
+.up_reset .failed_reset{margin-left:24px;font-size:14px; color:#00A3EF; line-height:42px; }
+
+/* 待处理任务 */
+.pending_tasks{overflow:hidden; background:#fff; border-radius:5px;width: 100%; }
+.taskinfo{padding:20px 0;}
+.taskinfo h3{color:#505050; font-size:18px; font-weight:500;}
+.taskinfo h3 span{font-size:14px; margin-left:20px;}
+.taskinfo h3 p{color:#f00; font-size:13px; padding-top:5px;}
+.taskinfo .pending_info{border-bottom:1px dashed #E0E2E6; padding-bottom:20px;}
+.taskinfo .pending_info p{margin-top:20px;margin-left:32px; display:inline-block; font-size:14px; color:#505050; line-height:25px;width:100%; }
+.taskinfo .pending_info p a{color:#00A5EC;}
+.taskinfo .pending_info p span{color:#F07A1D;}
+.taskinfo .pending_info div{color: #808080;font-size:18px;text-align:center;}
+
+/* 待处理的买手订单 */
+.pending-order{overflow:hidden; border:1px solid #e0e0e0; background:#fff; border-radius:5px; padding:10px 20px; margin:10px 0;}
+.pending-order h1{color:#363636; border-bottom:1px solid #E0E2E6; height:50px; line-height:50px; font-size:22px;}
+.pending-order h1 a{display:inline-block; float:right; color:#00A6EC; font-size:14px; margin-top:10px;}
+.pending-order p{font-size:14px; line-height:55px; color:#999;}
+.pending-order-list{margin-top:5px;}
+.pending-order-list table{width:100%;}
+.pending-order-list th{border-bottom:1px dashed #E0E2E6; line-height:50px; font-size:14px; color:#333; text-align:center; font-weight:normal;}
+.pending-order-list td{border-bottom:1px solid #E0E2E6; height:50px; line-height:50px; text-align:center; font-size:14px; color:#333;}
+.red{color:#f00;}
+.pending-order-list td a{color:#00A6EC;}
+.pending-order-list td a.flag{background:url('/static/imgs/business/pending-order-list.jpg') no-repeat; background-position:5% 50%; padding-left:23px;}
+.pending-list-page .export{display:inline-block; float:left; font-size:14px; color:#00A6ED; margin-top:25px;}
+
+.task_list_box{overflow:hidden; border:1px solid #e0e0e0; background:#fff; border-radius:5px; padding:20px; margin:10px 0;}
+.task_list_box h1{color:#363636; height:50px; line-height:50px; font-size:20px; margin-bottom:15px;}
+
+.task_list_search{line-height:20px; margin:20px 0;}
+.task_list_search span{font-size:14px;}
+.task_list_search select{margin-right:15px;}
+.task_list_search .task_search{display:inline-block; width:200px; padding-left:5px;}
+.task_list_search .time_start,.task_list_search .time_end{display:inline-block; width:100px; margin:0 5px; padding-left:5px;}
+.task_list_search .search_sub{display:inline-block; width:60px; text-align:center; background-color:#ff6b71; border:1px solid #ff6b71; border-radius:5px; color:#fff; margin-left:30px;}
+
+.task_list{border:1px solid #C9E7F7; margin-top:15px;}
+.task_list_title{display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;-webkit-justify-content: space-between;justify-content: space-between;height:35px;line-height:35px;border-bottom: 1px dashed #E0E2E6;}
+.task_list_title div:last-child{font-weight: 600;}
+.task_list_title div:first-child span:first-child{    float: left;max-width: 140px;height: 35px;overflow: hidden;word-wrap: break-word;word-break: break-all;}
+.task_list_title div:last-child a{margin: 0 15px;color: #ed702c;}
+.task_list_title span{margin-right:16px; font-weight:bold;}
+.task_list_title span a{color:#1f9cd8;}
+.task_list_info{padding:10px; height: 48px; }
+.task_list_info .task_info{display:inline-block; width:420px; height: 48px; float:left;}
+.task_list_info .task_info img{display:block; width:50px; height:50px; float:left; margin-right:5px;}
+.task_list_info .task_info p{display:inline-block; width:320px; float:left; line-height:20px; font-size:12px;}
+.task_list_info .task_fee{display:inline-block; width:185px; line-height:50px; text-align:center; font-size:14px;}
+.task_list_info .task_fee span{color:#f00;}
+.task_list_info .task_num{display:inline-block; width:150px; line-height:50px; text-align:center; font-size:14px;}
+.task_list_info .task_num span{color:#f00;}
+.task_list_info .task_type{display:inline-block; width:400px;}
+.task_list_info .task_type p{line-height:20px;}
+.task_list_info .task_type p span{color:#f00;}
+.task_list_info .task_type p em{color:#999;}
+.task_list_info .task_status{position: relative;display:inline-block; float:right; width:130px; height:60px;line-height: 60px;}
+.task_list_info .task_status img{position: absolute;top: 0;right: -30px;display:block; width:60px; height:60px;}
+.task_list_info .task_status a{display: inline-block;width: 80px;height: 24px;border: 1px solid #ff6b71;border-radius: 5px; background: #ff6b71;text-align: center;line-height: 24px;color: #fff;}
+.task_list_con .task_list_no{font-size:18px; color:#808080; text-align:center; line-height:120px;}
+.task_list_con .task_list_no a{color: #00A6EC;}
+
+/* 加快任务完成进度弹窗 */
+.popup_wraps{position: fixed;top: 100px;left: 50%;width: 600px;margin-left: -285px;padding: 20px;border-radius: 6px;background: #fff;text-align: left;}
+.popup_wraps>img{position: absolute;top: 10px;right: 10px;cursor: pointer;}
+
+.accelerate_speed_title{margin-bottom: 10px;text-align: left;}
+.accelerate_speed_title strong{font-size: 20px;font-weight: bold;}
+.accelerate_speed_title span{padding-left: 20px;font-size: 14px;}
+.green_bd{margin-bottom: 10px;padding: 5px 10px;}
+.accelerate_speed_first_title{line-height: 32px;font-size: 14px;}
+.accelerate_speed_first_title span{font-size: 12px;color: #888;}
+.upgrade,.a_plus{padding-bottom: 15px;}
+.upgrade ul,.a_plus div{ width: 450px;margin: 0 auto;overflow: hidden;line-height: 30px;}
+.upgrade ul li{float: left;width: 130px;text-align: left;}
+.upgrade ul li input{position: relative;top: 2px;}
+.a_plus input[type=checkbox]{position: relative;top: 2px;}
+.a_plus input[type=number]{width: 64px;margin: 0 5px;border: 1px solid #ccc;border-radius: 2px;}
+.accelerate_speed_first .next_wrap{height: 37px;padding: 15px 0 5px;line-height: 37px;}
+.accelerate_speed_first .next_wrap p:first-child{display: inline-block;font-size: 16px;}
+.accelerate_speed_first .next_wrap p:last-child{float: right;}
+.accelerate_speed_first .next_wrap .next_btn{display: inline-block;width: 96px;height: 37px;margin-right: 10px;border: 1px solid #ff6b71;border-radius: 4px;background: #ff6b71;text-align: center;line-height: 37px;font-size: 18px;color: #fff;}
+.no_accelerate_speed{margin-right: 31px;font-size: 14px;color: #ed702c;line-height: 36px;}
+.popup_contente .need_pay_money{height: 44px;margin-bottom: 15px;padding-right: 10px;text-align: right;line-height: 44px;}
+.pay_check {height: 55px;padding: 0 10px;border-bottom: 1px dashed #f2f2f2;line-height: 55px;font-size: 14px;color: #999;}
+.pay_check p{display: none;}
+.pay_check input{position: relative;top: 2px;}
+.cur{background: #FFFEEE;color: #333;}
+.popup_contente .cur p {float: right;line-height: 55px;}
+.true_pay_but {display: inline-block;width: 148px;height: 48px;margin: 40px auto;border-radius: 5px;text-align: center;line-height: 48px;font-size: 20px;color: #fff;font-weight: bold;}
+.pay_but{border: 1px solid #ff6b71;background: #ff6b71;}
+.pay_but_dis{ border: 1px solid #B2B2B2;background: #C0C0C0;}
+.prev_wrap{height: 150px;text-align: center;line-height: 150px;}
+.prev_btn{display: inline-block;height: 48px;padding: 0 10px 0 20px;background: url(/static/imgs/trade/previous_step.gif) left center no-repeat;line-height: 48px;color: #ed702c;}
+.lack_deposit {display: flex;justify-content: center;height: 30px;text-align: center;line-height: 30px;font-size: 14px;}
+.lack_deposit a{height: 24px;padding: 3px 5px;}
+
+
+/* 弹框   订单详情和任务详情 公用 */
+.popup_contente{text-align: center;}
+.popup_contente p{line-height: 24px;font-size: 14px;}
+.popup_contente strong{font-size: 16px;font-weight: 600;}
+.popup_contente span{color: #f00;}
+.edit_btn_wrap{display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;
+justify-content: center;align-items: center;padding: 15px 0;}
+.edit_btn_wrap a{width: 68px;height: 30px;border-radius: 6px;text-align: center;line-height: 30px;letter-spacing: 4px;font-size: 16px;}
+.confirm_btn{margin-right: 20px;border: 1px #1B60AD solid;background: #276FBE;color: #fff;}
+.close_btn{border: 1px #ADADAD solid;background: #F3F3F3;color: #767676;}
+
+.popup_wrap2{width: 250px;margin-left: -135px;}
+.back_money_title{color: #000;font-weight: 600;}
+.edit_back_money_val{width: 70px;height: 30px;margin: 10px 0px;text-align: center;line-height: 30px;border: 1px #999 solid;}
+
+/* 首页待处理的买手订单列表 */
+.pending_buy_order{width: 100%;margin: 10px 0;}
+.pending_buy_order thead{height: 40px;line-height: 40px;border-bottom: 1px dashed #E0E2E6;}
+.pending_buy_order thead td{text-align: center;font-size: 14px;}
+.pending_buy_order tbody td{height: 40px;border-bottom: 1px solid #E0E2E6;text-align: center;line-height: 40px;font-size: 14px;}
+.pending_buy_order tbody tr td:nth-child(2){text-align: left;}
+.pending_buy_order tbody a{color: #00A3EF;}
+.pending_buy_order tbody p{width: 120px;height: 40px;text-overflow:ellipsis; white-space:nowrap; overflow:hidden;}
+.pending_buy_order tbody span{color: #f00;}
+
+/*首页底页浮窗  */
+.floatwindow{width: 100%;  height: 80px;  background:rgba(40,86,125,0.8);  position: fixed;  bottom:0px; z-index: 500}
+.floatwindownav{width: 100%;text-align: center;margin:32px auto;color:#fff;letter-spacing: 6px;}
+.hidebtn{width: 20px; height: 20px;border-radius: 50% ;background:#9fd0fa;text-align:center;line-height:22px;position: fixed;bottom:50px;left:85%;border-color:#9fd0fa; color:slategray;}
+.floatwindowimg{position: fixed; bottom: 0px; width: 100%;text-align: center;z-index: -1}

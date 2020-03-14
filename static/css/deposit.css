@@ -1,0 +1,121 @@
+@charset "utf-8";
+/* 充值押金 */
+.recharge_box{border:1px solid #E0E0E0; border-radius:5px; padding:20px; background:#fff; overflow:hidden;}
+.recharge_box h1{font-size:22px; border-bottom:2px solid #E8E8E8; padding-bottom:15px;}
+.recharge_box h1 span{font-size:16px; font-weight:normal; margin-left:20px;}
+.recharge_box h1 span em{color:#f00;}
+.recharge_box h3{margin:20px 0; font-weight:normal; font-size:18px;}
+.recharge_box h3 span{color:#f00; font-size:14px; margin-left:15px;}
+
+.bank_list{position: relative; overflow:hidden;}
+.bank_list span{position: absolute;right: 10px;top: 18px;font-size: 14px;color: #1F9CD8;height: 30px;line-height: 30px;background:url(/static/imgs/deposit/arrange-down.gif) no-repeat right center;padding-right: 10px;cursor: pointer;}
+.bank_list ul li{margin-bottom:8px;width: 168px;height: 77px;float: left;margin-right: 20px;margin-top: 4px;font-size: 22px;line-height: 77px;text-align: center;color: #1f9cd8;position: relative;cursor: pointer;box-shadow: 0 0 3px #eee}
+.bank_list ul li i{display: none;width: 25px;height: 25px;position: absolute;right: -3px;bottom: -3px;background:url(/static/imgs/deposit/fund-yes.png) no-repeat;}
+.bank_list ul li.cur,.bank_list ul li:hover{padding: 0;border:3px solid #FF6400;}
+.bank_list ul li.cur i,.bank_list ul li:hover i{display: block;}
+/* 充值符点 */
+.purchase_points_box{width:1170px; border:1px solid #E0E0E0; border-radius:5px; margin:0 auto;}
+.title_h1{border-bottom: 1px solid #ddd; color: #1f9cd8; font-size: 28px; padding:15px 30px;}
+.title_h1 span{font-size:16px; color:#333; margin-left:20px; font-weight:normal;}
+.title_h1 span em{color:#f00;}
+
+.purchase_points_con{padding:24px;}
+.reminder b{display:block; font-size:16px; height:25px; line-height:15px;}
+.reminder p{font-size:12px; color:#f00; line-height:150%;}
+
+.points_number{margin:20px 0;}
+.list-group-item h3{float:left;width:20%;font-size:18px;color: #1f9cd8;}
+.list-group-item em{ display:block; color:#de0000; font-size:20px;}
+.list-group-item p{ margin: 0;font-size:14px;line-height:28px; color:#555;}
+.list-group-item:hover {background-color:#f2f2f2;cursor:pointer;}
+.list-group-item-active {background:url(/static/imgs/deposit/icon-gou.gif) right bottom no-repeat; z-index:99;background-color: #f2f2f2;}
+
+.points_pay_info{height:44px; line-height:44px; border-bottom:1px solid #f2f2f2; padding:0 15px; font-size:14px;}
+.points_pay_info span i{color:#f00;}
+.points_pay_info p{display:inline-block; float:right; font-size:18px;}
+.points_pay_info p em{color:#f00;}
+
+.pay_type{margin:30px 0;}
+.pay_type h3{font-size:18px; margin-bottom:20px;}
+.pay_type h3 span{font-size:13px; color:#9F9F9F; margin-left:20px; font-weight:normal;}
+
+.pay_check{height:55px;line-height:55px;border-bottom:1px dashed #f2f2f2; padding:0 10px; font-size:14px; color:#999;}
+.pay_check p{display:none;}
+.pay_check input{float:left; margin:21px 5px 0 0;}
+.cur{color:#333;}
+.cur p{display:inline-block; float:right;}
+.cur span{color:#f00;}
+.cur p em{color:#f00;}
+
+.pay_type_check{height:55px; line-height:55px; border-bottom:1px dashed #f2f2f2; padding:0 10px; font-size:14px; color:#555;}
+.pay_type_check label input{float:left; margin:21px 5px 0 0;}
+.pay_type_check label span{color:#f00;}
+.pay_type_check a{background:url(/static/imgs/deposit/arrange-down.gif) no-repeat center right; padding-right:10px; font-size:12px; color:#00A7E8; margin-left:15px;}
+.pay_type_check p{display:none;}
+.pay_list_type .cur{background:#FFFEEE; color:#333;}
+.pay_list_type .cur p{display:inline-block; float:right;}
+.pay_list_type .cur span{color:#f00;}
+.pay_list_type .cur p em{color:#f00;}
+
+.pay_but{display:block; width:148px; height:48px; text-align:center; line-height:48px; background:#4495e0; border:1px solid #4495e0; border-radius:5px; margin:40px auto; font-size:20px; color:#fff; font-weight:bold;}
+.pay_but:hover{background:#4495e0;}
+.pay_but_dis{display:block; width:148px; height:48px; text-align:center; line-height:48px; background:#C0C0C0; border:1px solid #B2B2B2; border-radius:5px; margin:40px auto; font-size:20px; color:#fff; font-weight:bold;}
+
+/* 押金提现 */
+.withdrawal_wrap{border:1px solid #E0E0E0; border-radius:5px; padding:20px; background:#fff; overflow:hidden;}
+.withdrawal_wrap h1{font-size:22px; border-bottom:2px solid #E8E8E8; padding-bottom:15px;}
+.withdrawal_form{padding: 40px 0 60px 0;font-size: 14px;}
+.withdrawal_form_item{display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;margin-bottom: 20px;}
+.withdrawal_form_item label{width: 220px;text-align: right;line-height: 30px;}
+.withdrawal_form_item .withdrawal_input{width: 180px;height: 28px;margin-bottom: 5px;padding: 0 5px;margin-right: 20px;border: 1px #ccc solid;line-height: 30px;}
+.withdrawal_form_item i{ padding-right: 4px;font-family: "SimSun";color: #FF0000;font-style: normal;font-weight: normal;}
+.withdrawal_form_item span.error{margin-left: 0;line-height: 18px;font-size: 12px;}
+.deposit_balance,.actual_arrival{line-height: 30px;}
+.deposit_balance span,.actual_arrival span{color: #f00;font-weight: 600;}
+.withdrawal_input_wrap{height: 30px;line-height: 30px;}
+.withdrawal_input_wrap a{font-size: 12px;color: #00a2ee;}
+.withdrawal_require{padding-top: 5px;line-height: 20px;font-size: 12px;color: #000;}
+.withdrawal_rule{line-height: 20px;font-size: 12px;color: #f00;}
+.withdrawal_btn_wrap{margin-left: 220px;}
+.withdrawal_btn_wrap .withdrawal_btn{display:inline-block; width:128px; height:43px; border:1px solid #ff6b71; border-radius:5px; background:#ff6b71;text-align:center; line-height:40px; font-size:22px; color:#fff; }
+.withdrawal_btn_wrap .withdrawal_btn:hover{background:#4495e0;}
+.withdrawal_prompt{border-top: 2px solid #E8E8E8;}
+.withdrawal_prompt h3{height: 30px;padding-top: 6px;line-height: 30px;color: #555;}
+.withdrawal_prompt li{line-height: 20px;color: #666;}
+.error_wrap{height: 20px;}
+.lack_deposit{display: flex;justify-content: center;height: 30px;text-align: center;line-height: 30px;font-size: 14px;}
+.lack_deposit a{height: 24px;padding: 3px 5px;}
+.lack_deposit a img{width: auto;height: 24px;}
+
+/* 押金提现成功 */
+.deposit_true{line-height: 60px;text-align: center;}
+.deposit_true span{color: #f00;}
+.deposit_true a{color: #00a2ee;}
+
+/** 押金充值页面 */
+.choice ul{background:#ebebeb;height:70px;width:1125px;margin-top:10px;margin-bottom: 0; display: flex;flex-direction: row}
+.choice ul li{height:70px;float:left;text-align:center;line-height:70px;border:1px solid #e0e0e0;font-size:16px;flex: 1;}
+.choice ul li.unionpay{background:url(/static/imgs/account/wangyin.png) no-repeat 35%}
+.choice ul li.wx{background:url(/static/imgs/account/wx_gray.png) no-repeat 30%}
+.choice ul li.bank{background:url(/static/imgs/account/bank_gray.png) no-repeat 30%}
+.choice ul li.alipay{background:url(/static/imgs/account/zhifubao_gray.png) no-repeat 35%}
+.choice ul li.unionpay.active{background:url(/static/imgs/account/wangyin2.png) no-repeat 35% #fafafa!important;}
+.choice ul li.wx.active{background:url(/static/imgs/account/wx_bright.png) no-repeat 30% #fafafa!important;}
+.choice ul li.bank.active{background:url(/static/imgs/account/bank_bright.png) no-repeat 30% #fafafa!important;}
+.choice ul li.alipay.active{background:url(/static/imgs/account/zhifubao_bright.png) no-repeat 35% #fafafa!important;}
+.ZXBank {width:855px;margin: 0 auto;height:288px;border: 1px solid #ebebeb;background:#f5f5f5;margin-top:30px;border-radius:10px;}
+.ZXbank_left {width:490px;float:left;margin: 0 auto;text-align:center;padding-top:45px;}
+.ZXBank_info {width:350px;padding:45px 0 0 0;float: left;}
+.ZXBank_info span {display:block;margin-top:30px;font-size:20px;}
+.ZXBank_info span:first-child{margin-top:25px;}
+.ZXBank_info span strong{font-weight:400;}
+.bank_list ul li {margin-bottom: 8px;  width: 200px;  height: 77px;  float: left;  margin-right: 22px;  margin-top: 30px;  color:#646464;  font-size: 20px;  line-height: 77px;  text-align: center;  position: relative;  cursor: pointer;  border:1px solid #ebebeb;  box-shadow: 0 0 3px #eee;  }
+.bank_list li img{margin-right:5px;margin-top:-5px;}
+/* 网银支付 */
+.recharge_number {margin:30px 210px;  }
+.recharge_number h5 {margin:20px 0;font-weight: 800;font-size: 18px;}
+.recharge_number_con p {font-size: 18px;margin: 20px 10px;}
+.recharge_number_con div {height: 32px;line-height: 32px;font-size:18px;margin-left:10px;}
+.recharge_number_con div input {display: inline-block;width: 200px;height: 34px;line-height: 34px;border: 1px solid #bddffd;  background-color: #fbfdff;  border-radius: 3px;  padding-left: 5px;  margin-right: 5px;  }
+.recharge_number_con div span {font-size: 14px;  color: #999;  margin-left: 15px;  }
+.recharge_number_con .recharge_butt {display: inline-block;  width: 140px;  height: 43px;  background: #1491fc;  font-size: 22px;  color: #fff;  font-weight: bold;  text-align: center;  line-height: 40px;  border: 1px solid #4495e0;  border-radius: 5px;margin: 30px 0 80px 100px;}

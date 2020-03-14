@@ -1,0 +1,117 @@
+@charset "utf-8";
+/*CSS reset*/
+body,html{background: #fff;}
+body a.hover{text-decoration:none;}
+.bg_wrap{width: 100%;min-width: 1000px;min-height: 100%;background: #fff;}
+.footer{background: #fff;}
+
+.help_center{height: 30px;width: 1000px;margin: 0 auto;text-align: right;line-height: 30px;}
+.help_center a{color: #000;}
+.header{height: 77px;background: #fff;box-shadow: 0px 2px 2px rgba(0,0,0,.2);}
+.header>a img{margin-left: 40px;}
+.content{width: 1170px;margin: 0 auto;padding-bottom: 10px;}
+
+.left{display: inline-block;}
+.right{margin:0 auto;width: 480px;min-height: 240px;overflow: hidden;padding: 15px 15px;border-radius: 6px;box-shadow: 0 0 10px rgba(0,0,0,.4);background: #fff;}
+/*.pwd_and_code{display: flex;justify-content: space-around;height: 32px;margin-bottom: 20px;border-bottom: 1px solid #E8E8E8;}*/
+.pwd_and_code{height: 32px;margin-bottom: 20px;padding-left: 20px;border-bottom: 1px solid #E8E8E8;font-size: 16px;}
+.pwd_and_code a{float: left;height: 31px;padding: 0 10px;font-size: 14px;color: #000;}
+.pwd_and_code a.active{border-bottom: 2px solid #4495e0;color: #4495e0;}
+
+.input_wrap{position: relative;width: 280px;padding: 0 20px;padding-bottom: 10px;}
+.border_wrap{position: relative;min-height: 33px;}
+.border_wrap input[type=text]{height: 33px;padding: 0 5px;}
+.border_wrap input[type=text].pwd,.border_wrap input[type=text].pwds{width: 189px;height: 33px;padding-left: 5px;padding-right: 54px;}
+.input_wrap>p{padding-left: 5px;color: #f00;}
+
+.get_code{position: absolute;top: 0;right: 20px;display: block;width: 100px;height: 33px;margin: 0 auto;margin-bottom: 10px;border: 1px solid #4495e0;border-radius: 4px;background: #4495e0;text-align: center;line-height: 33px;font-size: 14px;color: #fff;}
+.get_code_dis{background: #BBBBBB;border: 1px solid #BBBBBB;}
+
+.login_btn,.register_btn{display: block;width: 384px;height: 40px;margin: 0 auto;margin-bottom: 10px;border: 1px solid #4495e0;border-radius: 4px;background: #4495e0;text-align: center;line-height: 40px;font-size: 18px;color: #fff;}
+.register_btn{width: 360px;margin-bottom: 20px;}
+.register_btn_dis{border: 1px solid #A6A6A6;background: #AEAEAE;}
+
+.register_find_pwd{clear: both;padding: 12px 20px;text-align: right;}
+.register_find_pwd>a{color: #0090FF;}
+.register_find_pwd>a:last-child{margin-left: 10px;}
+
+.register_find_pwd .find_passwd{float: left;color: #666;}
+
+
+.input_wrap i.icon_account{float: left;width: 30px;height: 33px;background: #fff url(/static/imgs/lcj_login/account_orange.png) no-repeat center center;}
+.input_wrap i.icon_phone{float: left;width: 30px;height: 33px;background: #fff url(/static/imgs/lcj_login/phone_orange.png) no-repeat center center;}
+.input_wrap i.icon_phone2{float: left;width: 30px;height: 33px;background: #fff url(/static/imgs/lcj_login/phone.png) no-repeat center center;}
+.input_wrap i.icon_code{float: left;width: 30px;height: 33px;background: #fff url(/static/imgs/lcj_login/code_orange.png) no-repeat center center;}
+.input_wrap i.icon_code2{float: left;width: 30px;height: 33px;background: #fff url(/static/imgs/lcj_login/code.png) no-repeat center center;}
+.input_wrap i.icon_pwd{float: left;width: 30px;height: 33px;background: #fff url(/static/imgs/lcj_login/pwd_orange.png) no-repeat center center;}
+.input_wrap i.icon_pwd2{float: left;width: 30px;height: 33px;background: #fff url(/static/imgs/lcj_login/pwd.png) no-repeat center center;}
+
+.input_wrap i.icon_qq{float: left;width: 30px;height: 33px;background: #fff url(/static/imgs/lcj_login/qq.png) no-repeat center center;}
+.input_wrap i.icon_invite{float: left;width: 30px;height: 33px;background: #fff url(/static/imgs/lcj_login/invite.png) no-repeat center center;}
+
+.pwd_type{position: absolute; right: 10px;top: 10px;z-index: 9;height: 15px;cursor: pointer;}
+.input_val_close{position: absolute;right: 40px;top: 11px;z-index: 9;height: 13px;cursor: pointer;}
+
+.where_position{height: 45px;width: 1000px;margin: 0 auto;text-align: left;line-height: 45px;font-size: 16px;}
+.register_wrap,.find_pwd_wrap{width: 1000px;min-height: 450px;margin: 0 auto;margin-bottom: 20px;border-radius: 4px;box-shadow: 0px 0px 4px rgba(0,0,0,.4);background: #fff;}
+.find_pwd_wrap{width: 950px;min-height: 450px;padding: 25px;}
+
+.register_title{height: 60px;padding-left: 20px;border-bottom: 1px solid #F3F3F3;line-height: 60px;font-size: 30px;color: #36A5DB;font-weight: 600;}
+.register_content{width: 360px;padding-top: 40px;min-height: 400px;margin: 0 auto;font-size: 14px;}
+.register_discount{height: 45px;text-align: center;}
+.register_discount a{color: #00A7EA;}
+.data_item{position: relative;width: 360px;min-height: 55px;padding-bottom: 5px;}
+
+.data_item>span{display: inline-block;width: 75px;height: 50px;padding-right: 5px;text-align: right;line-height: 35px;font-size: 16px;}
+.data_item>span i{float: left;color: #F00;font-family: "SimSun";font-style: normal;}
+.data_item .input_wrap{float: right;padding: 0;}
+
+.register_content .register_find_pwd{padding: 0;}
+.true_protocol{float: left;}
+.true_protocol a{margin-left: 0;text-decoration: none;color: #666;}
+.true_protocol input{position: relative;top: 2px;}
+
+.bus,.buy{float: left;line-height: 35px;}
+.bus{width: 80px;}
+.bus input,.buy input{position: relative;top: 2px;}
+
+.input_wrap .error{position: absolute;display: none;width: 16px;height: 16px;top: 9px;right: -20px;background: url(/static/imgs/lcj_login/error.png) no-repeat center center;}
+
+/* 登录页面弹窗 */
+.popup_bg{position: fixed;top: 0;left: 0;z-index: 999;width: 100%;height: 100%;background: rgba(0,0,0,.4);}
+.prompt{position: relative;width: 250px;min-height: 90px;margin: 0 auto;margin-top: 240px;padding: 20px 0px;border-radius: 4px;box-shadow: 0 0 6px rgba(0,0,0,0.4);background: #fff;}
+.prompt .close{position: absolute;top: 4px;right: 4px;cursor: pointer;}
+.prompt .source{padding-left: 20px;border-bottom: 1px solid #ddd;font-size: 14px;color: #000;}
+.prompt_content{height: 40px;margin-bottom: 5px;padding-left: 20px;line-height: 30px;font-size: 14px;}
+.prompt .true_prompt_btn{display: block;width: 68px;height: 28px;margin: 0 auto;border: 1px solid #FF7E00;border-radius: 4px;background: #4495e0;text-align: center;line-height: 28px;color: #fff;}
+
+
+.find_pwd_titele{clear: both;height: 30px;border-bottom: 1px solid #ccc;font-size: 14px;}
+.find_pwd_titele span{color: #4495e0;}
+.find_pwd_titele a{float: right;color: #1F9CD8;}
+
+.find_pwd_step{width: 900px;height: 70px;margin: 0 auto;margin-bottom: 30px;padding-top: 40px;text-align: center;}
+.find_pwd_step li{float: left;width: 300px;position: relative;}
+
+.find_pwd_step_item .find_pwd_step_number{position: relative;z-index: 10;width: 24px;height: 24px;margin: 0 auto;border-radius: 12px;background: #CCCCCC;text-align: center;line-height: 24px;font-size: 14px;color: #fff;}
+.find_pwd_step_item .find_pwd_step_bg{position: absolute;top: 10px;left: 0;z-index: 5;width: 300px;height: 4px;background: #CCCCCC;}
+.find_pwd_step_item .find_pwd_step_title{padding-top: 5px;color: #000;}
+
+.find_pwd_step_item.active .find_pwd_step_number{background-color: #4495e0;}
+.find_pwd_step_item.active .find_pwd_step_bg{background-color: #4495e0;}
+.find_pwd_step_item.active .find_pwd_step_title{color: #4495e0;}
+
+.find_pwd_phone{padding-left:30px;font-size: 14px;color: #000;}
+
+.find_pwd_wrap .data_item{width: 380px;}
+.find_pwd_wrap .data_item>span i{float: none;}
+.find_pwd_wrap .data_item>span{width: 95px;}
+
+.next_find_pwd{display: block;width: 358px;height: 36px;margin-left: 20px;border: 1px solid #4495e0;border-radius: 4px;background: #4495e0;text-align: center;line-height: 36px;font-size: 16px;color: #fff;}
+
+/* 找回密码成功页面 */
+.find_pwd_true{padding-top: 120px;}
+.find_pwd_true p:first-child{width: 200px;}
+.find_pwd_true img{float: left;width: 26px;height: 26px;margin-top: 7px;}
+.find_pwd_true p{text-align: center;height: 40px;margin: 0 auto;line-height: 40px;font-size: 16px;}
+.find_pwd_true .next_find_pwd{margin: 0 10px;}

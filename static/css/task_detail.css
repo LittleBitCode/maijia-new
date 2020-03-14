@@ -1,0 +1,164 @@
+@charset "utf-8";
+/* CSS Document */
+.task_wrap1{display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;
+-webkit-justify-content: space-between;justify-content: space-between;
+margin-bottom: 10px;font-size: 14px;}
+.task_wrap2{min-height: 140px;margin-bottom: 10px;padding: 10px;border: 1px solid #E0E0E0;border-radius: 4px;background-color: #fff;}
+
+.task_wrap_left,.task_wrap_rgt{border: 1px solid #E0E0E0;border-radius: 4px;background-color: #fff;}
+.task_wrap_left{width: 40%;}
+.task_wrap_rgt{width: 59%;text-align: right;}
+
+.task_left_content{padding: 6px;}
+.task_left_content h3,.task_wrap2>h3{height: 40px;line-height: 40px;text-indent: 5px;font-size: 16px;font-weight: 600;}
+
+.task_state_wrap{margin-top: 30px;padding-left: 36px;text-align: left;}
+.task_state_wrap .task_state_money{height: 40px;}
+.task_state_wrap .task_state_money span{color: #f00;}
+.task_state_wrap h3{font-size: 16px;}
+
+.task_state_prompt{line-height: 24px;color: #f00;}
+
+/* 任务已撤销 */
+.task_state_revoke{padding-top: 30px;}
+.task_state_revoke h3{height: 34px;margin: 16px 0 26px 0;padding: 0 0 40px 26px;border-bottom: 1px #E7E7E7 solid;line-height: 34px;}
+/* 任务已提交：等待付款、等待审核 */
+.task_wait_examine{padding-top: 30px;}
+.task_wait_pay h3,.task_wait_examine h3{height: 50px;margin-bottom: 26px;padding-left: 40px;background: url(/static/imgs/icon/duibudui.png) no-repeat left center;line-height: 50px;}
+.examine_prompt{padding-left: 40px;padding-bottom: 5px;line-height: 25px;}
+.task_edit{display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex; align-items: center;margin-bottom: 30px;padding: 10px 0 20px 40px;border-bottom: 1px #E7E7E7 solid;}
+.task_edit a{height: 32px;margin-right: 20px;padding: 0 10px;border: 1px #ff6b71 solid;border-radius: 4px;background: #ff6b71;text-align: center;line-height: 28px;color: #fff;}
+
+.task_detail_item{padding: 10px 5px;border-top: 1px solid #E7E7E7;line-height: 22px;}
+.task_detail_item .pl10{padding-left: 10px;}
+.task_detail_item p span{color: #DD7D00;}
+
+.buyer_catcher{padding-left: 40px;height: 30px;line-height: 30px;}
+.buyer_catcher a{color: #1f9cd8;}
+
+.buyer_list{padding: 20px 15px;}
+.buyer_list_table{margin-bottom: 20px;}
+.buyer_list_table thead th{color: white;height: 30px;background-color: #ff8f8f;text-align: center;line-height: 30px;}
+.buyer_list_table tbody td{padding: 15px 0;text-align: center;border-bottom: 1px solid #f2f2f2;font-size: 14px;}
+.buyer_list_table tbody a{color: #1f9cd8;}
+.buyer_list_table tbody h5{height: 30px;padding: 90px 0;text-align: center;line-height: 30px;font-size: 16px;}
+.buyer_list .export_user_info{text-align: right;}
+.export_user_info a{margin-right: 10px;color: #00A7E9;}
+
+.task_goods thead th,.task_cost thead th{color: white;height: 30px;background-color: #ff8f8f;text-align: center;line-height: 30px;font-size: 14px;color: #555;}
+.task_goods thead th{font-weight: 600;}
+.task_goods tbody td{text-align: center;font-size: 14px;}
+.task_goods tbody img{margin-left: 15px;}
+
+.task_cost{text-align: center;font-size: 14px;}
+.task_cost tbody td{padding: 10px 0;line-height: 24px;}
+.task_cost tbody span{color: #f00;}
+.task_cost .rowspans{background: #F8FCFE;}
+.task_cost tbody td{border-bottom: 1px #EBEBEB solid;}
+
+.price_sum{height: 50px;text-align: right;line-height: 50px;font-size: 14px;}
+.price_sum span{font-size: 18px;color: #f00;}
+
+
+
+/* 弹框   订单详情和任务详情 公用 */
+.popup_bg{position: fixed;top: 0;left: 0;z-index: 99;width: 100%;height: 100%;background: rgba(0,0,0,.5);}
+.popup_wraps{position: fixed;top: 300px;left: 50%;width: 340px;margin-left: -175px;padding: 10px;border-radius: 6px;background: #fff;text-align: right;}
+.popup_contente{text-align: center;}
+.popup_wrap img{cursor: pointer;}
+.popup_contente p{line-height: 24px;font-size: 14px;}
+.popup_contente strong{font-size: 16px;font-weight: 600;}
+.popup_contente span{color: #f00;}
+.edit_btn_wrap{display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;
+justify-content: center;align-items: center;padding: 15px 0;}
+.edit_btn_wrap a{width: 68px;height: 30px;border-radius: 6px;text-align: center;line-height: 30px;letter-spacing: 4px;font-size: 16px;}
+.confirm_btn{margin-right: 20px;border: 1px #1B60AD solid;background: #276FBE;color: #fff;}
+.close_btn{border: 1px #ADADAD solid;background: #F3F3F3;color: #767676;}
+
+.popup_wrap2{width: 250px;margin-left: -135px;}
+.back_money_title{color: #000;font-weight: 600;}
+.edit_back_money_val{width: 70px;height: 30px;margin: 10px 0px;text-align: center;line-height: 30px;border: 1px #999 solid;}
+em.wallet{display: inline-block;width: 28px;height: 30px;background: url(/static/imgs/icon/tasktype_icon.png) no-repeat 0px 0px;}
+p.task_correct{padding-left: 25px;background: url(/static/imgs/icon/icon-g.png) left center no-repeat;}
+p.timer{padding-left: 25px;background: url(/static/imgs/icon/timer.png) left center no-repeat;}
+
+.seven_steps{position: relative;padding: 10px;padding-bottom: 20px;}
+.seven_steps_list{position: relative;z-index: 10;display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;
+-webkit-justify-content: space-between;justify-content: space-between;
+align-items: center;text-align: left;}
+.seven_steps_list p{position: relative;margin-bottom: 5px;color: #999;}
+.seven_steps_list_bg{position: absolute;z-index: 8;display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;
+justify-content: flex-start;align-items: center;width: 880px;top: 44px;padding-left: 25px;}
+.seven_steps_list{text-align: center;}
+.seven_steps_list li{height: 80px;}
+.seven_steps_list span{margin-bottom: 5px;}
+.seven_steps_list strong{display: block;width: 104px;}
+.seven_steps_list_bg{padding: 0 43px;}
+.seven_steps_list_bg .steps_item_bg2{width: 145px;}
+.steps_item1 span,.steps_item2 span{position: relative;z-index: 10;display: inline-block;width: 34px;height: 34px;background: url(/static/imgs/bg/process.png) no-repeat -85px 0;text-align: center;line-height: 34px; font-size: 14px;}
+.steps_item_complete1 span{background-position: 0px 0px;color: #FFF;}
+.steps_item_underway1 span{background-position: -36px 0px;color: #FFF;}
+.steps_item_bg2{height: 10px;background: url(/static/imgs/bg/processdis.png) repeat-x;}
+.steps_item_bg_complete2{background: url(/static/imgs/bg/processpass.png) repeat-x;}
+
+.task_message{display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;
+-webkit-justify-content: space-between;justify-content: space-between;
+align-items: center;  width: 1000px;height: 450px;margin: 0 auto;margin-bottom: 10px;font-size: 14px;}
+.task_message_left,.task_message_rgt{border: 1px solid #E0E0E0;background: #fff;border-radius: 4px;}
+.task_message_left{width: 272px;height: 428px;padding: 10px 10px;}
+.task_message_rgt{width: 658px;height: 448px;padding-left: 40px;}
+
+.task_message_left ul{padding: 10px 5px;border-top: 1px #E7E7E7 solid;}
+.task_message_left li{display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;
+align-items: center;height: 30px;}
+.task_message_left h3{height: 40px;line-height: 40px;text-indent: 5px;font-size: 16px;font-weight: 600;}
+
+.back_money_type_logo{height: 70px;text-align: right;}
+.task_state{height: 34px;margin: 16px 0 26px;line-height: 34px;font-size: 20px;font-weight: 600;}
+.task_time_rule{margin: 10px 0;line-height: 22px;}
+.task_time_rule a{margin-left: 10px;color: #1f9cd8;}
+
+.task_progress{font-size: 14px;color: #555555;}
+.task_progress a{margin: 0 10px;color: #00A7E9;}
+.task_progress thead{height: 30px;background-color: #F9F9F9;line-height: 30px;font-weight: 600;}
+.task_progress tr td{min-height: 28px;padding: 8px 0;}
+.task_progress tr{min-height: 30px;border-bottom: 1px #F2F2F2 solid;}
+.task_progress ul{padding-top: 15px;}
+.task_progress p,.task_progress li{min-height: 28px;line-height: 28px;}
+
+.modify_evaluate_wrap{display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;
+align-items: flex-start;}
+.modify_evaluate_wrap p{text-align: right;}
+.modify_evaluate_wrap textarea{resize:none;display: block;width: 400px;min-height: 20px;overflow: hidden;padding: 0 4px;border: 1px solid #DBDBDB;border-radius: 3px;line-height: 20px;text-align: left;}
+.modify_evaluate_wrap .submit_modify_evaluate{display: inline-block;width: 80px;height: 25px;margin: 10px 0;border-radius: 3px;background: #F6A000; text-align: center;line-height: 25px;color: #fff;font-weight: bold;cursor: pointer;}
+
+.goods_detail{text-align: center;font-size: 14px;color: #555555;}
+.goods_detail thead{height: 30px;background-color: #F9F9F9;line-height: 30px;font-weight: 600;}
+
+.buyer_goods_price{margin-top: 10px;padding-top: 20px;border-top: 1px solid #F2F2F2;text-align: right;}
+
+.task_progress p .upload_btn{display: inline-block;width: 48px;height: 25px;background: #DDD;text-align: center;line-height: 25px;color: #000;}
+
+.task_state_detail{padding-right: 30px;}
+
+.task_state_detail a{color: #17baf5;margin-right: 20px;}
+
+.buyer_order_detail{display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;
+align-items: center;margin-top: 20px;}
+.buyer_order_detail img{margin-right: 20px;}
+.buyer_order_detail .buyer_price_edit{margin: 0 10px;color: #00A7E9;}
+.buyer_order_detail .true_back_money{width: 76px;height: 24px;border: 1px #EB8700 solid;border-radius: 4px;background: #F39B00;text-align: center;line-height: 24px;color: #fff;}
+
+
+.go_praise_content{display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;
+align-items: center;padding: 15px 0;}
+.go_praise_content .go_praise{color: #fff;}
+.go_praise{width: 140px;height: 42px;margin: 0 16px 0 5px;border-radius: 6px;text-align: center;line-height: 42px;font-size: 16px;}
+.go_praise_dis{border: 1px #9D9D9D solid;background: #A4A4A4;}
+.go_praise_true{border: 1px #4495e0 solid;background: #F59D00;}
+
+.true_back_benjin{display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;
+align-items: center;padding: 20px 0;}
+.true_back_benjin .true_back_benjin_btn{width: 148px;height: 28px;border: 1px #4495e0 solid;border-radius: 4px;background: #F59F00;text-align: center;line-height: 28px;color: #fff;}
+
+.task_back_benyong{padding-bottom: 20px;}

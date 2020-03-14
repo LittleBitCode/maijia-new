@@ -1,0 +1,130 @@
+.invite_title {height: 25px;margin: 20px 0;text-align: left;line-height: 25px;font-size: 13px;color: #333;}
+/* 邀请复制地址 */
+.invite_url{justify-content: space-between; width: 64%; }
+.invite_url p{width: 650px;height: 40px;padding-left: 10px;border: 1px solid #88B4D8;line-height: 40px;font-size: 14px;color: #252020;font-weight: bold;}
+.invite_url a{width: 95px;height: 35px;margin: 3px 0 0 10px;border: 1px solid #4495e0;border-radius: 5px;background: #4495e0;text-align: center;line-height: 35px;font-size: 15px;color: #fff;font-weight: bold;}
+/* 邀请须知 */
+.invite_notice{line-height: 20px;font-size: 10px;color: red;}
+/* 邀请奖励 */
+.invite_reward{margin: 25px auto 0;padding: 25px 10px;border-top: 1px dashed #DDD;}
+.invite_reward div{margin-bottom: 5px;line-height: 25px;font-size: 14px;letter-spacing: 1px;}
+.invite_reward a{color: #38B1EF;}
+/* 邀请奖励规则 */
+.invite_rule{padding-bottom: 20px;border-top: 1px solid #DDD;border-bottom: 1px solid #DDD;}
+.invite_rule h3{margin-bottom: 10px;padding-top: 30px;font-size: 18px;font-weight: normal;color: #5D5D5D;}
+.invite_rule div{line-height: 25px;font-size: 14px;color: #333;}
+.invite_rule p{line-height: 25px;font-size: 14px;color: #333;}
+.invite_rule p strong{margin-right: 10px;}
+.invite_rule span{color: #F90000;}
+.invite_rule .zhu{margin-top: 20px;padding-left: 10px;color: #999;}
+/* 邀请常见问题 */
+.invite_problem{padding: 20px 5px;font-weight: 600;}
+.invite_problem h3{margin: 5px 0 15px;font-size: 18px;color: #5D5D5D;font-weight: normal;}
+.invite_problem span{line-height: 25px;font-size: 14px;color: #333;}
+.invite_problem p{margin-bottom: 25px;line-height: 25px;font-size: 14px;color: #F07A1D;}
+/* 邀请会员记录 任务奖励记录 失效的奖励 */
+.invite_list{width: 100%;}
+.invite_list th{height: 45px;text-align: center;line-height: 45px;font-size: 14px;color: #333;font-weight: normal;}
+.invite_list thead th{border-bottom: 1px #DDD dashed;}
+.invite_list tbody tr{border-bottom: 1px #DDD solid;}
+.invite_list tbody tr:last-child{border: none;}
+.invite_list tbody span{font-size: 20px;color: #FE0000;}
+.invite_list tbody a{color: #00A5EC;}
+
+.invalid_reward_nav{height: 35px;border-bottom: 1px solid #FF8745;font-size: 14px;}
+
+.invalid_reward_nav a{display: inline-block;height: 34px;margin-right: 7px;padding: 0 15px;border: 1px #E5E5E5 solid;border-bottom: none;border-radius: 6px 6px 0 0;background: -moz-linear-gradient(top, #fff 0%, #F8F8F8 100%);background: -webkit-linear-gradient(top, #fff 0%,#F8F8F8 100%);background: -o-linear-gradient(top, #fff 0%,#F8F8F8 100%);background: -ms-linear-gradient(top, #fff 0%,#F8F8F8 100%);background: linear-gradient(to bottom, #fff 0%,#F8F8F8 100%);line-height: 34px;}
+.invalid_reward_nav a.active{border-color: #e95912;background: -moz-linear-gradient(top, #FFFCE8 0%, #FFEFC6 100%);background: -webkit-linear-gradient(top, #FFFCE8 0%,#FFEFC6 100%);background: -o-linear-gradient(top, #FFFCE8 0%,#FFEFC6 100%);background: -ms-linear-gradient(top, #FFFCE8 0%,#FFEFC6 100%);background: linear-gradient(to bottom, #FFFCE8 0%,#FFEFC6 100%);color: #e95912;}
+
+.invite_buy_list tbody tr.open{border: none;}
+.invite_buy_list a{padding-right: 12px;background: #FFF url(/static/imgs/icon/arrow_bottom.png) no-repeat right center;}
+.invite_buy_task{position: relative;width: 90%;margin: 0 5%;border-top: 1px #03A5EE solid;background: #F4FBFF;}
+.invite_buy_task .invite_list tr{border-bottom: 1px #ddd dashed;}
+.invite_buy_task .invite_list span{font-size: 14px;}
+/* 列表为空 */
+.invlte_empty{height: 30px;padding: 60px;text-align: center;line-height: 30px;font-size: 16px;color: #666;}
+
+/* 没有邀请资格 */
+.no_invite{padding: 40px 0;text-align: center;}
+.no_invite p{padding: 10px 0;}
+/* 邀请会员记录详情 */
+.invite_record_detaile{position: relative;margin-top: 20px;padding: 20px;border: 1px #00A6ED solid;background: #fff;}
+.arrow_top_span{position: absolute;width: 18px;height: 10px;top: -10px;left: 90%;background: url(/static/imgs/icon/arrow_top1.png) no-repeat -18px 0;}
+.invite_record_detaile_nav{height: 35px;padding-top: 15px;padding-left: 17px;border-bottom: 1px solid #ddd;font-size: 14px;}
+.invite_record_detaile_nav a{display: inline-block;height: 34px;margin-right: 7px;padding: 0 15px;border: 1px #fff solid;border-bottom: 1px #ddd solid;border-radius: 6px 6px 0 0;background: #fff;line-height: 34px;color: #25A4E7;}
+.invite_record_detaile_nav a.active{border: 1px #ddd solid;border-bottom: 1px #fff solid;}
+
+
+
+
+a:hover,a:focus{text-decoration:none;bblr:expression(this.onFocus=this.blur());outline-style:none;}
+table {border-collapse:collapse;border-spacing:0;}
+input, select {vertical-align:middle;}
+/*css为clearfix，清除浮动*/
+.clearfix::before, .clearfix::after{content: "";height: 0;line-height: 0;display: block;visibility: hidden;clear: both;}
+.clearfix:after{clear:both;} 
+.clearfix{ *zoom:1;}
+.bg{background: url(/static/imgs/invite/bground.png);background-color:#ffd162;height:4024px;}
+.bg-head img{width: 100%;height: 540px;}
+.main{width: 1200px;margin: 0 auto;}
+.main img{float: left;}
+.header {height: 225px !important;line-height: 225px !important;background-color: inherit}
+.header .top{width: 100%;height: 34px;display: -ms-flexbox;display: flex;margin-bottom: 26px;}
+.header .top p{margin-top: -9px;font-size: 32px;color: #000000;display: inline-block;}
+.header .top #url1 {width: 640px;height: 36px;font-size: 30px;text-decoration: none;font-weight: normal;font-stretch: normal;line-height: 36px;letter-spacing: 0px;color: #228bec;border-bottom: 1px solid #323232;background-color: #ffd162;outline: medium;}
+.header .top #button {width: 107px;height: 34px;border: 1px solid #228bec;text-align: center;line-height: 34px;margin-left: 15px;border-radius: 5px;background-color: #ffd162;}
+.header .content .p1{height: 19px;font-size: 18px;font-weight: normal;color: #646464;text-align: center;}
+.header .content .p2{height: 19px;font-size: 18px;text-align: center;margin-top: 32px;}
+.header .content .p2 i{color: red;}
+.header .content button{font-size: 20px;width: 216px;height: 55px;background-color: #228bec;border-radius: 5px;color: #f5f5f5;margin-left: 500px;margin-top: 30px;position:relative;}
+.header .content button i{position:absolute;top:-85px;left:82px;}
+.main .xq{height: 300px;display: -ms-flexbox;display: flex;margin-top: 80px;}
+.main .xq .xq-l{width: 549px;height: 300px;background: url(/static/imgs/invite/bg-left.png);margin-right: 100px;}
+.main .xq .xq-l h4{width: 147px;font-size: 24px;letter-spacing: 0px;color: #db0029;margin-top: 60px;margin: 60px  auto;margin-bottom: 0;}
+.main .xq .xq-l p{width: 312px;font-size: 24px;color: #228bec;margin-top: 28px;margin-left: 130px;}
+.main .xq .xq-l button{width: 145px;height: 38px;background-color: #db0029;border-radius: 5px;font-size: 20px;color: #fdf6e6;margin-left: 200px;margin-top: 16px;}
+.main .xq .xq-r{width: 549px;height: 300px;background: url(/static/imgs/invite/bg-right.png);}
+.main .xq .xq-r h4{width: 147px;font-size: 24px;letter-spacing: 0px;color: #db0029;margin-top: 60px;margin: 60px  auto;margin-bottom: 0;}
+.main .xq .xq-r p{width: 410px;font-size: 24px;color: #228bec;margin: 0 auto;margin-top: 28px;}
+.main .xq .xq-r button{width: 145px;height: 38px;background-color: #db0029;border-radius: 5px;font-size: 20px;color: #fdf6e6;margin-left: 200px;margin-top: 16px;}
+.yqjl{width: 100%;border: 5px solid #228bec;margin-top: 80px;background-color: #fff;}
+.yqjl h4{font-size: 24px;color: #228bec;margin-top: 48px;margin-left: 517px;}
+.yqjl .tou{width: 1179px;height: 45px;background-color: #ffd162;border-radius: 20px;margin-top: 32px;margin-left: 10px;}
+.yqjl ul{display: -ms-flexbox;display: flex;padding-left: 30px;}
+.yqjl ul li{list-style: none;}
+.yqjl  .ml li{font-size: 18px;line-height: 45px;margin-right: 60px;color: #323232;}
+.yqjl  .ml li:nth-child(6){margin-left: 80px;}
+.yqjl .lb {min-height: 300px;}
+.yqjl .lb ul{font-size: 16px;color: #323232;margin-bottom: 0;}
+.yqjl .lb li{height: 80px;line-height: 80px;}
+.yqjl .lb li:nth-child(1){width: 128px; text-align:center;}
+.yqjl .lb li:nth-child(2){background: url(/static/imgs/invite/points.png) no-repeat 146px 25px;color: #ec6522;width: 226px;text-align: center;}
+.yqjl .lb li:nth-child(3){width: 140px;text-align: center;}
+.yqjl .lb li:nth-child(4){background: url(/static/imgs/invite/points.png) no-repeat 146px 25px;color: #ec6522;width: 226px;text-align: center;}
+.yqjl .lb li:nth-child(5){margin-right:32px;background: url(/static/imgs/invite/points.png) no-repeat 82px 25px;color: #ec6522;width: 128px;text-align: center;}
+.yqjl .lb li a{font-size: 16px;text-decoration:none;color: #1e8fd7;}
+.yqjl .fy{width: 387px;height: 36px;margin: 32px;}
+.yqjl .fy ul{width: 600px;margin-left: 340px;}
+.yqjl .fy li{width: 36px;height: 36px;font-size: 14px;border: solid 1px #e0e0e0;border-radius: 50%;line-height: 36px;text-align: center;margin-left: 30px;}
+.ph{width: 858px;height: 300px;border: 5px solid #005db2;margin-top: 80px;margin-left: 170px;}
+.ph-div{width: 800px;height: 240px;border: 1px solid #005db2;background-color: #fff;margin-top: 25px;margin-left: 29px;}
+.ph-div h4{width: 100%;font-size: 24px;color: #228bec;margin-top: 50px;text-align: center;}
+.ph-div p {height: 40px;line-height: 40px;font-size: 18px;color: #323232;text-align: center;}
+.footer-bg1{width: 960px;height: 626px;background: url(/static/imgs/invite/member-rebate-bg.png);margin: 80px auto;position:relative;}
+.footer-bg1 h4{font-size: 45px;color: #db0029;padding-left: 400px;padding-top: 100px;}
+.footer-bg1 img{width: 183px;height: 97px;position:absolute;left:410px;}
+.footer-bg1 ul{display: -ms-flexbox;display: flex;margin-left: 110px;margin-top: 50px;}
+.footer-bg1 ul:before{content: "";display: table;}
+.footer-bg1 ul li{list-style: none;width: 158px;height: 115px;margin-right: 35px;}
+.footer-bg1 li:nth-child(1){background: url(/static/imgs/invite/member-rebate-bg-1.png)}
+.footer-bg1 li:nth-child(2){background: url(/static/imgs/invite/member-rebate-bg-2.png)}
+.footer-bg1 li:nth-child(3){background: url(/static/imgs/invite/member-rebate-bg-3.png)}
+.footer-bg1 li:nth-child(4){background: url(/static/imgs/invite/member-rebate-bg-4.png)}
+.footer-bg1 .jl{font-size: 20px;color: #323232;font-weight: normal;position: relative;margin-top: 100px;margin-left: 260px;}
+.footer-bg1 li p:nth-child(1){font-size: 18px;color:#fff;padding-top: 15px;padding-left: 5px;}
+.footer-bg1 li p:nth-child(2){font-size: 28px;color:#db0029;padding-left: 60px;}
+.footer-bg2{width: 960px;height: 626px;background: url(/static/imgs/invite/task-rebate-bg.png);margin: 80px auto;margin-left: 190px;}
+.footer-bg2 img{width: 93px;height: 110px;margin-top:50px;margin-left:300px;}
+.footer-bg2 h4{font-size: 45px;color: #db0029;padding-top: 95px;}
+.footer-bg2 div{margin-top: 32px;}
+.footer-bg2 div p {height: 38px;line-height: 40px;font-size: 18px;color: #323232;font-weight: 300;margin-left: 216px;}

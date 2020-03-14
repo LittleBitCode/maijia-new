@@ -1,0 +1,174 @@
+
+.content2 .subtitle{padding-left: 20px;font-size: 18px;font-weight: normal;color: #000;}
+
+/* 	vip充值 */
+.vip_wrap{width: 938px;height: auto;padding: 20px 30px;}
+.vip_recharge_title{padding-bottom: 20px;}
+.vip_due_date{height: auto;margin-bottom: 30px;padding: 10px;border-bottom: 1px dashed #DDDDDD;line-height: 28px;text-indent: 10px; font-size: 14px;color: #555555;}
+.recharge_time{display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;
+align-items: center;margin-bottom: 10px;padding-bottom: 20px;border-bottom: 1px dotted #F2F2F2;font-size: 14px;}
+.recharge_time li{display: inline-flex;align-items: center;margin-right: 10px;}
+.add_due_date{display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;
+-webkit-justify-content: space-between;justify-content: space-between;
+height: 44px;margin-bottom: 15px;padding: 0 10px;border-bottom: 1px solid #F2F2F2;background-color: #F7FCEB;line-height: 44px;font-size: 14px;}
+.pay_type{display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;
+-webkit-justify-content: space-between;justify-content: space-between;
+height: 55px;padding: 0 10px;border-bottom: 1px dotted #F2F2F2;line-height: 55px;font-size: 14px;color: #999;}
+.pay_type label{display: inline-flex;align-items: center;}
+.pay_type label input{position: relative;top: 1px;margin-right: 5px;}
+.pay_type a{display: inline-block;margin-left: 5px;font-size: 12px;color: #00A7E8;}
+.pay_type.active{border-bottom: 1px dotted #E5DAB7;background-color: #FFFEEE;color: #555;}
+
+.pay_type2_list{margin-bottom: 30px;}
+.go_pay{display: block;width: 148px;height: 48px;margin: 0 auto;border: 1px #4495e0;border-radius: 4px;background: #4495e0;text-align: center;line-height: 48px;font-size: 18px;font-weight: 600;color: #fff;}
+
+.vip_problem{margin-top: 100px;padding-top: 20px;border-top: 1px solid #F2F2F2;}
+/* 账号信息 基本信息 */
+.userinfo_item{}
+.userinfo_item_head{display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;
+-webkit-justify-content: space-between;justify-content: space-between;align-items: center;height: 64px;padding: 10px 0px;border-bottom: 1px solid #e7e7e7;line-height: 30px;font-size: 14px;}
+.userinfo_item_name{width: 160px;font-size: 16px;}
+.userinfo_item_state{width: 560px;}
+.draw_edit_btn_wrap{width: 90px;text-align: right;}
+.userinfo_item_edit{width: 40px;text-align: right;color: #00A6EC;}
+
+.userinfo_item2{margin-bottom: 40px;padding-bottom: 20px;border-bottom: 1px solid #e7e7e7;}
+.userinfo_item2_head{height: 30px;padding: 10px 0px;line-height: 30px;font-size: 16px;}
+.userinfo_contact{line-height: 34px;}
+.userinfo_contact_item{display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;
+-webkit-justify-content: space-between;justify-content: space-between;align-items: center;padding-left: 24px;font-size: 14px;}
+.contact_type{width: 100px;}
+.contact_number{width: 470px;}
+.contact_edit,.contact_state{width: 130px;text-align: right;}
+.contact_edit{color: #00A6EC;}
+
+/* 修改 */
+.edit_wrap{display: none;width: 100%;min-height: 150px;padding: 20px 0;}
+.edit_wrap2{margin-top: 10px;padding-bottom: 30px;border-top: 1px solid #e7e7e7;}
+
+.edit_wrap_title{padding-bottom: 20px;margin-left:16%;font-size: 14px;color: #666;}
+.edit_item{position: relative;margin: 0 0 20px;font-size: 14px;}
+.edit_item_name{display: inline-block;width: 230px;text-align: right;font-size: 14px;}
+.edit_item_name strong{ padding-right: 4px;color: #FF0000;font-family: "SimSun";font-style: normal;}
+.edit_item .account_pwd{width: 212px;height: 30px;margin: 0px 5px;padding: 0 50px 0 30px;border: 1px #dcdcdc solid;line-height: 30px;}
+.submit_form{display: inline-block;width: 70px;height: 40px;border: 1px #ff6b71 solid;border-radius: 6px;background: #ff6b71;text-align: center;line-height: 40px;font-size: 16px;color: #fff;font-weight: 600;}
+
+.get_phone_code{display: inline-block;width: 120px; height: 30px;margin-left: 10px;border: 1px solid #ddd;border-radius: 3px; background: #FCFCFC;text-align: center;line-height: 30px;font-size: 14px;color: #545454;}
+.edit_item .phone_code{width: 128px;height: 30px;line-height: 30px;}
+.edit_item .img_code{display: inline-block;width: 302px;height: 40px;border: 1px #dcdcdc solid;}
+.draw_pwd_success{margin-bottom: 40px;padding-top: 10px;text-align: center;font-size: 14px;color: #adadc0;}
+.edit_item .input_prompt{display: none;font-size: 12px;color: #666;}
+.edit_item .contact_type_number{width: 190px;height: 30px;margin: 0px 5px;padding: 0 10px 0 30px;border: 1px #dcdcdc solid;line-height: 30px;}
+/* 修改提现密码三步 修改邮箱四步 公共样式 */
+.three_steps,.four_steps{position: relative;padding: 0 100px;margin-bottom: 50px;}
+.three_steps_list,.four_steps_list{position: relative;z-index: 10;display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex; -webkit-justify-content: space-between;justify-content: space-between;align-items: center;text-align: left;}
+.three_steps_list p,.four_steps_list p{position: absolute;margin-bottom: 5px;color: #999;}
+.three_steps_list_bg,.four_steps_list_bg{position: absolute;z-index: 8;display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex; justify-content: flex-start;align-items: center;width: 880px;top: 13px;padding-left: 10px;}
+
+.three_steps_list .steps_item1:nth-child(1) p{left: -30px;}
+.three_steps_list .steps_item1:nth-child(2) p{left: 254px;}
+.three_steps_list .steps_item2 p{right: 5px;}
+.three_steps_list .steps_item1:nth-child(2) span{display: block;margin: 0 auto;}
+.three_steps_list_bg .steps_item_bg2{width: 50%;}
+
+.four_steps_list .steps_item1:nth-child(1) p{left: -20px;}
+.four_steps_list .steps_item1:nth-child(2) p{left: 168px;}
+.four_steps_list .steps_item1:nth-child(3) p{left: 348px;}
+.four_steps_list .steps_item2 p{right: 5px;}
+.four_steps_list_bg .steps_item_bg2{width: 33%;}
+
+.steps_item1 span,.steps_item2 span{position: relative;z-index: 10;display: inline-block;width: 34px;height: 34px;background: url(/static/imgs/bg/process.png) no-repeat -85px 0;text-align: center;line-height: 34px; font-size: 14px;}
+.steps_item_complete1 span{background-position: 0px 0px;color: #FFF;}
+.steps_item_underway1 span{background-position: -36px 0px;color: #FFF;}
+.steps_item_bg2{height: 10px;background: url(/static/imgs/bg/processdis.png) repeat-x;}
+.steps_item_bg_complete2{background: url(/static/imgs/bg/processpass.png) repeat-x;}
+/* 更换邮箱 */
+.email_one{text-align: center;font-size: 14px;color: #666;}
+.send_emails{display: inline-block;width: 125px;height: 38px;margin: 10px 0;border: 1px #327CBF solid;border-radius: 6px;background: #428ACD;text-align: center;line-height: 40px;font-size: 16px;color: #fff;font-weight: 600;}
+
+.email_two{font-size: 14px;color: #666;}
+.email_two strong{display: block;margin-bottom: 40px;padding-top: 10px;text-align: center;font-size: 14px;color: #adadc0;}
+.email_two p{padding-left: 90px;}
+.email_two .again_send_emails{display: inline-block;width: 120px;height: 22px;padding: 0 12px;background: #89b46a;text-align: center;line-height: 22px;color: #FFF;}
+
+.email_val{width: 190px;height: 30px;margin: 0px 5px;padding: 0 10px 0 30px;border: 1px #dcdcdc solid;line-height: 30px;}
+
+/* 绑定提现账号 */
+.bind_bank,.network_pay{display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;
+align-items: center;width: 778px;height: 65px;border-bottom: 1px solid #E3E3E3;font-size: 14px;}
+.bind_pay_title{width: 110px;padding-left: 10px;font-size: 16px;font-weight: bold;color: #313131;}
+.bind_pay_logo,.bind_pay_img{display: inline-flex;align-items: center;width: 110px;}
+.bind_pay_img{cursor: pointer;}
+.bind_pay_name{width: 110px;}
+.bind_bank .bind_pay_account{width: 260px;}
+.network_pay .bind_pay_account{width: 150px;}
+.review_state{width: 110px;color: #00CB09;}
+.review_state2{width: 110px;color: #4495e0;}
+.review_state3,.review_state4{width: 110px;color: #f00;}
+/* 绑定信息 表单 */
+.binding{width: 778px;min-height: 65px;border-bottom: 1px solid #E3E3E3;font-size: 14px;}
+.binding_head{display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;
+-webkit-justify-content: space-between;justify-content: space-between;
+height: 65px;line-height: 65px;}
+.binding_head p{display: inline-flex;}
+.binding_head .go_binding{margin-right: 20px;padding-right: 15px;background: url(/static/imgs/icon/arrow_bottom.png) no-repeat right center;font-size: 14px;color: #00A7EA;}
+.binding_head .go_binding:hover{color: #4495e0;}
+.binding_wrap{position: relative;width: 700px;min-height: 150px;margin-bottom: 20px;padding: 0 18px;border: 1px solid #1F9CD8;border-top: none;background: #F5FEFF;font-size: 14px;}
+.binding_wrap_top{position: absolute;top: -4px;left: 0;}
+.binding_wrap_title{height: 75px;margin-bottom: 20px;border-bottom: 1px dashed #DDD;text-align: center;line-height: 75px;font-size: 14px;color: #363636;}
+.binding_wrap_title span{color: #f00;}
+.binging_item{display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;
+min-height: 62px;}
+.binging_item .binging_title{width: 160px;text-align: right;line-height: 32px;}
+.binging_item input{height: 30px;margin-bottom: 10px;padding: 0 5px;border: 1px #ccc solid;}
+.name_input{width: 120px;}
+.bank_select{margin-top: 5px;border: 1px solid #ccc;}
+
+.address_wrap{display: inline-flex;}
+.province_wrap,.city_wrap{position: relative;margin-right: 20px;}
+.address_wrap input{padding-right: 20px;background: #fff url(/static/imgs/icon/arrow_bottom_disabled.jpg) no-repeat 162px center;}
+.address_list{position: absolute;top: 35px;z-index: 99;padding: 5px 15px 5px 5px;border: 1px solid #C6CDCE;background: #fff;font-size: 14px; color: #444;}
+.address_list .address_close{position: absolute;right: 5px;top: 5px;margin: 0;color: #666;cursor: pointer;line-height: 10px;}
+.province_list{width: 440px;height: 198px;z-index: 100}
+.province_list div{height: 28px;line-height: 28px;}
+.province_list span{margin-right: 10px;cursor: pointer;}
+.province_list .region{color: #aaa;}
+.city_list{width: 290px;min-height: 100px;line-height: 25px;}
+.city_list span{margin-right: 10px;color: #444;cursor: pointer;}
+
+.subbranch_select{width: 395px;height: 30px;padding-left: 5px;border: 1px solid #ccc;border-radius: 2px;line-height: 30px;}
+.bank_card_input,.id_number_input{width: 280px;height: 30px;padding-left: 5px;line-height: 30px;color: #565656;}
+.id_number_wrap{height: 128px;}
+.id_number_purpose{display: inline-block;width: 150px;height: 32px;margin-left: 20px;background-color: #fffff7;line-height: 32px;font-size: 13px;color: #999;}
+
+.id_big_img{position: absolute;top: 10px;left: 380px;display: none;z-index: 99;}
+.id_big_img span{position: absolute;top: -10px;right: -10px;font-size: 14px;color: #f00;cursor: pointer;}
+
+.alipay_big_img{position: absolute;top: 0px;left: 130px;display: none;z-index: 99;}
+.alipay_big_img span{position: absolute;top: -10px;right: -10px;font-size: 14px;color: #f00;cursor: pointer;}
+
+.tenpay_big_img{position: absolute;top: -330px;left: 60px;display: none;z-index: 99;}
+.tenpay_big_img span{position: absolute;top: -10px;right: -10px;font-size: 14px;color: #f00;cursor: pointer;}
+
+.name_prompt{margin-left: 10px;font-size: 14px;color: #999;}
+
+.file_img strong{display: block;height: 100px;line-height: 60px;}
+
+.tenpay_account_input,.tenpay_account_inputs,.alipay_account_input{width: 300px;}
+
+.two_steps_title{height: 40px;padding-left: 10px;padding-top: 10px;border-top: 1px dashed #DDD;line-height: 40px;font-size: 16px;color: #565656;font-weight: 600;}
+.two_steps_title a{margin-left: 40px;color: #f00;}
+.file_img{position: relative;padding-left: 10px;line-height: 25px;}
+.file_img p{display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;
+align-items: flex-start;padding-top: 10px;cursor: pointer;}
+.file_img p a{margin-right: 10px;color: #00A7EB;}
+.upload_explain{padding-left: 10px;line-height: 40px;font-size: 14px;color: #565656;}
+.upload_explain span{color: #f00;}
+.upload_explain strong{font-size: 12px;color: #999;}
+.bind_btn_wrap{height: 80px;margin-top: 30px;text-align: center;}
+.bind_btn_wrap a{display: inline-block;width: 98px;height: 46px;border-radius: 6px;text-align: center;line-height: 46px;}
+.true_submit{margin-right: 10px;border: 1px #EF9B00 solid;background: #4495e0;font-size: 20px;color: #fff;font-weight: 900;}
+.none_submit{font-size: 16px;color: #666;}
+/* 密码可视　　一键删除 */
+.pwd_type{position: absolute; left: 445px;top: 10px;z-index: 9;height: 15px;cursor: pointer;}
+.input_val_close{position: absolute;left: 425px;top: 11px;z-index: 9;height: 13px;cursor: pointer;}

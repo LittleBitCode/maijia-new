@@ -1,0 +1,24 @@
+img{display: block;margin: 0;}
+a{display: inline-block;}
+.top{background: #fff;box-shadow: 0 2px 2px #999;margin-top:30px;width:auto;border:none;}
+.top_logo{width: auto;}
+.login_box{width: 1000px;margin:0 auto;padding-top: 65px;}
+/* 登录框 */
+.login{width:335px; min-height:320px; overflow:hidden; float:right;}
+.logincen{width:285px;min-height:200px; padding:5px 15px; overflow:hidden;box-shadow: 0 0 15px #999;border-radius: 15px;margin:10px auto;}
+.logincen h3{width:265px; height:30px; margin:5px auto; line-height:30px; color:#565656; font-size:16px;}
+.logincen span{display:block; height:30px; width:250px; padding-left:13px; margin:0 auto; line-height:30px; border:1px solid #FBE0AC; background:#FFFEDE; color:#F90000; font-weight:bold;}
+/*登录框信息输入模块*/
+.logincen .login_input{width:263px; height:35px; border:1px solid #B7B7B7; margin:5px auto; margin-top:10px;}
+.logincen .login_input input{width:255px; height:33px; border:1px solid #E7E7E7; color:#565656; padding-left:6px; line-height:33px;}
+.login_button{width:265px; height:43px; margin:10px auto;}
+.login_button input{width:93px; height:43px; float:left; display:block; line-height:43px; text-align:center; color:#fff; background: #4495e0;border-radius: 5px;border:1px solid #4495e0;cursor: pointer;font-size: 16px;}
+.login_button div{width:150px; height:15px; line-height:15px; float:right; margin-top:15px;}
+.login_button a{display:block; float:left; width:74px; height:15px; line-height:15px; text-align:center; color:#00A7EA;}
+.login_button p{display:block; background:#808080; float:left; height:15px; width:2px;}
+/*验证码*/
+.code{width:265px; height:35px; margin:5px auto; margin-top:10px;}
+.code_input{width:80px; height:33px; border:1px solid #B7B7B7; float:left; margin-right:20px;}
+.code_input input{width:78px; height:31px; border:1px solid #eee; line-height:31px; float:left;}
+.codes{width:80px; height:35px; float:left; line-height:35px; text-align:center; border:1px solid #E4F9D4; background:#F9FDEE;color:green;letter-spacing:3px; font-weight:bolder;}
+.footer{width:100%; height:80px; text-align:center; line-height:80px; color:#383838; background:#fff; font-family:"微软雅黑";}

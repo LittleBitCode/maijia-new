@@ -1,0 +1,29 @@
+/* Better spacing on download options in getting started */
+.bs-docs-dl-options h4 {margin-top: 15px;margin-bottom: 5px;}
+.ih-item {position: relative;-webkit-transition: all 0.35s ease-in-out;-moz-transition: all 0.35s ease-in-out;transition: all 0.35s ease-in-out;}
+.ih-item, .ih-item * {-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
+.ih-item a {color: #333;}
+.ih-item a:hover {text-decoration: none;}
+.ih-item img {width: 100%;height: 100%;}
+.ih-item.circle {position: relative;width: 220px;height: 220px;border-radius: 50%;}
+.ih-item.circle .img {position: relative;width: 220px;height: 220px;border-radius: 50%;}
+.ih-item.circle .img:before {position: absolute;display: block;content: '';width: 100%;height: 100%;border-radius: 50%;box-shadow: inset 0 0 0 16px rgba(255, 255, 255, 0.6), 0 1px 2px rgba(0, 0, 0, 0.3);-webkit-transition: all 0.35s ease-in-out;-moz-transition: all 0.35s ease-in-out;transition: all 0.35s ease-in-out;}
+.ih-item.circle .img img {border-radius: 50%;}
+.ih-item.circle .info {position: absolute;top: 0;bottom: 0;left: 0;right: 0;text-align: center;border-radius: 50%;-webkit-backface-visibility: hidden;backface-visibility: hidden;}
+.ih-item.square {position: relative;width: 316px;height: 216px;border: 8px solid #fff;box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);}
+.ih-item.square .info {position: absolute;top: 0;bottom: 0;left: 0;right: 0;text-align: center;-webkit-backface-visibility: hidden;backface-visibility: hidden;}
+.ih-item.circle.effect20 {-webkit-perspective: 900px;-moz-perspective: 900px;perspective: 900px;}
+.ih-item.circle.effect20 .img {-webkit-transition: all 0.35s linear;-moz-transition: all 0.35s linear;transition: all 0.35s linear;-webkit-transform-origin: 50% 0%;-moz-transform-origin: 50% 0%;-ms-transform-origin: 50% 0%;-o-transform-origin: 50% 0%;transform-origin: 50% 0%;}
+.ih-item.circle.effect20.colored .info .info-back {background: #1a4a72;}
+.ih-item.circle.effect20 .info {-webkit-transform-style: preserve-3d;-moz-transform-style: preserve-3d;-ms-transform-style: preserve-3d;-o-transform-style: preserve-3d;transform-style: preserve-3d;}
+.ih-item.circle.effect20 .info .info-back {opacity: 1;visibility: hidden;border-radius: 50%;width: 100%;height: 100%;background: #333333;-webkit-transition: all 0.35s linear;-moz-transition: all 0.35s linear;transition: all 0.35s linear;-webkit-transform-origin: 50% 0%;-moz-transform-origin: 50% 0%;-ms-transform-origin: 50% 0%;-o-transform-origin: 50% 0%;transform-origin: 50% 0%;-webkit-backface-visibility: hidden;backface-visibility: hidden;}
+.ih-item.circle.effect20 .info h3 {color: #fff;text-transform: uppercase;position: relative;letter-spacing: 2px;font-size: 22px;margin: 0 30px;padding: 55px 0 0 0;height: 110px;text-shadow: 0 0 1px white, 0 1px 2px rgba(0, 0, 0, 0.3);}
+.ih-item.circle.effect20 .info p {color: #bbb;padding: 10px 5px;font-style: italic;margin: 0 30px;font-size: 12px;border-top: 1px solid rgba(255, 255, 255, 0.5);}
+.ih-item.circle.effect20 a:hover .img {opacity: 0;}
+.ih-item.circle.effect20 a:hover .info .info-back {opacity: 1;visibility: visible;}
+.ih-item.circle.effect20.top_to_bottom .info .info-back {-webkit-transform: translate3d(0, 0, -220px) rotate3d(1, 0, 0, 90deg);-moz-transform: translate3d(0, 0, -220px) rotate3d(1, 0, 0, 90deg);-ms-transform: translate3d(0, 0, -220px) rotate3d(1, 0, 0, 90deg);-o-transform: translate3d(0, 0, -220px) rotate3d(1, 0, 0, 90deg);transform: translate3d(0, 0, -220px) rotate3d(1, 0, 0, 90deg);}
+.ih-item.circle.effect20.top_to_bottom a:hover .img {-webkit-transform: translate3d(0, 280px, 0) rotate3d(1, 0, 0, -90deg);-moz-transform: translate3d(0, 280px, 0) rotate3d(1, 0, 0, -90deg);-ms-transform: translate3d(0, 280px, 0) rotate3d(1, 0, 0, -90deg);-o-transform: translate3d(0, 280px, 0) rotate3d(1, 0, 0, -90deg);transform: translate3d(0, 280px, 0) rotate3d(1, 0, 0, -90deg);}
+.ih-item.circle.effect20.top_to_bottom a:hover .info .info-back {-webkit-transform: rotate3d(1, 0, 0, 0deg);-moz-transform: rotate3d(1, 0, 0, 0deg);-ms-transform: rotate3d(1, 0, 0, 0deg);-o-transform: rotate3d(1, 0, 0, 0deg);transform: rotate3d(1, 0, 0, 0deg);}
+.ih-item.circle.effect20.bottom_to_top .info .info-back {-webkit-transform: translate3d(0, 280px, 0) rotate3d(1, 0, 0, -90deg);-moz-transform: translate3d(0, 280px, 0) rotate3d(1, 0, 0, -90deg);-ms-transform: translate3d(0, 280px, 0) rotate3d(1, 0, 0, -90deg);-o-transform: translate3d(0, 280px, 0) rotate3d(1, 0, 0, -90deg);transform: translate3d(0, 280px, 0) rotate3d(1, 0, 0, -90deg);}
+.ih-item.circle.effect20.bottom_to_top a:hover .img {-webkit-transform: translate3d(0, 0, -220px) rotate3d(1, 0, 0, 90deg);-moz-transform: translate3d(0, 0, -220px) rotate3d(1, 0, 0, 90deg);-ms-transform: translate3d(0, 0, -220px) rotate3d(1, 0, 0, 90deg);-o-transform: translate3d(0, 0, -220px) rotate3d(1, 0, 0, 90deg);transform: translate3d(0, 0, -220px) rotate3d(1, 0, 0, 90deg);}
+.ih-item.circle.effect20.bottom_to_top a:hover .info .info-back {-webkit-transform: rotate3d(1, 0, 0, 0deg);-moz-transform: rotate3d(1, 0, 0, 0deg);-ms-transform: rotate3d(1, 0, 0, 0deg);-o-transform: rotate3d(1, 0, 0, 0deg);transform: rotate3d(1, 0, 0, 0deg);}

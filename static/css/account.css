@@ -1,0 +1,190 @@
+@charset "utf-8";
+/* 提现账号管理 */
+.account_box{margin-top:15px; background-color: #f7f7f9;border-radius: 3px; padding: 20px; box-shadow: 5px 5px 10px #f1f1f1;}
+.account_box h1{margin-top:0; font-size:20px;}
+.account_box h1 span{font-size:16px; margin-top:5px; color:#555; font-weight:normal; float:right;}
+
+/* 绑定银行卡 */
+.account_bank{margin:10px 0;}
+.bind_title{height:65px; line-height:65px; color:#313131; font-size:14px;}
+.bind_title b{font-size:16px;}
+.bind_title .logo{width: 25px;height: 25px;position: relative;top: -3px;margin-right: 5px;}
+.bind_title span{display:inline-block; float:left;}
+.bind_title span.username{width:100px; text-align:center;}
+.bind_title span.bank_cord{width:220px; text-align:center;}
+.white_box{background-color: #ffffff;border-radius: 5px;padding: 10px;margin: 15px 0;}
+.bind_title p{display:inline-block; float:right;}
+.bind_title p span{display:inline-block; width:100px; margin:0 5px; text-align:center; color:#05a2ff;}
+.bind_title p span.orange{color:orange;}
+.bind_title p span.green{color:#34D63B;}
+.bind_a{color:#00A7EA; padding-right:12px; background:url(/static/imgs/account/bindinga.jpg) no-repeat right 50%; margin-right:5px;}
+.bind_bank_box{padding:18px; position:relative;}
+.position_img{position:absolute; top:-5px; left:18px;}
+.prompt{font-size:14px; color:#363636; border-bottom:1px dashed #ddd; padding:10px 0 20px;}
+.prompt span{color:#f00;}
+
+.bind_bank_con{padding-bottom:30px;}
+
+.username_div{margin-top:30px; height:32px; line-height:32px; font-size:14px;}
+.username_div label{display:inline-block; width:150px; text-align:right; float:left;}
+.username_div input{display:inline-block; height:30px; line-height:30px;border:1px solid #bddffd;background-color: #fbfdff; padding-left:5px; width:400px; float:left;}
+.username_div span.error{float:left; margin-top:7px; line-height:18px;}
+
+.back_div{margin-top:30px; height:32px; line-height:32px; font-size:14px;}
+.back_div label{display:inline-block; width:150px; text-align:right; float:left;}
+.back_div select{display:inline-block; border:1px solid #bddffd;background-color: #fbfdff; padding-left:5px; float:left;}
+.back_div span.error{float:left; margin-top:7px; line-height:18px;}
+
+.address_div{margin-top:30px; height:32px; line-height:32px; font-size:14px; position:relative;}
+.address_div label{display:inline-block; width:150px; text-align:right; float:left;}
+.address_div input{height:30px; width:190px;border:1px solid #bddffd;background-color: #fbfdff;float:left; padding-left:5px; line-height:30px; color:#565656; background:url(/static/imgs/account/selectimg.png) no-repeat 98% 50% #fff; margin-right:20px;}
+.address_div span.error{float:left; margin-top:7px; line-height:18px;}
+
+.province_detail{position:absolute; z-index:99; background:#fff; padding:5px; border:1px solid #C6CDCE; top:35px; left:150px; font-size:14px; color:#aaa;}
+.province_detail .close{position: absolute; right:5px; top:0px; cursor: pointer; color:#666;}
+#provincebox span{margin-left:10px; color:#444; cursor:pointer;}
+#provincebox div{line-height:28px; height:28px;}
+.city_detail{position:absolute; z-index:99; background:#fff; padding:5px 15px 0 10px; border:1px solid #C6CDCE; top:35px; left:336px; font-size:14px; min-width: 256px;}
+.city_detail .close{position: absolute; right:5px; top:0px; cursor: pointer; color:#666;}
+#citybox span{margin-left:10px; color:#444; cursor:pointer; line-height:25px;word-wrap:break-word;}
+#citybox span:first-child{margin-left: 0;}
+#citybox{line-height:25px;}
+.provincebox,.citybox{background:url(/static/imgs/account/selectimg.png) no-repeat; background-position:98% 50%;}
+
+/* 开户行支行 */
+.bankname_div{margin-top:30px; height:32px; line-height:32px; font-size:14px; position: relative;}
+.bankname_div label{display:inline-block; width:150px; text-align:right; float:left;}
+.bankname_div input{width:400px; height:30px; line-height:30px; padding-left:5px;border:1px solid #bddffd;background-color: #fbfdff; border-radius:2px; float:left; background:url(/static/imgs/account/selectimg.png) no-repeat #fff 99% 50%;}
+.bankname_div #auto_div{display: none; width: 500px; height:145px; margin:auto; border: 1px #DDDDDD solid; border-radius:3px; background: #FFF; position: absolute; top:35px; left:150px; color: #323232; overflow:auto; padding:10px;}
+.bankname_div #auto_div div{height:20px; line-height:20px;}
+.bankname_div #auto_div div:hover{background-color:#E5F7FF;}
+.bankname_div span.error{float:left; margin-top:7px; line-height:18px;}
+
+.bankcode_div{margin-top:30px; height:32px; line-height:32px; font-size:14px;}
+.bankcode_div label{display:inline-block; width:150px; text-align:right; float:left;}
+.bankcode_div input{display:inline-block; height:30px; line-height:30px; border:1px solid #bddffd;background-color: #fbfdff; padding-left:5px; width:400px; float:left;}
+.bankcode_div span.error{float:left; margin-top:7px; line-height:18px;}
+
+.button_div{margin:60px 0 30px 140px;}
+.bank_sub{display:inline-block; width:120px; height:35px; background:#05a2ff;border-radius:3px; font-size:17px; color:#fff; line-height:35px; text-align:center; font-weight:bold; cursor:pointer;}
+.bank_sub:hover{background:#4495e0;}
+.bank_reset{font-size:16px; color:#666; margin-left:50px; line-height:38px;}
+.bank_reset:hover{color:#999;}
+
+
+/* 修改银行卡绑定 */
+.bank_update{border-top:1px dashed #ddd; padding:18px; position:relative; font-size:14px;}
+.verify_div{margin-top:20px; overflow:hidden;}
+.verify_div label{display:inline-block; width:200px; float:left; line-height:33px; text-align:right;}
+.verify_div .verify_img{display:inline-block; height:45px; width:305px; float:left;}
+
+.phone_number{margin-top:20px; overflow:hidden;}
+.phone_number label{display:inline-block; width:200px; float:left; line-height:32px; text-align:right;}
+.phone_number .phone_info{display:inline-block; float:left;}
+.phone_number .phone_info .verify_a{background: #fcfcfc none repeat scroll 0 0;border: 1px solid #ddd;border-radius: 3px;color: #545454;display: inline-block;float: left;font-size: 14px;height: 30px;line-height: 30px;margin-left: 10px;text-align: center;width: 100px;}
+.phone_number .phone_info i{background: #fcfcfc none repeat scroll 0 0;border: 1px solid #ddd;border-radius: 3px;color: #545454;display: inline-block;float: left;font-size: 14px;height: 30px;line-height: 30px;margin-left: 10px;text-align: center;width: 100px; display:none;}
+.phone_number .phone_info em{font-size:14px; height:32px; line-height:32px; color:#3A3A3A; margin:0 5px; float:left;font-style: normal;}
+
+.phone_verify{margin-top:20px; overflow:hidden;}
+.phone_verify label{display:inline-block; width:200px; float:left; line-height:32px; text-align:right;}
+.phone_verify input{height:30px; width:138px; padding-left:25px; line-height:30px; border:1px solid #C4C4C4; border-radius:2px; }
+
+.bank_update .bank_update_but{margin:20px 0;}
+.bank_update .bank_update_but input{display:inline-block; width:120px; height:35px; background:#05a2ff; text-align:center; line-height:35px;border-radius:3px; color:#fff; font-weight:bold; font-size:17px; margin-left:200px;}
+.bank_update .bank_update_but input:hover{background:#276FBE;}
+
+.username_div_ok{margin-top:30px; height:32px; line-height:32px; font-size:14px;}
+.username_div_ok label{display:inline-block; width:150px; text-align:right; float:left;}
+.username_div_ok em{display:inline-block; height:30px; line-height:30px; color:#3A3A3A;}
+.username_div_ok p{display:inline-block; margin-left:100px; height:30px; line-height:30px;}
+
+
+
+/* 商家绑定支付宝 */
+.bind_title .bind_zfb_a{color:#00A7EA; padding-right:12px; background:url(/static/imgs/account/bindinga.jpg) no-repeat right 50%; margin-right:5px;}
+.bind_zfb_box{padding:18px; position:relative;}
+.bind_zfb_con h3{font-size:16px; height:40px; line-height:40px; color:#565656; padding-left:10px; margin-top:10px;
+font-weight:bold;}
+
+.zfb_name{height:32px; line-height:32px; font-size:14px; margin-top:20px;}
+.zfb_name label{display:inline-block; width:120px; float:left; height:32px; line-height:32px; text-align:right;}
+.zfb_name input{display:inline-block; width:118px; height:30px; border:1px solid #CCC; line-height:30px; padding-left:5px; float:left;}
+.zfb_name em{color:#999; float:left; line-height:32px; margin-left:10px;}
+.zfb_name span.error{float:left; margin:8px 10px 0; line-height:18px;}
+
+.zfb_account{height:32px; line-height:32px; font-size:14px; margin-top:20px;}
+.zfb_account label{display:inline-block; width:120px; float:left; height:32px; line-height:32px; text-align:right;
+font-weight: normal;}
+.zfb_account input{display:inline-block; width:300px; height:30px; border:1px solid #bddffd;background-color: #fbfdff; line-height:30px; padding-left:5px; float:left;}
+.zfb_account span.error{float:left; margin:8px 10px 0; line-height:18px;}
+
+.bind_zfb_p{font-size:14px; color:#565656; line-height:30px; margin:10px;}
+.bind_zfb_p span{color:#f00;}
+
+.zfb_img_min{height:30px; padding:0 10px; line-height:30px; font-size:14px;}
+.zfb_img_min span{color:#f00;}
+.zfb_img_min a{display:inline-block;color:#00A7EB;}
+.zfb_img_min a img{float:right; margin-left:10px;}
+
+.bind_zfb_img{line-height:32px; font-size:14px; margin-top:40px;}
+.bind_zfb_img label{display:inline-block; width:80px;  height:32px; line-height:32px;
+position: relative;top: -42px;left: 8px;}
+.bind_zfb_img input{float:left; margin-top:5px;}
+.bind_zfb_img em{color:#999; float:left;}
+.bind_zfb_img span.error{margin-top:7px; line-height:18px;}
+.bind_zfb_img .bind_zfb_img_span{position: relative;left: 10px;top: 43px;}
+
+.button_div{margin:18px 0 5px 276px;}
+.zfb_sub{display:inline-block; width:120px; height:35px; background:#05a2ff; border-radius:3px; font-size:17px; color:#fff; line-height:35px; text-align:center; font-weight:bold; cursor:pointer;}
+.zfb_sub:hover{background:#4495e0;}
+.zfb_reset{font-size:16px; color:#666; margin-left:50px; line-height:38px;}
+.zfb_reset:hover{color:#999;}
+
+.bind_title_zfb{height:65px; line-height:65px; color:#313131; font-size:14px;}
+.bind_title_zfb b{font-size:16px; float:left;}
+.bind_title_zfb img{display:inline-block; margin:23px 30px 0; float:left;}
+.bind_title_zfb span{display:inline-block; float:left;}
+.bind_title_zfb span.username{width:100px; text-align:center;}
+.bind_title_zfb span.zfbaccount{width:150px; text-align:center;}
+.bind_title_zfb p{display:inline-block; float:right;}
+.bind_title_zfb p span{display:inline-block; width:100px; margin:0 5px; text-align:center; color:#f00;}
+.bind_title_zfb p span.orange{color:orange;}
+.bind_title_zfb p span.green{color:#34D63B;}
+
+.zfb_name_ok{margin-top:30px; height:32px; line-height:32px; font-size:14px;}
+.zfb_name_ok label{display:inline-block; width:150px; text-align:right; float:left;font-weight: normal}
+.zfb_name_ok em{display:inline-block; height:30px; line-height:30px; color:#3A3A3A;font-style: normal;}
+.zfb_name_ok p{display:inline-block; margin-left:60px; height:30px; line-height:30px;}
+
+.reminder div{font-size:14px; color:#f00; line-height:30px; margin-top:50px;}
+.reminder p{margin:50px 0 30px; padding:30px 0 0; border-top:1px dashed #ddd; font-size:14px;}
+
+/* add */
+.bank_inner.bind_title,
+.bank_inner.bind_title_zfb
+{
+    line-height: 30px;
+    height: 100px;
+}
+.bank_inner.bind_title .bank_inner_tit,
+.bank_inner.bind_title_zfb .bank_inner_tit
+{
+    border-bottom: #ccccce dashed 1px;
+    padding-bottom: 3px;
+    height: 30px;
+}
+.bank_inner.bind_title .bank_inner_box,
+.bank_inner.bind_title_zfb .bank_inner_box
+{
+    line-height: 77px;
+}
+.bank_inner.bind_title_zfb img
+{
+    width: 25px;
+    height: 25px;
+    position: relative;
+    top: 1px;
+    margin: 0;
+    margin-right: 5px;
+    clear: both;
+}

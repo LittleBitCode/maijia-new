@@ -1,0 +1,60 @@
+@charset "utf-8";
+.member_box{width:1170px; border:1px solid #E0E0E0; border-radius:5px; margin:0 auto; background:#fff;}
+
+.title_h1{border-bottom: 1px solid #ddd; color: #1f9cd8; font-size: 28px; padding:15px 30px;}
+.title_h1 span{font-size:16px; color:#333; margin-left:20px; font-weight:normal;}
+.title_h1 span em{color:#f00;}
+
+.member_con{padding:24px;}
+.reminder{border-bottom:1px dashed #ddd; padding:15px 20px; color:#555; font-size:14px;}
+.reminder span{color:#f00;}
+.reminder em{font-size:20px; color:#f00;}
+
+.select_time{margin:30px 0;}
+.select_time h3{font-size:18px;}
+.select_time h3 span{color:#888; font-size:14px;}
+.select_time h3 span em{color:#f00;}
+.select_time h3 p{display:inline-block; margin-left:40px; color:#f00; font-size:18px;}
+
+.select_time_list{padding:20px 0;}
+.select_time_list label{display:block; height:40px; line-height:40px; margin: 0; padding-left:10px; font-size:14px;}
+.select_time_list label input{margin-right:5px;}
+.select_time_list label em{color:#f00; margin-left:5px;}
+.select_time_list label span{color:#999;}
+
+.vip_time_info{height:44px; line-height:44px; border-bottom:1px solid #f2f2f2; padding:0 15px; font-size:14px;}
+.vip_time_info span i{color:#f00;}
+.vip_time_info span em{color:#f00;}
+.vip_time_info p{display:inline-block; float:right; font-size:18px;}
+.vip_time_info p em{color:#f00;}
+
+.pay_type{margin:30px 0;}
+.pay_type h3{font-size:18px; margin-bottom:20px;}
+.pay_type h3 span{font-size:13px; color:#9F9F9F; margin-left:20px; font-weight:normal;}
+
+.pay_check{height:55px; line-height:55px; border-bottom:1px dashed #f2f2f2; padding:0 10px; font-size:14px; color:#999;}
+.pay_check p{display:none;}
+.pay_check input{float:left; margin:21px 5px 0 0;}
+.cur{color:#333;}
+.cur p{display:inline-block; float:right;}
+.cur span{color:#f00;}
+.cur p em{color:#f00;}
+
+.pay_type_check{height:55px; line-height:55px; border-bottom:1px dashed #f2f2f2; padding:0 10px; font-size:14px; color:#555;}
+.pay_type_check label input{float:left; margin:21px 5px 0 0;}
+.pay_type_check label span{color:#f00;}
+.pay_type_check a{background:url(/static/imgs/deposit/arrange-down.gif) no-repeat center right; padding-right:10px; font-size:12px; color:#00A7E8; margin-left:15px;}
+.pay_type_check p{display:none;}
+.pay_list_type .cur{background:#FFFEEE; color:#333;}
+.pay_list_type .cur p{display:inline-block; float:right;}
+.pay_list_type .cur span{color:#f00;}
+.pay_list_type .cur p em{color:#f00;}
+
+.pay_but{display:block; width:148px; height:48px; text-align:center; line-height:48px; background:#4495e0; border:1px solid #4495e0; border-radius:5px; margin:40px auto; font-size:20px; color:#fff; font-weight:bold;}
+.pay_but:hover{background:#4495e0;}
+.pay_but_dis{display:block; width:148px; height:48px; text-align:center; line-height:48px; background:#C0C0C0; border:1px solid #B2B2B2; border-radius:5px; margin:40px auto; font-size:20px; color:#fff; font-weight:bold;}
+
+
+.lack_deposit{display: flex;justify-content: center;height: 30px;text-align: center;line-height: 30px;font-size: 14px;}
+.lack_deposit a{height: 24px;padding: 3px 5px;}
+.lack_deposit a img{width: auto;height: 24px;}

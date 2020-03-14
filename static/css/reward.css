@@ -1,0 +1,110 @@
+/* 打赏模块 */
+
+	.service{display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;-webkit-box-pack: space-between;-moz-justify-content: space-between;-webkit-justify-content: space-between;justify-content: space-between;}
+
+	/* 左侧 */
+	/* 个人排名 */
+	.ranking{position: relative;height: 120px;margin: 20px auto;}
+	.ranking p{height: 26px;padding: 10px 0 10px 150px;line-height: 26px;font-size: 18px;color: #fb3d79;}
+	.ranking p span{display: inline-block;width: 26px;height: 26px;margin-right: 10px;border-radius: 13px;background: #F56C00;text-align: center;line-height: 26px;color: #fff;}
+	.ranking div{height: 70px;padding-left: 150px;background: #F3F3F3;line-height: 70px;font-size: 14px;color: #666;}
+	.ranking div span{color: #20AE04;}
+	.ranking img{position: absolute;display: block;width: 90px;height: 90px;top: 0;left: 35px;border: 2px solid #FC3D79;border-radius: 1px;}
+	
+	/* 客服印象 */
+	.impression_list{display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;width: 600px;padding:25px; overflow:hidden;flex-wrap: wrap;}
+	.impression_list a{height:27px; margin:0 10px 10px 0;padding:0 10px; border:1px solid #E6E8EB; border-radius:3px; background:#FBFBFC;text-align:center;  line-height:27px;  color:#666;}
+	.impression_list a.ajax_impress:nth-child(15n-14){background:#FFCCBF; border:1px solid #F58A6E;}
+	.impression_list a.ajax_impress:nth-child(15n-13){background:#E7F2D0; border:1px solid #90D52D;}
+	.impression_list a.ajax_impress:nth-child(15n-12){background:#FEF6CE; border:1px solid #EAD483;}
+	.impression_list a.ajax_impress:nth-child(15n-11){background:#FBFBFC; border:1px solid #E6E8EB;}
+	.impression_list a.ajax_impress:nth-child(15n-10){background:#F5E887; border:1px solid #DED576;}
+	.impression_list a.ajax_impress:nth-child(15n-9){background:#FCC10F; border:1px solid #F5860D;}
+	.impression_list a.ajax_impress:nth-child(15n-8){background:#A4E6B9; border:1px solid #6EB27B;}
+	.impression_list a.ajax_impress:nth-child(15n-7){background:#8CBCAC; border:1px solid #73A292;}
+	.impression_list a.ajax_impress:nth-child(15n-6){background:#F2E149; border:1px solid #CBBD20;}
+	.impression_list a.ajax_impress:nth-child(15n-5){background:#CDE9D3; border:1px solid #A3BBA8;}
+	.impression_list a.ajax_impress:nth-child(15n-4){background:#F89252; border:1px solid #D7712C;}
+	.impression_list a.ajax_impress:nth-child(15n-3){background:#F8EEE5; border:1px solid #DED5CC;}
+	.impression_list a.ajax_impress:nth-child(15n-2){background:#F4A39F; border:1px solid #DA8783;}
+	.impression_list a.ajax_impress:nth-child(15n-1){background:#D8D8D8; border:1px solid #F0F0F0;}
+	.impression_list a.ajax_impress:nth-child(15n){background:#FAD1D7; border:1px solid #F5B9BF;}
+
+	/* 奖品列表 */
+	.prize{display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;flex-wrap: wrap;-webkit-box-pack: space-between;-moz-justify-content: space-between;-webkit-justify-content: space-between;justify-content: space-between;}
+	.prize_item{width: 112px;margin-right: 20px;margin-bottom: 20px;text-align: center;}
+	.prize_item img{display: block;width: 112px;height: auto;}
+	.prize_item p{height: 30px;text-align: center;line-height: 30px;font-size: 13px;color: #000;}
+	.prize_item p i{color: #f00;}
+	.prize_item a{display: block;width: 73px;height: 27px;margin: 0 auto;border: 1px solid #DE0D4E;border-radius: 3px;background: url(/static/imgs/bg/reward_bg.jpg) repeat-x;text-align: center;line-height: 27px;font-size: 12px;font-weight: bold;color: #fff;letter-spacing: 3px;}
+
+	/* 客服列表 */
+	.service_left{width: 644px;}
+	.service_left .title{height: 29px;margin: 15px 0;padding: 1px 15px;border-left: 4px solid #FC3E79;font-size: 18px;line-height: 27px;}
+	.service_left .title span{display: inline-block;height: 27px;padding: 0 10px; border: 1px solid #DE0D4E;border-radius: 3px;background: url(/static/imgs/bg/reward_bg.jpg) repeat-x;color: #fff;text-align: center;line-height: 27px;font-size: 12px;cursor: pointer;}
+	.service_item,.service_item2{display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;width: 594px;height: auto;margin: 0 25px;padding-bottom: 10px;border-bottom: 1px dashed #ddd;-webkit-box-pack: space-between;-moz-justify-content: space-between;-webkit-justify-content: space-between;justify-content: space-between;-webkit-box-align: center;-moz-align-items: center;-webkit-align-items: center;align-items: center;}
+	.service_item2{padding-top: 10px;}
+	.service_item>span{margin-top: 22px;}
+	.service_info{width: 360px;}
+	.service_info p{height: 40px;line-height: 50px;font-size: 16px;}
+	.service_info span{display: block;height: 22px;padding-left: 20px;background: url(/static/imgs/icon/service_info.png) no-repeat;line-height: 22px;font-size: 14px;color: #999;}
+	.service_item a,.service_item2 a{width: 68px;height: 32px;margin-top: 12px;border: 1px solid #F26500;border-radius: 5px;text-align: center;line-height: 32px;font-size: 14px;color: #F26600;}
+	
+
+	/* 右侧 */
+	.reward_right{width: 306px;}
+
+
+	.reward_top{width: 304px;height: 318px;margin-bottom: 45px;border: 1px solid #ddd;background: #F7F8FB;}
+	.reward_top .title{position: relative;margin-top: 15px;padding-left: 85px;font-size: 16px;}
+	.reward_top .title img{position: absolute;top: -39px;left: 15px;}
+
+	.reward_top_list{ height: 260px;margin-left: 16px;padding-top : 12px;overflow: hidden;}
+	.reward_top_list li{margin-bottom: 12px;padding-left: 10px;line-height: 14px;background: url(/static/imgs/icon/roll_list_bg.png) no-repeat;background-position: left 50%;font-size: 14px;}
+	.reward_top_list li span{color: #f00;}
+
+
+	/* 客服印象+1弹窗 */
+	.impression_tan_add{border:3px solid #FC3E79; background:#fff; border-radius:3px; width:360px; padding:20px; position:absolute; left:50px; top:60px; display:none;}
+	.impression_tan_add .reward_add_closea{display:inline-block; position:absolute; top:0; right:0; margin:8px 10px 0 0;}
+	.impression_tan_add h5{margin-bottom:15px; font-size:18px; text-align:center;}
+	.impression_tan_add h5 span{color:#f00;}
+	.impression_tan_add div{padding-left:80px;}
+	.impression_tan_add .butt_add{display:block; width:73px; margin:0 auto; height:27px; background:url(/static/imgs/bg/reward_bg.jpg) repeat-x; color:#fff; text-align:center; line-height:25px; font-size:12px; border:1px solid #DE0D4E; border-radius:3px; font-weight:bold; letter-spacing:3px; float:left; cursor:pointer;}
+	.impression_tan_add .reset_add{display:inline-block; float:left; border:1px solid #E6E8EB; border-radius:3px; height:27px; line-height:27px; text-align:center; padding:0 25px; color:#666; margin-left:30px; background:#FBFBFC; cursor:pointer;}
+	
+	/* 添加客服印象弹窗 */
+	.impression_tan{border:3px solid #FC3E79; background:#fff; border-radius:3px; width:460px; padding:20px; position:absolute; left:50px; top:60px; display:none;}
+	.impression_tan .reward_close{display:inline-block; position:absolute; top:0; right:0; margin:8px 10px 0 0;}
+	.impression_tan h5{margin-bottom:15px; font-size:18px;}
+	.impression_tan .impression_tan_list{margin-bottom:10px; overflow:hidden;}
+	.impression_tan .impression_tan_list a{display:inline-block; float:left; border:1px solid #E6E8EB; border-radius:3px; height:35px; line-height:35px; text-align:center; padding:0 25px; color:#666; margin:0 10px 10px 0; background:#FBFBFC;}
+	.impression_tan .impression_input{height:35px; overflow:hidden; margin-bottom:10px;}
+	.impression_tan .impression_input .impression_text{dipslay:inline-block; float:left; width:285px; height:33px; border:1px solid #ccc; border-radius:5px; padding-left:5px;}
+	.impression_tan .impression_input .butt{dipslay:inline-block; float:left; margin-left:10px; height:33px; padding:0 10px; background:url(/static/imgs/bg/reward_bg2.jpg) repeat-x; color:#fff; text-align:center; line-height:27px; font-size:12px; border:1px solid #DE0D4E; border-radius:3px; cursor:pointer;}
+	
+	/* 添加印象成功弹窗 */
+	.impression_tan_ok{border:3px solid #FC3E79; background:#fff; border-radius:3px; width:330px; padding:20px; position:absolute; left:-20px; top:-20px; display:none;}
+	.impression_tan_ok .reward_close{display:inline-block; position:absolute; top:0; right:0; margin:8px 10px 0 0;}
+	.impression_tan_ok p{font-size:18px; height:50px; line-height:50px; width:135px; margin:0 auto; text-align:center; color:#333; font-weight:bold; background:url(/static/imgs/icon/reward_tan_ok.jpg) no-repeat; padding-left:50px;}
+	.impression_tan_ok a.tan_close{display:block; width:100px; height:33px; border:1px solid #E6E8EB; margin:20px auto 10px; background:#FBFBFC; color:#666; text-align:center; line-height:33px; font-size:14px; border-radius:3px;}
+
+
+	/* 打赏金币不足、需要充值弹窗 */
+	.reward_tan{border:3px solid #FC3E79; background:#fff; border-radius:3px; width:330px; padding:20px; position:fixed; top:40%; left:40%; display:none;}
+	.reward_tan .reward_close{display:inline-block; position:absolute; top:0; right:0; margin:8px 10px 0 0;}
+	.reward_tan p{font-size:18px; height:50px; line-height:50px; text-align:center; color:#333; font-weight:bold;}
+	.reward_tan a.pay_gold{display:block; width:98px; height:33px; padding:0 10px; margin:0 auto; background:url(/static/imgs/bg/reward_bg2.jpg) repeat-x; color:#fff; text-align:center; line-height:33px; font-size:14px; border:1px solid #DE0D4E; border-radius:3px;}
+
+	/* 打赏成功弹窗 */
+	.reward_tan_ok{border:3px solid #FC3E79; background:#fff; border-radius:3px; width:330px; padding:20px; position:fixed; top:40%; left:40%; display:none;}
+	.reward_tan_ok .reward_close{display:inline-block; position:absolute; top:0; right:0; margin:8px 10px 0 0;}
+	.reward_tan_ok p{font-size:18px; height:50px; line-height:50px; width:90px; margin:0 auto; text-align:center; color:#333; font-weight:bold; background:url(/static/imgs/icon/reward_tan_ok.jpg) no-repeat; padding-left:50px;}
+	.reward_tan_ok div{font-size:14px; text-align:center; margin:10px 0;}
+	.reward_tan_ok a.tan_close{display:block; width:100px; height:33px; border:1px solid #E6E8EB; margin:20px auto 10px; background:#FBFBFC; color:#666; text-align:center; line-height:33px; font-size:14px; border-radius:3px;}
+
+	.reward_tan_err{border:3px solid #FC3E79; background:#fff; border-radius:3px; width:330px; padding:20px; position:fixed; top:40%; left:40%; display:none;}
+	.reward_tan_err .reward_close{display:inline-block; position:absolute; top:0; right:0; margin:8px 10px 0 0;}
+	.reward_tan_err p{font-size:18px; height:50px; line-height:50px; width:90px; margin:0 auto; text-align:center; color:#333; font-weight:bold; }
+	.reward_tan_err div{font-size:14px; text-align:center; margin:10px 0;}
+	.reward_tan_err a.tan_close{display:block; width:100px; height:33px; border:1px solid #E6E8EB; margin:20px auto 10px; background:#FBFBFC; color:#666; text-align:center; line-height:33px; font-size:14px; border-radius:3px;}
