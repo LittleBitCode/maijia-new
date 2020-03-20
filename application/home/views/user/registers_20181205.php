@@ -26,11 +26,11 @@
 		}
 		.get_code {
 			border:none;
-		    background: #7B68EE;
+		    background: #FF6347;
 		}
 		.login_btn, .register_btn{
 			border:none;
-			background: #e73c3a;
+			background: #FF6347;
 		}
 		.register_wrap, .find_pwd_wrap{
 			margin-left: 40%;
@@ -41,28 +41,10 @@
     <title>注册-<?php echo PROJECT_NAME; ?></title>
 </head>
 <body>
-<!--<header class="nav_head">
-    <div class="nav_head_t">
-        <div class="contain">
-            <nav class="navbar navbar-default" role="navigation">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="/"><img src="/static/imgs/logo.png" alt="logo"/></a>
-                </div>
-                <ul class="nav navbar-nav navbar-right" style="font-size: 15px;">
-                    <li><a href="/user/login">登录</a></li>
-                    <li><a href="/user/register">注册</a></li>
-                </ul>
-            </nav>
-        </div>
-    </div>
-</header>
-<div class="content2">
-    <div style="margin:0 auto; width: 1200px;"><div class="logo_title">商家注册</div></div>
-</div>-->
-    <?php $this->load->view("/common/test1", ['site' => 'recode']); ?>
+<?php $this->load->view("/common/test1", ['site' => 'recode']); ?>
 <div  style="height: 500px;background:url(/static/imgs/icon/login_bg.jpg) no-repeat 0;background-size: 100%;background-color: white">
     <div class="register_wrap" style="padding-top: 20px">
-        <div class="register_content"  style="background-color: #FF6347;padding: 25px">
+        <div class="register_content"  style="background-color: #D3D3D3;padding: 25px">
             <div class="data_item">
                 <span>手&nbsp;&nbsp;机：</span>
                 <div class="input_wrap">

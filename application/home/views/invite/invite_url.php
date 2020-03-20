@@ -62,7 +62,7 @@
     font-size: 24px;
     color: #fff;
     text-align: center;
-    background: #e73c3a;
+    background: #FF6347;
     border-radius: 10px;
     cursor: pointer;
     display: inline-block;
@@ -102,7 +102,7 @@ img {
     vertical-align: middle;
 }
 .yaoqingfl-rule-p {
-    color: #e73c3a;
+    color: #FF6347;
     text-align: center;
     font-size: 26px;
     padding: 10px 0 0 0px;
@@ -166,7 +166,7 @@ em{
     font-size: 24px;
     color: #fff;
     text-align: center;
-    background: #e73c3a;
+    background: #FF6347;
     border-radius: 10px;
     cursor: pointer;
     display: inline-block;
@@ -197,7 +197,7 @@ em{
     width: 136px;
     height: 136px;
     border-radius: 50%;
-    background: #E73C3A;
+    background: #FF6347;
     color: #fff;
     margin: 0 auto;
     text-align: center;
@@ -225,7 +225,7 @@ em{
     height: 156px;
 }
 .yqfl-list li>span {
-    color: #e73c3a;
+    color: #FF6347;
     font-size: 24px;
     line-height: 45px;
 }

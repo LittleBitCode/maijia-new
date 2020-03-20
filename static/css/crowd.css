@@ -39,9 +39,7 @@ section .bg { height: 100%; width: 100%; background-color: #174c95; background: 
 }
 .login_view{
     width: 345px;
-    min-height: 500px;
-    margin: 0 auto;
-    margin-top: 75px;
+    /*min-height: 500px;*/
     background-color: rgba(1, 31, 68, 0.8);
     border-radius: 3px;
 }
@@ -109,7 +107,7 @@ section .bg { height: 100%; width: 100%; background-color: #174c95; background: 
     right:5px; 
     bottom: 0;
     text-align: center;
-    color: #7B68EE;
+    color: #FF6347;
     border: rgba(255, 255, 255, 0.3) solid 1px;
 }
 .LoginBox form .pic_code{

@@ -167,7 +167,7 @@
 			    min-height: 759px;
 		    }
 		    .btn-blues, .btn-blues:hover, .btn-blues:active, .btn-blues:focus {
-			    background-color: #e73c3a;
+			    background-color: #FF6347;
 			    color: #ffffff;
 			}
 </style>

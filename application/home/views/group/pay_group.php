@@ -442,7 +442,7 @@
         }
         button{
             height: 36px;
-            background-color: #e73c3a;
+            background-color: #FF6347;
             font-size: 16px;
             color: #fff;
             border-radius: 5px;
