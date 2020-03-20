@@ -17,7 +17,7 @@
     <script language="javascript" src="/static/toast/toastr.min.js"></script>
 
     <style type="text/css">
-        .register_content{width:400px;padding-top:40px;min-height:400px;margin:0 auto;font-size:14px}
+        .register_content{width:450px;height:450px;font-size:14px;border-radius: 3px}
         .data_item{position:relative;width:400px;min-height:55px;padding-bottom:5px}
         .data_item>span{display:inline-block;width:105px;height:50px;padding-right:5px;text-align:left;line-height:35px;font-size:16px}
     	.register_wrap, .find_pwd_wrap {
@@ -26,7 +26,7 @@
 		}
 		.get_code {
 			border:none;
-		    background: #e73c3a;
+		    background: #7B68EE;
 		}
 		.login_btn, .register_btn{
 			border:none;
@@ -60,9 +60,9 @@
     <div style="margin:0 auto; width: 1200px;"><div class="logo_title">商家注册</div></div>
 </div>-->
     <?php $this->load->view("/common/test1", ['site' => 'recode']); ?>
-<div style="min-height: 69vh;background:url(/static/imgs/icon/login_bg.jpg) no-repeat 100% -10px">
-    <div class="register_wrap" style="padding-top: 50px;">
-        <div class="register_content">
+<div  style="height: 500px;background:url(/static/imgs/icon/login_bg.jpg) no-repeat 0;background-size: 100%;background-color: white">
+    <div class="register_wrap" style="padding-top: 20px">
+        <div class="register_content"  style="background-color: #FF6347;padding: 25px">
             <div class="data_item">
                 <span>手&nbsp;&nbsp;机：</span>
                 <div class="input_wrap">

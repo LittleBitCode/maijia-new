@@ -32,18 +32,19 @@ class User extends MY_Controller
         if ($test == $invite_code) {
             $data['pid'] = $pid;            // 传递父id
         } else {
-            show_404();
+//            show_404();                   // 临时关掉注册
             $data['pid'] = '0';             // 传递父id
         }
 
         if (!in_array($server_name, $this->register_list)) {
             if ($data['pid'] == '0') {
-                show_404();                 // 临时关掉注册
+//                show_404();                 // 临时关掉注册
             }
             /** 注册都要求填写验证码 **/
             $res = $this->db->query('select 1 from rqf_users where id = ? limit 1', [intval($data['pid'])])->row();
             if (!$res) {
-                show_404();                 // 临时关掉注册
+//                show_404();                 // 临时关掉注册
+
             }
         }
 
@@ -59,12 +60,12 @@ class User extends MY_Controller
         $banner_info = $this->banner->get_banner(3, 1);
         $data['banner_info'] = $banner_info;
         $data['renqiyanzhengis'] = 1;
-        $data['qrcode_url'] = $qrcode_url;
-        if ($qrcode_url) {
-            $this->load->view('user/registers', $data);                 // 带注册码注册页
-        } else {
+//        $data['qrcode_url'] = $qrcode_url;
+//        if ($qrcode_url) {
+//            $this->load->view('user/registers', $data);                 // 带注册码注册页
+//        } else {
             $this->load->view('user/registers_20181205', $data);        // 不带注册码注册页
-        }
+//        }
     }
     
     /**

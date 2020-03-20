@@ -1,142 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="renderer" content="webkit">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="x">
-<meta name="keywords" content="x"> 
-<link rel="shortcut icon" href="/static/imgs/favicon.ico" />
-<link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css" />
-<link rel="stylesheet" href="/static/css/common.css" />
-<link rel="stylesheet" href="/static/toast/toastr.min.css" />
-<link rel="stylesheet" href="/static/css/lcj_login_register.css" />
-<link rel="stylesheet" href="/static/css/flat-ui.css" />
-<link rel="stylesheet" href="/static/css/layout.css" />
-<link rel="stylesheet" href="/static/css/crowd.css" />
-<link rel="stylesheet" href="/static/css/non-responsive.css" />
-<title>登录-<?= PROJECT_NAME; ?></title>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="x">
+    <meta name="keywords" content="x">
+    <link rel="shortcut icon" href="/static/imgs/favicon.ico"/>
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/static/css/common.css"/>
+    <link rel="stylesheet" href="/static/toast/toastr.min.css"/>
+    <link rel="stylesheet" href="/static/css/lcj_login_register.css"/>
+    <link rel="stylesheet" href="/static/css/flat-ui.css"/>
+    <link rel="stylesheet" href="/static/css/layout.css"/>
+    <link rel="stylesheet" href="/static/css/crowd.css"/>
+    <link rel="stylesheet" href="/static/css/non-responsive.css"/>
+    <title>登录-<?= PROJECT_NAME; ?></title>
 </head>
-<body >
-<section><div class="bg" style="background:url(/static/imgs/icon/login_bg.jpg) no-repeat 100% 106px"><!--<canvas id="display"></canvas>--><div id="blachole"></div></div></section>
-<div class="main_box" >
-    <!--<header>
-        <div class="contain">
-            <nav class="navbar navbar-default navbar-lg" role="navigation">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="javascript:;">
-                        <img src="/static/imgs/logo.png" alt="logo" />
-                    </a>
-                </div>
-                <ul class="nav navbar-nav navbar-left">
-                    <li><a href="/">商家登录</a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <!-- <li><a href="/user/register">注册</a></li> -->
-                    <!-- <li><a href="javascript:;">|</a></li> -->
-                    <!-- <li><a href="/user/login">登录</a></li> -->
-                    <!-- <li><a href="<?= HELP_CENTER_URL. '/archives/101'; ?>" target="_blank">帮助中心</a></li> -->
-                <!--</ul>-->
-            <!--</nav>-->
-        <!--</div>-->
-    <!--</header>-->
+<body>
+<div class="main_box" style="background-color: white">
     <?php $this->load->view("/common/test1", ['site' => 'recode']); ?>
-    	<div>
-    		<!--<img src="/static/imgs/icon/login_bg.jpg" style="position: absolute;left: 50%;top: 106px;transform: translateX(-50%);" />-->
-    <div class="login_view">
-    	<!--<img src="/static/imgs/icon/login_bg.jpg">-->
-        <ul id="Tab_login" class="nav nav-tabs">
-            <li class="active"><a href="#login1" data-toggle="tab">密码登录</a></li>
-            <li><a href="#login2" data-toggle="tab">手机无密码登录</a></li>
-        </ul>
-        <div class="tab-content">
-            <div class="tab-pane fade in active" id="login1">
-                <div class="LoginBox pull-right">
-                    <input type="hidden" name="renqiyanzheng_pwd" id="renqiyanzheng_pwd" value="no" />
-                    <input type="hidden" name="check_ip_num_pwd" id="check_ip_num_pwd" value="0" />
-                    <input type="hidden" name="check_ip_num_code" id="check_ip_num_code" value="0" />
-                    <form role="form" name="myForm1" onsubmit="return false;">
-                        <!-- 账号 -->
-                        <div class="form-group">
-                            <img src="/static/imgs/icon/account.png" alt="账号" />
-                            <input type="text" name="user" class="form-control account" placeholder="请输入<?= PROJECT_NAME ?>账号/已验证手机号" maxlength="11" autocomplete="off" disableautocomplete />
-                            <p class="tips hide">
-                                <span class="glyphicon glyphicon-remove red"> 账号不能为空！</span>
-                                <span class="glyphicon glyphicon-ok text-success"></span>
-                            </p>
-                        </div>
-                        <!-- 图形验证码 -->
-                        <div class="form-group renjiyanzheng_one hide">
-                            <img src="/static/imgs/icon/picture.png" alt="验证码" />
-                            <input type="text" id="captcha_response" class="form-control pad_r" placeholder="请输入图形验证码" name="phone_code" maxlength="4" />
-                            <span class="pic_code"><img id='code2' src="<?php echo site_url('service/captcha'); ?> " alt="" onclick="create_code()" /></span>
-                            <p class="tips hide">
-                                <span class="glyphicon glyphicon-remove red">图形验证码不能为空！</span>
-                                <span class="glyphicon glyphicon-ok text-success"></span>
-                            </p>
-                        </div>
-                        <!-- 密码 -->
-                        <div class="form-group">
-                            <img src="/static/imgs/icon/Password.png" alt="密码">
-                            <input type="password" class="form-control pwd" placeholder="请输入密码" name="password" ng-minlength="6" ng-maxlength="16">
-                            <p class="tips hide">
-                                <span class="glyphicon glyphicon-remove red">密码不能为空！</span>
-                                <span class="glyphicon glyphicon-ok text-success"></span>
-                            </p>
-                        </div>
-                        <div class="submitBtn">
-                            <button type="submit" class="btn btn-default btn-blues pwd_login_btn">登录</button>
-                        </div>
-                        <div class="pasGo">
-                            <a href="/user/find_passwd_1" class="white">忘记密码</a>
-                            <?php if ($eabled_register): ?>
-                            <a href="/user/register" class="pull-right underLine white">商家注册</a>
-                            <?php endif; ?>
-                        </div>
-                    </form>
+    <div  style="background:url(/static/imgs/icon/login_bg.jpg) no-repeat;">
+        <div class="login_view" style="background-color: #FF6347">
+            <ul id="Tab_login" class="nav nav-tabs">
+                <li class="active"><a href="#login1" data-toggle="tab">密码登录</a></li>
+                <li><a href="#login2" data-toggle="tab">手机无密码登录</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane fade in active" id="login1">
+                    <div class="LoginBox pull-right">
+                        <input type="hidden" name="renqiyanzheng_pwd" id="renqiyanzheng_pwd" value="no"/>
+                        <input type="hidden" name="check_ip_num_pwd" id="check_ip_num_pwd" value="0"/>
+                        <input type="hidden" name="check_ip_num_code" id="check_ip_num_code" value="0"/>
+                        <form role="form" name="myForm1" onsubmit="return false;">
+                            <!-- 账号 -->
+                            <div class="form-group">
+                                <img src="/static/imgs/icon/account.png" alt="账号"/>
+                                <input id="user" type="text" name="user" class="form-control account"
+                                       placeholder="请输入<?= PROJECT_NAME ?>账号/已验证手机号" maxlength="11" autocomplete="off"
+                                       disableautocomplete/>
+                                <p class="tips hide">
+                                    <span class="glyphicon glyphicon-remove red"> 账号不能为空！</span>
+                                    <span class="glyphicon glyphicon-ok text-success"></span>
+                                </p>
+                            </div>
+                            <!-- 图形验证码 -->
+                            <div class="form-group renjiyanzheng_one hide">
+                                <img src="/static/imgs/icon/picture.png" alt="验证码"/>
+                                <input type="text" id="captcha_response" class="form-control pad_r"
+                                       placeholder="请输入图形验证码" name="phone_code" maxlength="4"/>
+                                <span class="pic_code"><img id='code2' src="<?php echo site_url('service/captcha'); ?> "
+                                                            alt="" onclick="create_code()"/></span>
+                                <p class="tips hide">
+                                    <span class="glyphicon glyphicon-remove red">图形验证码不能为空！</span>
+                                    <span class="glyphicon glyphicon-ok text-success"></span>
+                                </p>
+                            </div>
+                            <!-- 密码 -->
+                            <div class="form-group">
+                                <img src="/static/imgs/icon/Password.png" alt="密码">
+                                <input type="password" class="form-control pwd" placeholder="请输入密码" name="password"
+                                       ng-minlength="6" ng-maxlength="16">
+                                <p class="tips hide">
+                                    <span class="glyphicon glyphicon-remove red">密码不能为空！</span>
+                                    <span class="glyphicon glyphicon-ok text-success"></span>
+                                </p>
+                            </div>
+                            <div class="submitBtn">
+                                <button type="submit" class="btn btn-default btn-blues pwd_login_btn">登录</button>
+                            </div>
+                            <div class="pasGo">
+                                <a href="/user/find_passwd_1" class="white">忘记密码</a>
+                                <?php if ($eabled_register): ?>
+                                    <a href="/user/register" class="pull-right underLine white">商家注册</a>
+                                <?php endif; ?>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-            </div>
-            <div class="tab-pane fade" id="login2">
-                <div class="LoginBox pull-right">
-                    <form role="form" name="myForm2" onsubmit="return false;">
-                        <!-- 手机号 -->
-                        <div class="form-group">
-                            <img src="/static/imgs/icon/phone.png" alt="手机号">
-                            <input type="tel" class="form-control phone" placeholder="请输入手机号" name="phone" maxlength="11" autocomplete="off" disableautocomplete />
-                            <p class="tips hide">
-                                <span class="glyphicon glyphicon-remove red">手机号不能为空！</span>
-                                <span class="glyphicon glyphicon-ok text-success"></span>
-                            </p>
-                        </div>
-                        <!-- 图形验证码 -->
-                        <div class="form-group renjiyanzheng_two"></div>
-                        <!-- 验证码 -->
-                        <div class="form-group">
-                            <img src="/static/imgs/icon/yzm.png" alt="验证码" />
-                            <input type="text" class="form-control pad_r phone_code" placeholder="请输入手机验证码" name="phone_code" maxlength="6" />
-                            <button class="phoneCodeBox">获取验证码</button>
-                            <p class="tips hide">
-                                <span class="glyphicon glyphicon-remove red">验证码不能为空！</span>
-                                <span class="glyphicon glyphicon-ok text-success"></span>
-                            </p>
-                        </div>
-                        <div class="submitBtn">
-                            <button type="submit" class="btn btn-default btn-blues code_login_btn">登录</button>
-                        </div>
-                        <div class="pasGo text-center">
-                            <!-- <a href="/user/register" class="underLine white">商家注册</a> -->
-                        </div>
-                    </form>
+                <div class="tab-pane fade" id="login2">
+                    <div class="LoginBox pull-right">
+                        <form role="form" name="myForm2" onsubmit="return false;">
+                            <!-- 手机号 -->
+                            <div class="form-group">
+                                <img src="/static/imgs/icon/phone.png" alt="手机号">
+                                <input type="tel" class="form-control phone" placeholder="请输入手机号" name="phone"
+                                       maxlength="11" autocomplete="off" disableautocomplete/>
+                                <p class="tips hide">
+                                    <span class="glyphicon glyphicon-remove red">手机号不能为空！</span>
+                                    <span class="glyphicon glyphicon-ok text-success"></span>
+                                </p>
+                            </div>
+                            <!-- 图形验证码 -->
+                            <div class="form-group renjiyanzheng_two"></div>
+                            <!-- 验证码 -->
+                            <div class="form-group">
+                                <img src="/static/imgs/icon/yzm.png" alt="验证码"/>
+                                <input type="text" class="form-control pad_r phone_code" placeholder="请输入手机验证码"
+                                       name="phone_code" maxlength="6"/>
+                                <button class="phoneCodeBox">获取验证码</button>
+                                <p class="tips hide">
+                                    <span class="glyphicon glyphicon-remove red">验证码不能为空！</span>
+                                    <span class="glyphicon glyphicon-ok text-success"></span>
+                                </p>
+                            </div>
+                            <div class="submitBtn">
+                                <button type="submit" class="btn btn-default btn-blues code_login_btn">登录</button>
+                            </div>
+                            <div class="pasGo text-center">
+                                 <a href="/user/register" class="underLine white">商家注册</a>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    </div>
-    <footer class="l_footer">
-        <p>Copyright (c) 2018 Inc. All Rights. 蜀ICP备12028237号</p>
-        <p>版权所有 版权所有公司属于 四川鑫网络科技有限公司</p>
-    </footer>
+    <?php $this->load->view("/common/footer"); ?>
 </div>
 <!--
 <div class="right2">
@@ -161,14 +142,14 @@
 <script language="javascript" src="/static/js/constellation.js"></script>
 <script type="text/javascript">
     //验证码切换
-    function create_code(){
+    function create_code() {
         var URL = "<?php echo site_url('service/captcha');?>";
-        document.getElementById('code2').src = URL+'?'+Math.random()*10000;
+        document.getElementById('code2').src = URL + '?' + Math.random() * 10000;
     }
 
-    $(function(){
+    $(function () {
         // 密码登录按钮
-        $('.pwd_login_btn').click(function(event) {
+        $('.pwd_login_btn').click(function (event) {
             var account = $('.account').val();
             if (account.length == 0) {
                 toastr.warning("请输入您的登录账号");
@@ -180,7 +161,7 @@
                 if (captcha_response.length == 0) {
                     toastr.warning("请先填写图形验证码");
                     return false;
-                }else if(captcha_response.length != 4){
+                } else if (captcha_response.length != 4) {
                     toastr.warning("填写图形验证码不正确，请确认");
                     return false;
                 }
@@ -198,20 +179,20 @@
         });
 
         // 获取验证码
-        $('.phoneCodeBox').click(function(event) {
-            if($(this).hasClass('get_code_dis')) return;
+        $('.phoneCodeBox').click(function (event) {
+            if ($(this).hasClass('get_code_dis')) return;
             var phone = $('.phone').val();
             var phone_reg = /^1[3456789]\d{9}$/;
             var renqiyanzheng_code = $("#renqiyanzheng_code").val();
-            if(phone.length == 0){
+            if (phone.length == 0) {
                 toastr.warning("请输入您的登录手机号");
                 return false;
-            }else if(!(phone_reg.test(phone))){
+            } else if (!(phone_reg.test(phone))) {
                 toastr.warning("您输入的手机号不正确，请确认");
                 return false;
             }
             var captcha_check = true;
-            if(i>=3 || renqiyanzheng_code=='yes') {
+            if (i >= 3 || renqiyanzheng_code == 'yes') {
                 //当错误次数超过三次时需要进行人机验证
                 var captcha_response = $("#captcha_response").val();
                 if (captcha_response.length == 0) {
@@ -248,7 +229,7 @@
         });
 
         // 手机验证码点击登录
-        $('.code_login_btn').click(function(event) {
+        $('.code_login_btn').click(function (event) {
             var phone = $('.phone').val();
             var code = $('.phone_code').val();
             var phone_reg = /^1[3456789]\d{9}$/;
@@ -269,29 +250,31 @@
             super_login(phone, code);
         });
     });
+
     // 短信验证码获取
-    function get_code(){
+    function get_code() {
         var phone = $('.phone').val();
-        $.post("/user/login_send_code",{'mobile':phone},function(data){
-            if(data.state != '1'){
+        $.post("/user/login_send_code", {'mobile': phone}, function (data) {
+            if (data.state != '1') {
                 clearInterval(timer);
                 $('.phoneCodeBox').text("获取验证码").removeClass('get_code_dis');
                 toastr.error(data.msg);
             }
-        },'json');
+        }, 'json');
     }
 
     var timer;
-    function cost(a){
-        timer = setInterval(function(_this){
-            a-=1;
-            var text_time = a+"s后重新获取";
+
+    function cost(a) {
+        timer = setInterval(function (_this) {
+            a -= 1;
+            var text_time = a + "s后重新获取";
             $('.phoneCodeBox').text(text_time);
-            if(a < 0){
+            if (a < 0) {
                 clearInterval(timer);
                 $('.phoneCodeBox').text("获取验证码").removeClass('get_code_dis');
             }
-        },1000);
+        }, 1000);
     }
 
     var j = 0;  //用于记录错误次数
@@ -352,19 +335,19 @@
         var check_ip_num_code = $("#check_ip_num_code").val();
         var renqiyanzheng_code = $("#renqiyanzheng_code").val();
         var data = {
-            'mobile':mobile,
-            'verify':verify,
-            'i':i,
-            'check_ip_num_code':check_ip_num_code
+            'mobile': mobile,
+            'verify': verify,
+            'i': i,
+            'check_ip_num_code': check_ip_num_code
         }
 
-        if(i>=3 || renqiyanzheng_code=='yes'){
+        if (i >= 3 || renqiyanzheng_code == 'yes') {
             //当错误次数超过三次时需要进行人机验证
             var captcha_response = $("#captcha_response").val();
-            if(captcha_response.length == 0){
+            if (captcha_response.length == 0) {
                 toastr.warning("请先进行图形验证码验证");
                 return false;
-            }else if(captcha_response.length != 4){
+            } else if (captcha_response.length != 4) {
                 toastr.warning("填写图形验证码不正确，请确认");
                 return false;
             }
@@ -374,14 +357,14 @@
             url: '/user/super_login',
             type: "post",
             dataType: 'json',
-            data:data,
+            data: data,
             success: function (data) {
                 if (data.code == 0) {
                     location.href = "/center";
                 } else {
                     i++;
-                    if (i >= 3 || renqiyanzheng_code == 'yes' || data.code ==5) {
-                        if($('.renjiyanzheng_two').html() == ''){
+                    if (i >= 3 || renqiyanzheng_code == 'yes' || data.code == 5) {
+                        if ($('.renjiyanzheng_two').html() == '') {
                             $('.renjiyanzheng_two').html($('.renjiyanzheng_one').html());
                             $('.renjiyanzheng_one').html('');
                         }
@@ -389,7 +372,7 @@
                         $("#captcha_response").val('');
                         create_code();
                     }
-                    if(data.code ==5){
+                    if (data.code == 5) {
                         $("#check_ip_num_code").val(1);
                         var value = data.renqiyanzheng_code;
                         $("#renqiyanzheng_code").val(value);
@@ -401,20 +384,21 @@
 
         return false;
     }
-     $(function () {
-           $(".right2 .lineqq").mouseenter(function(){
+
+    $(function () {
+        $(".right2 .lineqq").mouseenter(function () {
             $(this).find('.online').show();
-           });
-             $('.right2 .lineqq').mouseleave(function () {
-              $(this).find('.online').hide();
-            });
-            $('.right2 .bdqrcode').mouseenter(function(){
-                $(this).find('img').show();
-            });
-            $('.right2 .bdqrcode').mouseleave(function () {
-                $(this).find('img').hide();
-           });
         });
+        $('.right2 .lineqq').mouseleave(function () {
+            $(this).find('.online').hide();
+        });
+        $('.right2 .bdqrcode').mouseenter(function () {
+            $(this).find('img').show();
+        });
+        $('.right2 .bdqrcode').mouseleave(function () {
+            $(this).find('img').hide();
+        });
+    });
 </script>
 </body>
 </html>

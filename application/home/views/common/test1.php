@@ -171,23 +171,22 @@
 			    color: #ffffff;
 			}
 </style>
-<header class="nav_head">
-    <div class="nav_head_t">
+<header class="nav_head" style="height: 80px">
+    <div class="nav_head_t" style="display: none">
     	<div class="contain_top">
 					<div class="contain_one">
 						<div class="contain_layui_col1">
 							<span><a href="/user/login">登录<a></span>
 						</div>
-						
+
 					</div>
 				</div>
     </div>
     <div style="background-color: white;">
-    	
 
     <div class="nav_head_b contain">
         <nav class="navbar navbar-default navbar-lg" role="navigation">
-        	<img style="width: 300px;height: 50px;float: left;margin: 12px;" src="/static/imgs/icon/jinpai.png">
+        	<img style="width: 300px;float: left;margin: 12px;" src="/static/imgs/icon/jinpai.png">
             
         </nav>
     </div>
