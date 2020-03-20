@@ -620,9 +620,9 @@
             <a href="/trade/step" class="trade_click">报名活动</a>-->
         </li>
     </ul>
-    <div class="banner">
-				<a   href="/invite/invite_url"><img style="width: 932px;" src="/static/imgs/icon/banner.jpg" /></a>
-	</div>
+<!--    <div class="banner">-->
+<!--				<a   href="/invite/invite_url"><img style="width: 932px;" src="/static/imgs/icon/banner.jpg" /></a>-->
+<!--	</div>-->
     <div class="box_2 my_task">
     	<div class="tit_box">
 					<p class="tit">我的任务</p>

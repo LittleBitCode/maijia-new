@@ -64,9 +64,9 @@
 .tast-tab-pane li img{width: 25px;height: 25px;position: relative;top: -3px;margin-right:3px;}
 .tast-tab-pane li .black{margin-left: 20px;}
 /*侧边栏开始*/
-.right{position: fixed;right: 0;width:54px;bottom: 20%;z-index: 500;}
+.right{position: fixed;top: 0;right: 0;width:54px;bottom: 20%;z-index: 500;height: 100%;background-color: #8074c5; padding-top: 20%}
 .right ul{list-style: none;padding: 0;margin: 0;position: relative;}
-.right ul li{border: #dbdada solid 1px;background-color: #f7f7f9;width: 50px;height: 50px;line-height: 50px;text-align: center;border-radius: 2px;margin-bottom: 5px;transition: all 0.3s;position: relative;}
+.right ul li{margin: 0 auto; border: #dbdada solid 1px;background-color: #f7f7f9;width: 50px;height: 50px;line-height: 50px;text-align: center;border-radius: 2px;margin-bottom: 5px;transition: all 0.3s;position: relative;}
 .right ul li:first-child,.right ul li:first-child:hover{ background: none; border: none;}
 .right ul li:first-child img{ width: 30px;}
 .right ul li:last-of-type{background-color: #dbdada;}

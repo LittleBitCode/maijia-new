@@ -38,7 +38,7 @@ class Sms_Model extends CI_Model
         $request_time = strtotime('now');
         // 此处短信接口
         $this->load->helper('sms_helper');
-        $statusCode = sendTemplatesubmail($mobile, array('code' => $check_code, 'minute' => 10), 'S9lE3');  // 更改短信模板
+        $statusCode = sendTemplatesubmail($mobile, array('code' => $check_code, 'minute' => 10), '7irUA2');  // 更改短信模板
         //发送短信成功
         if ($statusCode['status'] == 'success') {
             $notes = "短信发送成功，验证码十分钟内有效";

@@ -138,7 +138,7 @@
 				background: url(img/logo.png) no-repeat;
 			}
 			.right ul li{
-				background-color: black;
+				background-color: #8074c5;
 			}
 			.right ul li p{
 				color: white;
@@ -211,7 +211,7 @@
             <ul class="nav navbar-nav navbar-left" style="margin-left: 80px;">
                 <li class="<?= ($site=='index') ? 'active': '' ?>" style = 'height: 94px;'><a href="/">首页</a></li>
                 <li class="<?= ($site=='trade') ? 'active': '' ?>" style = 'height: 94px;'><a href="/trade/step">报名活动</a></li>
-                <li class="<?= ($site=='trade') ? 'active': '' ?>" style = 'height: 94px;'><a href="/invite/invite_url" target="_blank">邀请返利</a></li>
+<!--                <li class="--><?//= ($site=='trade') ? 'active': '' ?><!--" style = 'height: 94px;'><a href="/invite/invite_url" target="_blank">邀请返利</a></li>-->
                 <!--<li class="dropdown <?= ($site=='manage') ? 'active': '' ?>">
                     <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">活动管理<b class="caret"></b></a>
                     <ul class="dropdown-menu">
@@ -252,9 +252,9 @@
                         <li><a href="/center/withdrawal_info">提现账号管理</a></li>
                     </ul>
                 </li>-->
-                <li class="<?= ($site=='finance') ? 'active': '' ?>" style = 'height: 94px;'><a href="/finance/summary">账房</a></li>
-                <li class="<?= ($site=='traffic') ? 'active': '' ?>" style = 'height: 94px;'><a href="/review/traffic_list">流量截图</a></li>
-                <li><a target="_blank" href="<?= POST_SERVICE_URL ?>">发快递</a></li>
+<!--                <li class="--><?//= ($site=='finance') ? 'active': '' ?><!--" style = 'height: 94px;'><a href="/finance/summary">账房</a></li>-->
+<!--                <li class="--><?//= ($site=='traffic') ? 'active': '' ?><!--" style = 'height: 94px;'><a href="/review/traffic_list">流量截图</a></li>-->
+<!--                <li><a target="_blank" href="--><?//= POST_SERVICE_URL ?><!--">发快递</a></li>-->
             </ul>
         </nav>
     </div>

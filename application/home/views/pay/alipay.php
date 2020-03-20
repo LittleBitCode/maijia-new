@@ -47,7 +47,7 @@
                 </div>
                 <div class="content_right_m">
                     <img src="/static/imgs/alipay/QR.png" style="width:220px; height: 220px;" />
-                    <div class="botton-title">金牌卖家</div>
+                    <div class="botton-title">多赢符</div>
                 </div>
             </div>
             <div class="tab-pane fade" id="web_tab">

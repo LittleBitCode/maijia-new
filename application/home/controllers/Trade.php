@@ -481,13 +481,14 @@ class Trade extends Ext_Controller
         } else {
             $order_fee_obj = $this->fee->order_fee_obj(1, $price * $buy_num);
         }
-//
+
 //        if (in_array($trade_info->trade_type, ['112', '212'])) {
 //            $order_fee_obj->total_fee = $order_fee_obj->total_fee + 4;
 //            $order_fee_obj->base_reward = $order_fee_obj->base_reward + 2;
 //        }
-        $order_fee_obj->total_fee = $order_fee_obj->total_fee - 2;
-        $order_fee_obj->base_reward = $order_fee_obj->base_reward - 1;
+
+        $order_fee_obj->total_fee = $order_fee_obj->total_fee - SUB_SELLER_PRICE;
+        $order_fee_obj->base_reward = $order_fee_obj->base_reward - SUB_BUYER_PRICE;
 
 
         if (empty($order_fee_obj)) {
@@ -884,7 +885,8 @@ class Trade extends Ext_Controller
             ['trade_id' => $trade_id, 'trade_sn' => $trade_sn, 'service_name' => 'plat_refund', 'comments' => '快速返款'],
             ['trade_id' => $trade_id, 'trade_sn' => $trade_sn, 'service_name' => 'first_check', 'comments' => '优先审核'],
             ['trade_id' => $trade_id, 'trade_sn' => $trade_sn, 'service_name' => 'traffic_list', 'comments' => '人气权重优化'],
-            ['trade_id' => $trade_id, 'trade_sn' => $trade_sn, 'service_name' => 'free_eval', 'comments' => '自由好评']
+            ['trade_id' => $trade_id, 'trade_sn' => $trade_sn, 'service_name' => 'free_eval', 'comments' => '自由好评'],
+            ['trade_id' => $trade_id, 'trade_sn' => $trade_sn, 'service_name' => 'safe_control', 'comments' => '安全控制手段以及买号质量'],
         ];
 
         $result = $this->write_db->insert_batch('rqf_trade_service', $trade_service);
@@ -927,16 +929,7 @@ class Trade extends Ext_Controller
         if (empty($auth_info2)) {
             $auth_info = $this->db->get_where('rqf_shop_auth_info', ['shop_ww' => $show_ww, 'auth_type' => 1])->row();
             if (empty($auth_info)) {
-                $result = $this->ddx($show_ww);
-                if ($result['code'] == 0) {
-                    $insert_array['shop_ww'] = $show_ww;
-                    $insert_array['auth_type'] = 1;
-                    $insert_array['is_order'] = $result['is_order'];
-                    $insert_array['expires_time'] = strtotime($result['expires_time']);
-                    $insert_array['deadline'] = strtotime($result['deadline']);
-                    $this->write_db->insert('rqf_shop_auth_info', $insert_array);
-                }
-                exit(json_encode(['code' => $result['code'], 'msg' => $result['msg']]));
+                exit(json_encode(['code' => 1, 'msg' => '请先购买服务']));
             } else {
                 if ($auth_info->expires_time > time()) {
                     exit(json_encode(['code' => 0, 'msg' => 'ok']));
@@ -950,34 +943,6 @@ class Trade extends Ext_Controller
             } else {
                 exit(json_encode(['code' => 3, 'msg' => '授权过期，需要重新授权']));
             }
-        }
-    }
-
-    private function ddx($show_ww)
-    {
-        $this->load->helper('curl_helper');
-        $url = 'http://api.tbk.dingdanxia.com/shop/auth_info';
-        $param['apikey'] = 'lNvC0W2qFV8OFbhSsT2IBOZ9u10ZjsuY';
-        $param['seller_nick'] = $show_ww;
-        $result = curl_post($url, $param);
-        if ($result) {
-            $result = json_decode($result, true);
-            if ($result['code'] == '-1') {
-                return ['code' => 1, 'msg' => '未购买，未授权'];
-            }
-            if ($result['code'] == '200') {
-                $data = $result['data'];
-                if ($data['is_order'] == 'false') {
-                    return ['code' => 2, 'msg' => '订购过期，需要重新订购'];
-                }
-                $auth_time = strtotime($data['expires_time']);
-                if ($auth_time < time()) {
-                    return ['code' => 3, 'msg' => '授权过期，需要重新授权'];
-                }
-            }
-            return ['code' => 0, 'msg' => 'ok', 'is_order' => $data['is_order'], 'expires_time' => $data['expires_time'], 'deadline' => $data['deadline']];
-        } else {
-            return ['code' => 4, 'msg' => '接口请求失败'];
         }
     }
 
@@ -1348,6 +1313,10 @@ class Trade extends Ext_Controller
 
         $is_phone = $phone_taobao ? 1 : 0;
         $order_fee_obj = $this->fee->order_fee_obj($trade_info->trade_type, $price * $buy_num);
+
+        $order_fee_obj->total_fee = $order_fee_obj->total_fee - SUB_SELLER_PRICE;
+        $order_fee_obj->base_reward = $order_fee_obj->base_reward - SUB_BUYER_PRICE;
+
         if (empty($order_fee_obj)) {
             echo json_encode(['code' => 7, 'msg' => '系统错误']);
             return;
@@ -1629,6 +1598,8 @@ class Trade extends Ext_Controller
         $data['reputation_limit'] = isset($trade_service['reputation_limit']) ? 2 : 1;
         // 仅限淘气值1000以上买号可接此活动
         $data['taoqi_limit'] = isset($trade_service['taoqi_limit']) ? 2 : 1;
+        // 安全控制
+        $data['has_safe_control'] = isset($trade_service['safe_control']) ? $trade_service['safe_control']->param : 3;
         // 定时发布
         $data['has_set_time'] = isset($trade_service['set_time']);
         $data['set_time_val'] = isset($trade_service['set_time']) ? $trade_service['set_time']->param : '';
@@ -2186,6 +2157,36 @@ class Trade extends Ext_Controller
             $trade_service[] = $tmp_info;
             $service_point = bcadd($service_point, $tmp_info['pay_point'], 4);
         }
+        // 安全控制手段
+        $safe_control = intval($this->input->post('safe_control'));
+        if ($safe_control) {
+            if ($safe_control == 1) {
+                $tmp_price = 0;
+                $comments = '照妖镜全零账号';
+            } elseif ($safe_control == 2) {
+                $tmp_price = 1;
+                $comments = '照妖镜全零账号+脸谱规避';
+            } else {
+                $tmp_price = 2;
+                $comments = '照妖镜全零账号+脸谱规避+极速验号无违规无删评无降权';
+            }
+            if (array_key_exists('safe_control', $discount_list) && $discount_list['safe_control'] < 100) {
+                $tmp_price = round(bcmul($tmp_price, $discount_list['safe_control'] / 100, 4), 2);
+            }
+            $tmp_info = [
+                'trade_id' => $trade_id,
+                'trade_sn' => $trade_info->trade_sn,
+                'service_name' => 'safe_control',
+                'price' => $tmp_price,
+                'num' => $trade_info->total_num,
+                'pay_point' => bcmul($tmp_price, $trade_info->total_num, 4),
+                'param' => $safe_control,
+                'comments' => $comments
+            ];
+
+            $trade_service[] = $tmp_info;
+            $service_point = bcadd($service_point, $tmp_info['pay_point'], 4);
+        }
         // 指定平台新注册买手接单
         $newhand = intval($this->input->post('newhand'));
         if ($newhand) {
@@ -2540,8 +2541,19 @@ class Trade extends Ext_Controller
 
         $trade_point = bcadd($trade_info->order_fee_point, $trade_info->order_dis_point, 4);
         $trade_point = bcadd($trade_point, $service_point, 4);
+
+        if ($safe_control == 1) {
+            $safe_control_price = 0;
+        } elseif ($safe_control == 2) {
+            $safe_control_price = 0;
+        } else if ($safe_control == 3){
+            $safe_control_price = 2;
+        } else {
+            $safe_control_price = 0;
+        }
+
         $trade_info_upd = [
-            'add_reward' => bcmul($add_reward_point, ADD_REWARD_POINT_PERCENT, 4),
+            'add_reward' => bcmul(bcadd($add_reward_point, $safe_control_price, 2), ADD_REWARD_POINT_PERCENT, 4),
             'pic_reward' => $pic_rewards,
             'recommend_weight' => $add_speed,
             'extend_cycle' => $extend_cycle,
@@ -2625,18 +2637,8 @@ class Trade extends Ext_Controller
             if (empty($auth_info2)) {
                 $auth_info = $this->db->get_where('rqf_shop_auth_info', ['shop_ww' => $show_ww, 'auth_type' => 1])->row();
                 if (empty($auth_info)) {
-                    $result = $this->ddx($show_ww);
-                    if ($result['code'] == 0) {
-                        $insert_array['shop_ww'] = $show_ww;
-                        $insert_array['auth_type'] = 1;
-                        $insert_array['is_order'] = $result['is_order'];
-                        $insert_array['expires_time'] = strtotime($result['expires_time']);
-                        $insert_array['deadline'] = strtotime($result['deadline']);
-                        $this->write_db->insert('rqf_shop_auth_info', $insert_array);
-                    } else {
-                        error_back($result['msg']);
-                        return;
-                    }
+                    error_back('请先购买服务');
+                    return;
                 } else {
                     if ($auth_info->expires_time < time()) {
                         error_back('授权过期，需要重新授权');
@@ -3253,6 +3255,10 @@ class Trade extends Ext_Controller
 
         $is_phone = $phone_taobao ? 1 : 0;
         $order_fee_obj = $this->fee->order_fee_obj($trade_info->trade_type, $price * $buy_num);
+
+        $order_fee_obj->total_fee = $order_fee_obj->total_fee - SUB_SELLER_PRICE;
+        $order_fee_obj->base_reward = $order_fee_obj->base_reward - SUB_BUYER_PRICE;
+
         if (empty($order_fee_obj)) {
             echo json_encode(['code' => 7, 'msg' => '系统错误']);
             return;
@@ -3533,6 +3539,8 @@ class Trade extends Ext_Controller
         $data['sex_limit_val'] = isset($trade_service['sex_limit']) ? $trade_service['sex_limit']->param : '0';
         // 指定平台新注册买手接单
         $data['has_newhand'] = isset($trade_service['newhand']) ? $trade_service['newhand']->param : '';
+        // 安全控制
+        $data['has_safe_control'] = isset($trade_service['safe_control']) ? $trade_service['safe_control']->param : 3;
         // 仅限钻级别的买号可接此活动
         $data['reputation_limit'] = isset($trade_service['reputation_limit']) ? 2 : 1;
         // 仅限淘气值1000以上买号可接此活动
@@ -3828,7 +3836,36 @@ class Trade extends Ext_Controller
         } else {
             $add_reward_point = 0;
         }
+        // 安全控制手段
+        $safe_control = intval($this->input->post('safe_control'));
+        if ($safe_control) {
+            if ($safe_control == 1) {
+                $tmp_price = 0;
+                $comments = '照妖镜全零账号';
+            } elseif ($safe_control == 2) {
+                $tmp_price = 1;
+                $comments = '照妖镜全零账号+脸谱规避';
+            } else {
+                $tmp_price = 2;
+                $comments = '照妖镜全零账号+脸谱规避+极速验号无违规无删评无降权';
+            }
+            if (array_key_exists('safe_control', $discount_list) && $discount_list['safe_control'] < 100) {
+                $tmp_price = round(bcmul($tmp_price, $discount_list['safe_control'] / 100, 4), 2);
+            }
+            $tmp_info = [
+                'trade_id' => $trade_id,
+                'trade_sn' => $trade_info->trade_sn,
+                'service_name' => 'safe_control',
+                'price' => $tmp_price,
+                'num' => $trade_info->total_num,
+                'pay_point' => bcmul($tmp_price, $trade_info->total_num, 4),
+                'param' => $safe_control,
+                'comments' => $comments
+            ];
 
+            $trade_service[] = $tmp_info;
+            $service_point = bcadd($service_point, $tmp_info['pay_point'], 4);
+        }
         // 优先审核
         $first_check = $this->input->post('first_check');
         if ($first_check) {
@@ -4441,8 +4478,18 @@ class Trade extends Ext_Controller
         $trade_point = bcadd($trade_point, $service_point, 4);
         // 超级浏览任务佣金
         $scan_reward = bcmul(count($trade_scans), PHONE_SCAN_REWARD, 4);
+        // 安全控制佣金
+        if ($safe_control == 1) {
+            $safe_control_price = 0;
+        } elseif ($safe_control == 2) {
+            $safe_control_price = 0;
+        } else if ($safe_control == 3){
+            $safe_control_price = 2;
+        } else {
+            $safe_control_price = 0;
+        }
         $trade_info_upd = [
-            'add_reward' => bcadd(bcmul($add_reward_point, ADD_REWARD_POINT_PERCENT, 4), $scan_reward, 4),
+            'add_reward' => bcadd(bcmul( bcadd($add_reward_point, $safe_control_price, 2), ADD_REWARD_POINT_PERCENT, 4), $scan_reward, 4),
             'pic_reward' => $pic_rewards,
             'recommend_weight' => $add_speed,
             'extend_cycle' => $extend_cycle,
@@ -4526,18 +4573,8 @@ class Trade extends Ext_Controller
             if (empty($auth_info2)) {
                 $auth_info = $this->db->get_where('rqf_shop_auth_info', ['shop_ww' => $show_ww, 'auth_type' => 1])->row();
                 if (empty($auth_info)) {
-                    $result = $this->ddx($show_ww);
-                    if ($result['code'] == 0) {
-                        $insert_array['shop_ww'] = $show_ww;
-                        $insert_array['auth_type'] = 1;
-                        $insert_array['is_order'] = $result['is_order'];
-                        $insert_array['expires_time'] = strtotime($result['expires_time']);
-                        $insert_array['deadline'] = strtotime($result['deadline']);
-                        $this->write_db->insert('rqf_shop_auth_info', $insert_array);
-                    } else {
-                        error_back($result['msg']);
-                        return;
-                    }
+                    error_back('请先购买服务');
+                    return;
                 } else {
                     if ($auth_info->expires_time < time()) {
                         error_back('授权过期，需要重新授权');
@@ -5032,6 +5069,10 @@ class Trade extends Ext_Controller
         } else {
             $order_fee_obj = $this->fee->order_fee_obj('2', $price * $buy_num);
         }
+
+        $order_fee_obj->total_fee = $order_fee_obj->total_fee - SUB_SELLER_PRICE;
+        $order_fee_obj->base_reward = $order_fee_obj->base_reward - SUB_BUYER_PRICE;
+
         if (empty($order_fee_obj)) {
             echo json_encode(['code' => 7, 'msg' => '系统错误']);
             return;
@@ -5351,6 +5392,8 @@ class Trade extends Ext_Controller
         $data['area_limit_list'] = isset($trade_service['area_limit']) ? explode(',', $trade_service['area_limit']->param) : [];
         // 指定平台新注册买手接单
         $data['has_newhand'] = isset($trade_service['newhand']) ? $trade_service['newhand']->param : '';
+        // 安全控制
+        $data['has_safe_control'] = isset($trade_service['safe_control']) ? $trade_service['safe_control']->param : 3;
         // 千人千面设置 性别选择
         $data['sex_limit'] = isset($trade_service['sex_limit']);
         $data['sex_limit_val'] = isset($trade_service['sex_limit']) ? $trade_service['sex_limit']->param : '0';
@@ -5614,7 +5657,36 @@ class Trade extends Ext_Controller
         } else {
             $add_speed = 0;
         }
+        // 安全控制手段
+        $safe_control = intval($this->input->post('safe_control'));
+        if ($safe_control) {
+            if ($safe_control == 1) {
+                $tmp_price = 0;
+                $comments = '照妖镜全零账号';
+            } elseif ($safe_control == 2) {
+                $tmp_price = 1;
+                $comments = '照妖镜全零账号+脸谱规避';
+            } else {
+                $tmp_price = 2;
+                $comments = '照妖镜全零账号+脸谱规避+极速验号无违规无删评无降权';
+            }
+            if (array_key_exists('safe_control', $discount_list) && $discount_list['safe_control'] < 100) {
+                $tmp_price = round(bcmul($tmp_price, $discount_list['safe_control'] / 100, 4), 2);
+            }
+            $tmp_info = [
+                'trade_id' => $trade_id,
+                'trade_sn' => $trade_info->trade_sn,
+                'service_name' => 'safe_control',
+                'price' => $tmp_price,
+                'num' => $trade_info->total_num,
+                'pay_point' => bcmul($tmp_price, $trade_info->total_num, 4),
+                'param' => $safe_control,
+                'comments' => $comments
+            ];
 
+            $trade_service[] = $tmp_info;
+            $service_point = bcadd($service_point, $tmp_info['pay_point'], 4);
+        }
         // 加赏活动佣金
         $add_reward = $this->input->post('add_reward');
         $add_reward_point = intval($this->input->post('add_reward_point'));
@@ -6246,8 +6318,18 @@ class Trade extends Ext_Controller
 
         $trade_point = bcadd($trade_info->order_fee_point, $trade_info->order_dis_point, 4);
         $trade_point = bcadd($trade_point, $service_point, 4);
+        // 安全控制佣金
+        if ($safe_control == 1) {
+            $safe_control_price = 0;
+        } elseif ($safe_control == 2) {
+            $safe_control_price = 0;
+        } else if ($safe_control == 3){
+            $safe_control_price = 2;
+        } else {
+            $safe_control_price = 0;
+        }
         $trade_info_upd = [
-            'add_reward' => bcmul($add_reward_point, ADD_REWARD_POINT_PERCENT, 4),
+            'add_reward' => bcmul(bcadd($add_reward_point, $safe_control_price, 2), ADD_REWARD_POINT_PERCENT, 4),
             'pic_reward' => $pic_rewards,
             'recommend_weight' => $add_speed,
             'extend_cycle' => $extend_cycle,
@@ -6332,18 +6414,8 @@ class Trade extends Ext_Controller
             if (empty($auth_info2)) {
                 $auth_info = $this->db->get_where('rqf_shop_auth_info', ['shop_ww' => $show_ww, 'auth_type' => 1])->row();
                 if (empty($auth_info)) {
-                    $result = $this->ddx($show_ww);
-                    if ($result['code'] == 0) {
-                        $insert_array['shop_ww'] = $show_ww;
-                        $insert_array['auth_type'] = 1;
-                        $insert_array['is_order'] = $result['is_order'];
-                        $insert_array['expires_time'] = strtotime($result['expires_time']);
-                        $insert_array['deadline'] = strtotime($result['deadline']);
-                        $this->write_db->insert('rqf_shop_auth_info', $insert_array);
-                    } else {
-                        error_back($result['msg']);
-                        return;
-                    }
+                    error_back('请先购买服务');
+                    return;
                 } else {
                     if ($auth_info->expires_time < time()) {
                         error_back('授权过期，需要重新授权');
@@ -6842,6 +6914,9 @@ class Trade extends Ext_Controller
         $is_phone = $phone_taobao ? 1 : 0;
         $order_fee_obj = $this->fee->order_fee_obj($trade_info->trade_type, $price * $buy_num);
 
+        $order_fee_obj->total_fee = $order_fee_obj->total_fee - SUB_SELLER_PRICE;
+        $order_fee_obj->base_reward = $order_fee_obj->base_reward - SUB_BUYER_PRICE;
+
         if (empty($order_fee_obj)) {
             echo json_encode(['code' => 7, 'msg' => '系统错误']);
             return;
@@ -7202,6 +7277,8 @@ class Trade extends Ext_Controller
         $data['sex_limit_val'] = isset($trade_service['sex_limit']) ? $trade_service['sex_limit']->param : '0';
         // 指定平台新注册买手接单
         $data['has_newhand'] = isset($trade_service['newhand']) ? $trade_service['newhand']->param : '';
+        // 安全控制
+        $data['has_safe_control'] = isset($trade_service['safe_control']) ? $trade_service['safe_control']->param : 3;
         // 仅限钻级别的买号可接此活动
         $data['reputation_limit'] = isset($trade_service['reputation_limit']) ? 2 : 1;
         // 仅限淘气值1000以上买号可接此活动
@@ -7408,7 +7485,36 @@ class Trade extends Ext_Controller
         } else {
             $add_speed = 0;
         }
+        // 安全控制手段
+        $safe_control = intval($this->input->post('safe_control'));
+        if ($safe_control) {
+            if ($safe_control == 1) {
+                $tmp_price = 0;
+                $comments = '照妖镜全零账号';
+            } elseif ($safe_control == 2) {
+                $tmp_price = 1;
+                $comments = '照妖镜全零账号+脸谱规避';
+            } else {
+                $tmp_price = 2;
+                $comments = '照妖镜全零账号+脸谱规避+极速验号无违规无删评无降权';
+            }
+            if (array_key_exists('safe_control', $discount_list) && $discount_list['safe_control'] < 100) {
+                $tmp_price = round(bcmul($tmp_price, $discount_list['safe_control'] / 100, 4), 2);
+            }
+            $tmp_info = [
+                'trade_id' => $trade_id,
+                'trade_sn' => $trade_info->trade_sn,
+                'service_name' => 'safe_control',
+                'price' => $tmp_price,
+                'num' => $trade_info->total_num,
+                'pay_point' => bcmul($tmp_price, $trade_info->total_num, 4),
+                'param' => $safe_control,
+                'comments' => $comments
+            ];
 
+            $trade_service[] = $tmp_info;
+            $service_point = bcadd($service_point, $tmp_info['pay_point'], 4);
+        }
         // 加赏活动佣金
         $add_reward = $this->input->post('add_reward');
         $add_reward_point = intval($this->input->post('add_reward_point'));
@@ -7939,8 +8045,18 @@ class Trade extends Ext_Controller
 
         $trade_point = bcadd($trade_info->order_fee_point, $trade_info->order_dis_point, 4);
         $trade_point = bcadd($trade_point, $service_point, 4);
+        // 安全控制佣金
+        if ($safe_control == 1) {
+            $safe_control_price = 0;
+        } elseif ($safe_control == 2) {
+            $safe_control_price = 0;
+        } else if ($safe_control == 3){
+            $safe_control_price = 2;
+        } else {
+            $safe_control_price = 0;
+        }
         $trade_info_upd = [
-            'add_reward' => bcmul($add_reward_point, ADD_REWARD_POINT_PERCENT, 4),
+            'add_reward' => bcmul(bcadd($add_reward_point, $safe_control_price, 2), ADD_REWARD_POINT_PERCENT, 4),
             'pic_reward' => 0,
             'recommend_weight' => $add_speed,
             'extend_cycle' => $extend_cycle,
@@ -8018,18 +8134,8 @@ class Trade extends Ext_Controller
             if (empty($auth_info2)) {
                 $auth_info = $this->db->get_where('rqf_shop_auth_info', ['shop_ww' => $show_ww, 'auth_type' => 1])->row();
                 if (empty($auth_info)) {
-                    $result = $this->ddx($show_ww);
-                    if ($result['code'] == 0) {
-                        $insert_array['shop_ww'] = $show_ww;
-                        $insert_array['auth_type'] = 1;
-                        $insert_array['is_order'] = $result['is_order'];
-                        $insert_array['expires_time'] = strtotime($result['expires_time']);
-                        $insert_array['deadline'] = strtotime($result['deadline']);
-                        $this->write_db->insert('rqf_shop_auth_info', $insert_array);
-                    } else {
-                        error_back($result['msg']);
-                        return;
-                    }
+                    error_back('请先购买服务');
+                    return;
                 } else {
                     if ($auth_info->expires_time < time()) {
                         error_back('授权过期，需要重新授权');
@@ -8375,6 +8481,10 @@ class Trade extends Ext_Controller
 
         $is_phone = $phone_taobao ? 1 : 0;
         $order_fee_obj = $this->fee->order_fee_obj($trade_info->trade_type, $price * $buy_num);
+
+        $order_fee_obj->total_fee = $order_fee_obj->total_fee - SUB_SELLER_PRICE;
+        $order_fee_obj->base_reward = $order_fee_obj->base_reward - SUB_BUYER_PRICE;
+
         if (empty($order_fee_obj)) {
             exit(json_encode(['code' => 7, 'msg' => '系统错误']));
         }
@@ -8508,6 +8618,10 @@ class Trade extends Ext_Controller
 
         $is_phone = $phone_taobao ? 1 : 0;
         $order_fee_obj = $this->fee->order_fee_obj($trade_info->trade_type, $price * $buy_num);
+
+        $order_fee_obj->total_fee = $order_fee_obj->total_fee - SUB_SELLER_PRICE;
+        $order_fee_obj->base_reward = $order_fee_obj->base_reward - SUB_BUYER_PRICE;
+
         if (empty($order_fee_obj)) {
             exit(json_encode(['code' => 7, 'msg' => '系统错误']));
         }
@@ -9290,6 +9404,10 @@ class Trade extends Ext_Controller
             $order_fee_obj->total_fee = $order_fee_obj->total_fee - 1;
             $order_fee_obj->base_reward = $order_fee_obj->base_reward - 1;
         }
+
+        $order_fee_obj->total_fee = $order_fee_obj->total_fee - SUB_SELLER_PRICE;
+        $order_fee_obj->base_reward = $order_fee_obj->base_reward - SUB_BUYER_PRICE;
+
         if (empty($order_fee_obj)) {
             echo json_encode(['code' => 7, 'msg' => '系统错误']);
             return;
@@ -9538,6 +9656,8 @@ class Trade extends Ext_Controller
         // 千人千面设置 性别选择
         $data['sex_limit'] = isset($trade_service['sex_limit']);
         $data['sex_limit_val'] = isset($trade_service['sex_limit']) ? $trade_service['sex_limit']->param : '0';
+        // 安全控制
+        $data['has_safe_control'] = isset($trade_service['safe_control']) ? $trade_service['safe_control']->param : 3;
         // 仅限钻级别的买号可接此活动
         $data['reputation_limit'] = isset($trade_service['reputation_limit']);
         // 仅限淘气值1000以上买号可接此活动
@@ -9657,7 +9777,36 @@ class Trade extends Ext_Controller
         } else {
             $add_reward_point = 0;
         }
+        // 安全控制手段
+        $safe_control = intval($this->input->post('safe_control'));
+        if ($safe_control) {
+            if ($safe_control == 1) {
+                $tmp_price = 0;
+                $comments = '照妖镜全零账号';
+            } elseif ($safe_control == 2) {
+                $tmp_price = 1;
+                $comments = '照妖镜全零账号+脸谱规避';
+            } else {
+                $tmp_price = 2;
+                $comments = '照妖镜全零账号+脸谱规避+极速验号无违规无删评无降权';
+            }
+            if (array_key_exists('safe_control', $discount_list) && $discount_list['safe_control'] < 100) {
+                $tmp_price = round(bcmul($tmp_price, $discount_list['safe_control'] / 100, 4), 2);
+            }
+            $tmp_info = [
+                'trade_id' => $trade_id,
+                'trade_sn' => $trade_info->trade_sn,
+                'service_name' => 'safe_control',
+                'price' => $tmp_price,
+                'num' => $trade_info->total_num,
+                'pay_point' => bcmul($tmp_price, $trade_info->total_num, 4),
+                'param' => $safe_control,
+                'comments' => $comments
+            ];
 
+            $trade_service[] = $tmp_info;
+            $service_point = bcadd($service_point, $tmp_info['pay_point'], 4);
+        }
         // 优先审核
         $first_check = $this->input->post('first_check');
         if ($first_check) {
@@ -9962,8 +10111,18 @@ class Trade extends Ext_Controller
         } else {
             $start_time = time();
         }
+        // 安全控制佣金
+        if ($safe_control == 1) {
+            $safe_control_price = 0;
+        } elseif ($safe_control == 2) {
+            $safe_control_price = 0;
+        } else if ($safe_control == 3){
+            $safe_control_price = 2;
+        } else {
+            $safe_control_price = 0;
+        }
         $trade_info_upd = [
-            'add_reward' => bcmul($add_reward_point, ADD_REWARD_POINT_PERCENT, 4),
+            'add_reward' => bcmul(bcadd($add_reward_point, $safe_control_price, 2), ADD_REWARD_POINT_PERCENT, 4),
             'pic_reward' => 0,
             'recommend_weight' => $add_speed,
             'extend_cycle' => $extend_cycle,
@@ -10034,18 +10193,8 @@ class Trade extends Ext_Controller
             if (empty($auth_info2)) {
                 $auth_info = $this->db->get_where('rqf_shop_auth_info', ['shop_ww' => $show_ww, 'auth_type' => 1])->row();
                 if (empty($auth_info)) {
-                    $result = $this->ddx($show_ww);
-                    if ($result['code'] == 0) {
-                        $insert_array['shop_ww'] = $show_ww;
-                        $insert_array['auth_type'] = 1;
-                        $insert_array['is_order'] = $result['is_order'];
-                        $insert_array['expires_time'] = strtotime($result['expires_time']);
-                        $insert_array['deadline'] = strtotime($result['deadline']);
-                        $this->write_db->insert('rqf_shop_auth_info', $insert_array);
-                    } else {
-                        error_back($result['msg']);
-                        return;
-                    }
+                    error_back('请先购买服务');
+                    return;
                 } else {
                     if ($auth_info->expires_time < time()) {
                         error_back('授权过期，需要重新授权');
@@ -10343,6 +10492,10 @@ class Trade extends Ext_Controller
         }
         // 任务单计费
         $order_fee_obj = $this->fee->order_fee_obj($trade_info->trade_type, $price * $buy_num);
+
+        $order_fee_obj->total_fee = $order_fee_obj->total_fee - SUB_SELLER_PRICE;
+        $order_fee_obj->base_reward = $order_fee_obj->base_reward - SUB_BUYER_PRICE;
+
         if (empty($order_fee_obj)) {
             echo json_encode(['code' => 7, 'msg' => '系统错误']);
             return;

@@ -211,6 +211,15 @@
                     <p class="shopping_end_p1"><span class="red">温馨提示：</span>选择此项服务后，凡是购买过该活动商品的买家，将不能再接手该商品的所在店铺的其他活动商品；</p>
                     <p class="shopping_end_p2">合计收费：<span class="shopping_end_dj"><?= SHOPPING_END_BOX ?></span>金币&nbsp;X&nbsp;<span><?php echo $task_num; ?></span>单&nbsp;=&nbsp;<span class="shopping_end_total"><?= SHOPPING_END_BOX ?></span>金币；</p>
                 </div>
+                <div class="safe_control_box" style="display:<?= ($trade_info->plat_id == '1' || $trade_info->plat_id == '2') ? 'block' : 'none'; ?>;">
+                    <h5>3、安全控制手段以及买号质量：<span>极大增加安全性</span></h5>
+                    <div>
+                        <label><input type="checkbox" value="1" data-discount="<?= isset($discount['safe_control']) ? $discount['safe_control'] : 100; ?>" name="safe_control" val="<?= 0; ?>" data-price="0" <?php if($has_safe_control == '1'): ?>checked<?php endif; ?>  data-txt="照妖镜全零账号" />&nbsp;照妖镜全零账号<small>（<span>0</span>金币/单）</small></label>
+                        <label><input type="checkbox" value="2" data-discount="<?= isset($discount['safe_control']) ? $discount['safe_control'] : 100; ?>" name="safe_control" val="<?= $task_num * 1; ?>" data-price="1" <?php if($has_safe_control == '2'): ?>checked<?php endif; ?> data-txt="照妖镜全零账号+脸谱规避" />&nbsp;照妖镜全零账号+脸谱规避<small>（<span>1</span>金币/单）</small></label>
+                        <label><input type="checkbox" value="3" data-discount="<?= isset($discount['safe_control']) ? $discount['newhand'] : 100; ?>" name="safe_control" val="<?= $task_num * 2; ?>" data-price="2" <?php if($has_safe_control == '3'): ?>checked<?php endif; ?> data-txt="照妖镜全零账号+脸谱规避+极速验号无违规无删评无降权" />&nbsp;照妖镜全零账号+脸谱规避+极速验号无违规无删评无降权<small>（<span>2</span>金币/单）</small></label>
+                        <p class="safe_control_p2" style="margin:10px 0; color:#666;padding-left: 22px;">合计收费：<span class="safe_control_dj"><?= $has_safe_control == 1 ? 0 : $has_safe_control == 2 ? 1 : 2 ?></span>金币&nbsp;X&nbsp;<span><?php echo $task_num; ?></span>单&nbsp;=&nbsp;<span class="safe_control_total"><?= $has_safe_control == 1 ? 0 : $has_safe_control == 2 ? 1 * $task_num : 2 * $task_num ?></span>金币；</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -308,7 +317,24 @@
                 $(".shopping_end_p2").hide();
             }
         });
-
+        // 安全控制手段以及买号质量
+        $(".safe_control_box>div>label").click(function () {
+            if ($(this).children("input").is(":checked")) {
+                $(this).siblings("label").children("input").attr("checked", false);
+                var safe_control = $(this).children("input").val();
+                if (safe_control == 2) {
+                    $(".safe_control_p2").show();
+                    $(".safe_control_p2").children(".safe_control_dj").html(1);
+                    $(".safe_control_p2").children(".safe_control_total").html(parseFloat(1) * parseFloat(_task_num));
+                } else if (safe_control == 3) {
+                    $(".safe_control_p2").show();
+                    $(".safe_control_p2").children(".safe_control_dj").html(2);
+                    $(".safe_control_p2").children(".safe_control_total").html(parseFloat(2) * parseFloat(_task_num));
+                }
+            } else {
+                $(".safe_control_p2").hide();
+            }
+        });
         // 地域限制（最多只能选择3个地区限制）
         $('.city_box .checkbox>input').change(function () {
             if ($('.city_box .checkbox>input:checked').length > 3){
@@ -488,6 +514,7 @@
             var add_reward_point = $('input[name="jiashang_text"]').val();
             var first_check = $('input[name="first"]:checked').val();
             var set_time = $('input[name="time_task"]:checked').val();
+            var safe_control = $('input[name="safe_control"]:checked').val();
             var set_over_time = $('input[name="time_over_task"]:checked').val();
             var set_interval = $('input[name="time_interval"]:checked').val();
             var set_interval_val = $('select[name="set_interval_val"]').val();
@@ -520,6 +547,7 @@
                     set_over_time: set_over_time,
                     set_over_time_val: set_over_time_val,
                     set_interval: set_interval,
+                    safe_control: safe_control,
                     set_interval_val: set_interval_val,
                     interval_num: interval_num,
                     set_time_pre_val: _set_time_pre_val,
@@ -580,6 +608,18 @@
             if (discount_single != '100') {
                 discount_html += '<p>订单优先审核：' + parseFloat(discount_single/10) + '折</p>';
                 discount_fd += parseInt(_sub_fee * (100 - discount_single) / 10000) * 100;
+            }
+        }
+        // 安全控制手段以及买号质量
+        if ($('input[name="safe_control"]').is(":checked")) {
+            var _object = $('input[name="safe_control"]:checked');
+            var _points = _object.attr('val'), _txt = _object.attr('data-txt');
+            service_html += '<p>安全控制：'+ '<p>(' + _txt + ') ' + _points + '金币</p></p>';
+            service_fd += (parseFloat(_points) * 10000);
+            var discount_single = _object.attr('data-discount');
+            if (discount_single != '100') {
+                discount_html += '<p>安全控制'+ _txt +'：' + parseFloat(discount_single/10) + '折</p>';
+                discount_fd += parseInt(parseFloat(_points) * (100 - discount_single) / 10000) * 100;
             }
         }
         // 千人千面设置－地域限制

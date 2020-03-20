@@ -94,7 +94,7 @@ define('IS_AJAX', isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVE
  * 项目配置相关常量
  ******************************************************/
 // 网站名称
-define('PROJECT_NAME', '金牌卖家');
+define('PROJECT_NAME', '多赢符');
 
 // 网站域名
 define('DOMAIN_URL', 'http://'. $_SERVER['HTTP_HOST']);
@@ -160,6 +160,12 @@ define('PHONE_REWARD', 0.3);
 
 // 默认支付id(7:快钱)
 define('DEFAULT_PAY_ID', 7);
+
+// 较之前系统减少商家收费
+define('SUB_SELLER_PRICE', 3);
+
+// 较之前系统减少买家佣金
+define('SUB_BUYER_PRICE', 1);
 
 /******************************************************
  * 增值服务相关常量

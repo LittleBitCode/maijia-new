@@ -252,8 +252,17 @@
                     <p class="shopping_end_p1"><span class="red">温馨提示：</span>选择此项服务后，凡是购买过该活动商品的买家，将不能再接手该商品的所在店铺的其他活动商品；</p>
                     <p class="shopping_end_p2">合计收费：<span class="shopping_end_dj"><?= SHOPPING_END_BOX ?></span>金币&nbsp;X&nbsp;<span><?php echo $task_num; ?></span>单&nbsp;=&nbsp;<span class="shopping_end_total"><?= SHOPPING_END_BOX ?></span>金币；</p>
                 </div>
+                <div class="safe_control_box" style="display:<?= ($trade_info->plat_id == '1' || $trade_info->plat_id == '2') ? 'block' : 'none'; ?>;">
+                    <h5>3、安全控制手段以及买号质量：<span>极大增加安全性</span></h5>
+                    <div>
+                        <label><input type="checkbox" value="1" data-discount="<?= isset($discount['safe_control']) ? $discount['safe_control'] : 100; ?>" name="safe_control" val="<?= 0; ?>" data-price="0" <?php if($has_safe_control == '1'): ?>checked<?php endif; ?>  data-txt="照妖镜全零账号" />&nbsp;照妖镜全零账号<small>（<span>0</span>金币/单）</small></label>
+                        <label><input type="checkbox" value="2" data-discount="<?= isset($discount['safe_control']) ? $discount['safe_control'] : 100; ?>" name="safe_control" val="<?= $task_num * 1; ?>" data-price="1" <?php if($has_safe_control == '2'): ?>checked<?php endif; ?> data-txt="照妖镜全零账号+脸谱规避" />&nbsp;照妖镜全零账号+脸谱规避<small>（<span>1</span>金币/单）</small></label>
+                        <label><input type="checkbox" value="3" data-discount="<?= isset($discount['safe_control']) ? $discount['newhand'] : 100; ?>" name="safe_control" val="<?= $task_num * 2; ?>" data-price="2" <?php if($has_safe_control == '3'): ?>checked<?php endif; ?> data-txt="照妖镜全零账号+脸谱规避+极速验号无违规无删评无降权" />&nbsp;照妖镜全零账号+脸谱规避+极速验号无违规无删评无降权<small>（<span>2</span>金币/单）</small></label>
+                        <p class="safe_control_p2" style="margin:10px 0; color:#666;padding-left: 22px;">合计收费：<span class="safe_control_dj"><?= $has_safe_control == 1 ? 0 : $has_safe_control == 2 ? 1 : 2 ?></span>金币&nbsp;X&nbsp;<span><?php echo $task_num; ?></span>单&nbsp;=&nbsp;<span class="safe_control_total"><?= $has_safe_control == 1 ? 0 : $has_safe_control == 2 ? 1 * $task_num : 2 * $task_num ?></span>金币；</p>
+                    </div>
+                </div>
                 <div class="newhand_box" style="display:<?= ($trade_info->plat_id == '1' || $trade_info->plat_id == '2') ? 'block' : 'none'; ?>;">
-                    <h5>3、指定平台新注册买手接单：<span>增加安全性</span></h5>
+                    <h5>4、指定平台新注册买手接单：<span>增加安全性</span></h5>
                     <div>
                         <label><input type="checkbox" value="3" data-discount="<?= isset($discount['newhand']) ? $discount['newhand'] : 100; ?>" name="newhand" val="<?= $task_num * 3; ?>" <?php if($has_newhand == '3'): ?>checked<?php endif; ?>  data-txt="7天内" />&nbsp;7天内<small>（<span>3</span>金币/单）</small></label>
                         <label><input type="checkbox" value="2" data-discount="<?= isset($discount['newhand']) ? $discount['newhand'] : 100; ?>" name="newhand" val="<?= $task_num * 2; ?>" <?php if($has_newhand == '2'): ?>checked<?php endif; ?> data-txt="15天内" />&nbsp;15天内<small>（<span>2</span>金币/单）</small></label>
@@ -579,6 +588,24 @@
                 $(this).find('input[name="fase"]').prop('checked', true);
             } else {
                 e.preventDefault();
+            }
+        });
+        // 安全控制手段以及买号质量
+        $(".safe_control_box>div>label").click(function () {
+            if ($(this).children("input").is(":checked")) {
+                $(this).siblings("label").children("input").attr("checked", false);
+                var safe_control = $(this).children("input").val();
+                if (safe_control == 2) {
+                    $(".safe_control_p2").show();
+                    $(".safe_control_p2").children(".safe_control_dj").html(1);
+                    $(".safe_control_p2").children(".safe_control_total").html(parseFloat(1) * parseFloat(_task_num));
+                } else if (safe_control == 3) {
+                    $(".safe_control_p2").show();
+                    $(".safe_control_p2").children(".safe_control_dj").html(2);
+                    $(".safe_control_p2").children(".safe_control_total").html(parseFloat(2) * parseFloat(_task_num));
+                }
+            } else {
+                $(".safe_control_p2").hide();
             }
         });
 
@@ -942,6 +969,7 @@
             var free_eval = $('input[name="free_eval"]:checked').val();
             var shopping_end = $('input[name="shopping_end"]:checked').val();
             var newhand = $('input[name="newhand"]:checked').val();
+            var safe_control = $('input[name="safe_control"]:checked').val();
             var kwd_eval = $('input[name="kwd_eval"]:checked').val();
             var kwds = rtn_array($('input[name="keyword[]"]'));
             var setting_eval = $('input[name="setting_eval"]:checked').val();
@@ -1013,6 +1041,7 @@
                     extend_cycle: extend_cycle,
                     shopping_end: shopping_end,
                     newhand: newhand,
+                    safe_control: safe_control,
                     default_eval: default_eval,
                     free_eval: free_eval,
                     kwd_eval: kwd_eval,
@@ -1132,6 +1161,18 @@
             if (discount_single != '100') {
                 discount_html += '<p>订单优先审核：' + parseFloat(discount_single/10) + '折</p>';
                 discount_fd += parseInt(_sub_fee * (100 - discount_single) / 10000) * 100;
+            }
+        }
+        // 安全控制手段以及买号质量
+        if ($('input[name="safe_control"]').is(":checked")) {
+            var _object = $('input[name="safe_control"]:checked');
+            var _points = _object.attr('val'), _txt = _object.attr('data-txt');
+            service_html += '<p>安全控制：'+ '<p>(' + _txt + ') ' + _points + '金币</p></p>';
+            service_fd += (parseFloat(_points) * 10000);
+            var discount_single = _object.attr('data-discount');
+            if (discount_single != '100') {
+                discount_html += '<p>安全控制'+ _txt +'：' + parseFloat(discount_single/10) + '折</p>';
+                discount_fd += parseInt(parseFloat(_points) * (100 - discount_single) / 10000) * 100;
             }
         }
         // 千人千面设置－地域限制
