@@ -512,14 +512,14 @@
 				<li><a href="/trade/step">报名活动</a></li>
 				<li><a href="/center/trade_finished">已完成活动</a></li>
 				<li><a href="/review/traffic_list">审核截图</a></li>
-				<li class="left_tab_nav_head">
-					<img style="vertical-align: middle;" src="/static/imgs/icon/cwgl.png" />
-					邀请管理
-				</li>
-				<li><a href="/invite/invite_record">邀请记录</a></li>
-				<li><a href="/invite/invite_reward">奖励记录</a></li>
-				<li><a href="/invite/failure_reward">邀请详情</a></li>
-				<li><a href="/invite/invite_url">邀请返利</a></li>
+<!--				<li class="left_tab_nav_head">-->
+<!--					<img style="vertical-align: middle;" src="/static/imgs/icon/cwgl.png" />-->
+<!--					邀请管理-->
+<!--				</li>-->
+<!--				<li><a href="/invite/invite_record">邀请记录</a></li>-->
+<!--				<li><a href="/invite/invite_reward">奖励记录</a></li>-->
+<!--				<li><a href="/invite/failure_reward">邀请详情</a></li>-->
+<!--				<li><a href="/invite/invite_url">邀请返利</a></li>-->
 			</ul>
 		</div>
 <div class="right_center">

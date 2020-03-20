@@ -208,7 +208,7 @@
     <div class="nav_head_b contain">
         <nav class="navbar navbar-default navbar-lg" role="navigation">
         	<img style="width: 400px;height: 70px;float: left;margin: 12px;" src="/static/imgs/icon/jinpai.png">
-            <ul class="nav navbar-nav navbar-left" style="margin-left: 80px;">
+            <ul class="nav navbar-nav navbar-right"  style="margin-right: 50px">
                 <li class="<?= ($site=='index') ? 'active': '' ?>" style = 'height: 94px;'><a href="/">首页</a></li>
                 <li class="<?= ($site=='trade') ? 'active': '' ?>" style = 'height: 94px;'><a href="/trade/step">报名活动</a></li>
 <!--                <li class="--><?//= ($site=='trade') ? 'active': '' ?><!--" style = 'height: 94px;'><a href="/invite/invite_url" target="_blank">邀请返利</a></li>-->

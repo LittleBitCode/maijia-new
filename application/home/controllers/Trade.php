@@ -1599,7 +1599,7 @@ class Trade extends Ext_Controller
         // 仅限淘气值1000以上买号可接此活动
         $data['taoqi_limit'] = isset($trade_service['taoqi_limit']) ? 2 : 1;
         // 安全控制
-        $data['has_safe_control'] = isset($trade_service['safe_control']) ? $trade_service['safe_control']->param : 3;
+        $data['has_safe_control'] = isset($trade_service['safe_control']) ? $trade_service['safe_control']->param : 2;
         // 定时发布
         $data['has_set_time'] = isset($trade_service['set_time']);
         $data['set_time_val'] = isset($trade_service['set_time']) ? $trade_service['set_time']->param : '';
@@ -3540,7 +3540,7 @@ class Trade extends Ext_Controller
         // 指定平台新注册买手接单
         $data['has_newhand'] = isset($trade_service['newhand']) ? $trade_service['newhand']->param : '';
         // 安全控制
-        $data['has_safe_control'] = isset($trade_service['safe_control']) ? $trade_service['safe_control']->param : 3;
+        $data['has_safe_control'] = isset($trade_service['safe_control']) ? $trade_service['safe_control']->param : 2;
         // 仅限钻级别的买号可接此活动
         $data['reputation_limit'] = isset($trade_service['reputation_limit']) ? 2 : 1;
         // 仅限淘气值1000以上买号可接此活动
@@ -5393,7 +5393,7 @@ class Trade extends Ext_Controller
         // 指定平台新注册买手接单
         $data['has_newhand'] = isset($trade_service['newhand']) ? $trade_service['newhand']->param : '';
         // 安全控制
-        $data['has_safe_control'] = isset($trade_service['safe_control']) ? $trade_service['safe_control']->param : 3;
+        $data['has_safe_control'] = isset($trade_service['safe_control']) ? $trade_service['safe_control']->param : 2;
         // 千人千面设置 性别选择
         $data['sex_limit'] = isset($trade_service['sex_limit']);
         $data['sex_limit_val'] = isset($trade_service['sex_limit']) ? $trade_service['sex_limit']->param : '0';
@@ -7278,7 +7278,7 @@ class Trade extends Ext_Controller
         // 指定平台新注册买手接单
         $data['has_newhand'] = isset($trade_service['newhand']) ? $trade_service['newhand']->param : '';
         // 安全控制
-        $data['has_safe_control'] = isset($trade_service['safe_control']) ? $trade_service['safe_control']->param : 3;
+        $data['has_safe_control'] = isset($trade_service['safe_control']) ? $trade_service['safe_control']->param : 2;
         // 仅限钻级别的买号可接此活动
         $data['reputation_limit'] = isset($trade_service['reputation_limit']) ? 2 : 1;
         // 仅限淘气值1000以上买号可接此活动
@@ -9657,7 +9657,7 @@ class Trade extends Ext_Controller
         $data['sex_limit'] = isset($trade_service['sex_limit']);
         $data['sex_limit_val'] = isset($trade_service['sex_limit']) ? $trade_service['sex_limit']->param : '0';
         // 安全控制
-        $data['has_safe_control'] = isset($trade_service['safe_control']) ? $trade_service['safe_control']->param : 3;
+        $data['has_safe_control'] = isset($trade_service['safe_control']) ? $trade_service['safe_control']->param : 2;
         // 仅限钻级别的买号可接此活动
         $data['reputation_limit'] = isset($trade_service['reputation_limit']);
         // 仅限淘气值1000以上买号可接此活动
