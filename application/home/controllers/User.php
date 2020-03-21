@@ -396,7 +396,7 @@ class User extends MY_Controller
     public function login()
     {
         $server_name = trim($this->input->server('SERVER_NAME'));
-        $this->load->view('user/logins', ['eabled_register' => !in_array($server_name, $this->register_list)]);
+        $this->load->view('user/logins', ['eabled_register' => in_array($server_name, $this->register_list)]);
     }
 
     /**
