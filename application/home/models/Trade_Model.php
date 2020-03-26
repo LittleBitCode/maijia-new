@@ -415,7 +415,7 @@ class Trade_Model extends CI_Model {
                 if ($trade_info->is_phone) {
                     $point_unit_price = bcadd($point_unit_price, ORDER_DIS_PRICE, 4);
                 }
-                $average_refund_list = ['plat_refund', 'bus_refund', 'set_traffic', 'add_reward', 'kwd_eval', 'setting_eval', 'add_reward_ext', 'set_shipping', 'shopping_end', 'area_limit', 'sex_limit', 'reputation_limit', 'taoqi_limit', 'setting_picture', 'traffic_list', 'newhand', 'super_scan', 'safe_control'];
+                $average_refund_list = ['plat_refund', 'bus_refund', 'set_traffic', 'add_reward', 'kwd_eval', 'setting_eval', 'add_reward_ext', 'set_shipping', 'shopping_end', 'area_limit', 'sex_limit', 'reputation_limit', 'taoqi_limit', 'setting_picture', 'traffic_list', 'newhand', 'super_scan', 'safe_control', 'extend_cycle'];
                 foreach ($trade_service as $v) {
                     if (in_array($v->service_name, $average_refund_list)) {
                         if (strpos($v->service_name, 'super_scan') !== false) {

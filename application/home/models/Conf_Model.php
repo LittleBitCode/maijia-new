@@ -191,10 +191,10 @@ class Conf_Model extends CI_Model {
     /** 快递配送类型 */
     public function get_shipping_type_list($type = null) {
         $list = [
+            'zto' => ['name' => '中通快递', 'price' => 3, 'default' => 0, 'is_show' => 1],
             'yto' => ['name' => '圆通快递', 'price' => 3, 'default' => 1, 'is_show' => 1],
             'sto' => ['name' => '申通快递', 'price' => 3, 'default' => 0, 'is_show' => 1],
             'yunda' => ['name' => '韵达快递', 'price' => 3, 'default' => 0, 'is_show' => 0],
-            'zto' => ['name' => '中通快递', 'price' => 3, 'default' => 0, 'is_show' => 1],
             'self' => ['name' => '自发快递赠送小礼品', 'price' => 0, 'default' => 0, 'is_show' => 1],
         ];
 
