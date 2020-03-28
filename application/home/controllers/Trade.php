@@ -2551,13 +2551,13 @@ class Trade extends Ext_Controller
         } elseif ($safe_control == 2) {
             $safe_control_price = 0;
         } else if ($safe_control == 3){
-            $safe_control_price = 2;
+            $safe_control_price = 0.7;
         } else {
             $safe_control_price = 0;
         }
 
         $trade_info_upd = [
-            'add_reward' => bcmul(bcadd($add_reward_point, $safe_control_price, 2), ADD_REWARD_POINT_PERCENT, 4),
+            'add_reward' => bcadd(bcmul($add_reward_point, ADD_REWARD_POINT_PERCENT, 4), $safe_control_price, 4),
             'pic_reward' => $pic_rewards,
             'recommend_weight' => $add_speed,
             'extend_cycle' => $extend_cycle,
@@ -4490,12 +4490,13 @@ class Trade extends Ext_Controller
         } elseif ($safe_control == 2) {
             $safe_control_price = 0;
         } else if ($safe_control == 3){
-            $safe_control_price = 2;
+            $safe_control_price = 0.7;
         } else {
             $safe_control_price = 0;
         }
+
         $trade_info_upd = [
-            'add_reward' => bcadd(bcmul( bcadd($add_reward_point, $safe_control_price, 2), ADD_REWARD_POINT_PERCENT, 4), $scan_reward, 4),
+            'add_reward' => bcadd(bcmul($add_reward_point, ADD_REWARD_POINT_PERCENT, 4), $safe_control_price, 4),
             'pic_reward' => $pic_rewards,
             'recommend_weight' => $add_speed,
             'extend_cycle' => $extend_cycle,
@@ -6332,12 +6333,13 @@ class Trade extends Ext_Controller
         } elseif ($safe_control == 2) {
             $safe_control_price = 0;
         } else if ($safe_control == 3){
-            $safe_control_price = 2;
+            $safe_control_price = 0.7;
         } else {
             $safe_control_price = 0;
         }
+
         $trade_info_upd = [
-            'add_reward' => bcmul(bcadd($add_reward_point, $safe_control_price, 2), ADD_REWARD_POINT_PERCENT, 4),
+            'add_reward' => bcadd(bcmul($add_reward_point, ADD_REWARD_POINT_PERCENT, 4), $safe_control_price, 4),
             'pic_reward' => $pic_rewards,
             'recommend_weight' => $add_speed,
             'extend_cycle' => $extend_cycle,
@@ -8061,12 +8063,13 @@ class Trade extends Ext_Controller
         } elseif ($safe_control == 2) {
             $safe_control_price = 0;
         } else if ($safe_control == 3){
-            $safe_control_price = 2;
+            $safe_control_price = 0.7;
         } else {
             $safe_control_price = 0;
         }
+
         $trade_info_upd = [
-            'add_reward' => bcmul(bcadd($add_reward_point, $safe_control_price, 2), ADD_REWARD_POINT_PERCENT, 4),
+            'add_reward' => bcadd(bcmul($add_reward_point, ADD_REWARD_POINT_PERCENT, 4), $safe_control_price, 4),
             'pic_reward' => 0,
             'recommend_weight' => $add_speed,
             'extend_cycle' => $extend_cycle,
@@ -10133,12 +10136,13 @@ class Trade extends Ext_Controller
         } elseif ($safe_control == 2) {
             $safe_control_price = 0;
         } else if ($safe_control == 3){
-            $safe_control_price = 2;
+            $safe_control_price = 0.7;
         } else {
             $safe_control_price = 0;
         }
+
         $trade_info_upd = [
-            'add_reward' => bcmul(bcadd($add_reward_point, $safe_control_price, 2), ADD_REWARD_POINT_PERCENT, 4),
+            'add_reward' => bcadd(bcmul($add_reward_point, ADD_REWARD_POINT_PERCENT, 4), $safe_control_price, 4),
             'pic_reward' => 0,
             'recommend_weight' => $add_speed,
             'extend_cycle' => $extend_cycle,
