@@ -17,27 +17,28 @@
 <title>找回登录密码-<?php echo PROJECT_NAME; ?></title>
 </head>
 <body>
-    <header class="nav_head">
-        <div class="nav_head_t">
-            <div class="contain">
-                <nav class="navbar navbar-default" role="navigation">
-                    <div class="navbar-header">
-                        <a class="navbar-brand" href="/"><img src="/static/imgs/logo.png" alt="logo"/></a>
-                    </div>
-                    <ul class="nav navbar-nav navbar-right" style="font-size: 15px;">
-                        <li><a href="/user/login">登录</a></li>
-                        <!-- <li><a href="/user/register">注册</a></li> -->
-                    </ul>
-                </nav>
+<header class="nav_head" style="height: 80px">
+    <div class="nav_head_t" style="display: none">
+        <div class="contain_top">
+            <div class="contain_one">
+                <div class="contain_layui_col1">
+                    <span><a href="/user/login">登录<a></span>
+                </div>
             </div>
         </div>
-    </header>
-    <div class="bg_wrap" style="min-height:72vh">
-        <div class="content2">
-            <div style="margin:0 auto; width: 1200px;"><div class="logo_title">找回登录密码</div></div>
+    </div>
+    <div style="background-color: white;">
+        <div class="nav_head_b contain">
+            <nav class="navbar navbar-default navbar-lg" role="navigation">
+                <img style="width: 300px;float: left;margin: 12px;" src="/static/imgs/icon/jinpai.png">
+
+            </nav>
         </div>
+    </div>
+</header>
+    <div class="bg_wrap" style="min-height:72vh">
         <div class="find_pwd_wrap" style="margin-top: 32px;">
-            <p class="find_pwd_titele"><span>找回登录密码</span><a href="/">返回登录</a></p>
+            <p class="find_pwd_titele"><a href="/">返回登录</a></p>
             <div class="find_pwd_second">
                 <ul class="find_pwd_step">
                     <li class="find_pwd_step_item active">

@@ -183,7 +183,7 @@
             }
             if (_plat_id == '1' || _plat_id == '2') {
                 var _shop_ww = _shop.data("shop_ww");
-                isBuyOrAuth(_shop_ww)
+                // isBuyOrAuth(_shop_ww)
             }
         });
         $(".accordion-group").click(function () {
@@ -207,7 +207,7 @@
             }
             if (_plat_id == '1' || _plat_id == '2') {
                 var _shop_ww = _shop.data("shop_ww");
-                isBuyOrAuth(_shop_ww)
+                // isBuyOrAuth(_shop_ww)
             }
         })
 
@@ -255,47 +255,47 @@
                 return false;
             }
             var _trade_type = _trade_type_obj.data("id");
-            if (_plat_id == 1 || _plat_id == 2) {
-                $.ajax({
-                    type: "POST",
-                    url: "/trade/ddx_auth",
-                    data: {"shop_ww": _shop_ww},
-                    dataType: "json",
-                    success: function (res) {
-                        console.log(res)
-                        if (res.code == 0) {  // 已订购 已授权
-                            $.ajax({
-                                type: "POST",
-                                url: "/trade/step1_submit/<?php echo $trade_info->id; ?>",
-                                data: {
-                                    "plat_id": _plat_id,
-                                    "shop_id": _shop_id,
-                                    "trade_type": _trade_type
-                                },
-                                dataType: "json",
-                                success: function (d) {
-                                    if (d == 0)
-                                        location.href = '/trade/step/<?php echo $trade_info->id; ?>';
-                                    if (d == 1)
-                                        location.href = '/user/login';
-                                    if (d == 2)
-                                        alert('数据异常');
-                                }
-                            });
-                        } else if (res.code == 1) {  // 未订购 未授权
-                            $('#authModal').modal('show');
-                        } else if (res.code == 2) {  // 订购过期，需要重新订购
-                            $('#authModal').modal('show');
-                        } else if (res.code == 3) {  // 授权过期，需要重新授权
-                            $('#authModal1').modal('show');
-                        } else if (res.code == 4) {  // 接口请求失败
-                            toastr.warning("接口请求失败");
-                        } else {  // 其他错误
-                            toastr.warning(res.msg);
-                        }
-                    }
-                });
-            } else {
+            //if (_plat_id == 1 || _plat_id == 2) {
+            //    $.ajax({
+            //        type: "POST",
+            //        url: "/trade/ddx_auth",
+            //        data: {"shop_ww": _shop_ww},
+            //        dataType: "json",
+            //        success: function (res) {
+            //            console.log(res)
+            //            if (res.code == 0) {  // 已订购 已授权
+            //                $.ajax({
+            //                    type: "POST",
+            //                    url: "/trade/step1_submit/<?php //echo $trade_info->id; ?>//",
+            //                    data: {
+            //                        "plat_id": _plat_id,
+            //                        "shop_id": _shop_id,
+            //                        "trade_type": _trade_type
+            //                    },
+            //                    dataType: "json",
+            //                    success: function (d) {
+            //                        if (d == 0)
+            //                            location.href = '/trade/step/<?php //echo $trade_info->id; ?>//';
+            //                        if (d == 1)
+            //                            location.href = '/user/login';
+            //                        if (d == 2)
+            //                            alert('数据异常');
+            //                    }
+            //                });
+            //            } else if (res.code == 1) {  // 未订购 未授权
+            //                $('#authModal').modal('show');
+            //            } else if (res.code == 2) {  // 订购过期，需要重新订购
+            //                $('#authModal').modal('show');
+            //            } else if (res.code == 3) {  // 授权过期，需要重新授权
+            //                $('#authModal1').modal('show');
+            //            } else if (res.code == 4) {  // 接口请求失败
+            //                toastr.warning("接口请求失败");
+            //            } else {  // 其他错误
+            //                toastr.warning(res.msg);
+            //            }
+            //        }
+            //    });
+            //} else {
                 $.ajax({
                     type: "POST",
                     url: "/trade/step1_submit/<?php echo $trade_info->id; ?>",
@@ -314,7 +314,7 @@
                             alert('数据异常');
                     }
                 });
-            }
+            // }
 
         });
 

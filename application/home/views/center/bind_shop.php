@@ -124,24 +124,24 @@
                                 <span style="white-space: nowrap"><small>（请填写您店铺的真实发件人信息，此信息会打印在快递面单上）</small></span>
                             </div>
 
-                            <?php if(in_array($bind_shop,array('taobao','tmall','jd', 'pdd'))): ?>
-                                <div class="bind_div_list">
-                                    <label>验证码：</label>
-                                    <div class="bind_code">
-                                        <span class="copy-code"><?php echo $bind_shop_goods_code; ?></span>
-                                        <a href="javascript:;" class="J_copytext copy-code1" data-copy="<?php echo $bind_shop_goods_code; ?>">复制</a>
-                                    </div>
-                                </div>
-
-                                <div class="code_info">
-                                    <p>1、将验证码加到您的店铺里某个商家商品的标题上，类似这样：</p>
-                                    <span class="<?= $bind_shop; ?>"><?php echo $bind_shop_goods_code; ?></span>
-                                    <img style="width: 816px;" src="/static/imgs/binding/<?php echo $bind_shop;?>.png" />
-                                    <br /><br />
-                                    <p>2、再将这个商品的详情页链接，复制到下面输入框</p>
-                                    <p>提示：店铺绑定成功后，商品标题中添加的验证码可以去掉；</p>
-                                </div>
-                            <?php endif; ?>
+<!--                            --><?php //if(in_array($bind_shop,array('taobao','tmall','jd', 'pdd'))): ?>
+<!--                                <div class="bind_div_list">-->
+<!--                                    <label>验证码：</label>-->
+<!--                                    <div class="bind_code">-->
+<!--                                        <span class="copy-code">--><?php //echo $bind_shop_goods_code; ?><!--</span>-->
+<!--                                        <a href="javascript:;" class="J_copytext copy-code1" data-copy="--><?php //echo $bind_shop_goods_code; ?><!--">复制</a>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!---->
+<!--                                <div class="code_info">-->
+<!--                                    <p>1、将验证码加到您的店铺里某个商家商品的标题上，类似这样：</p>-->
+<!--                                    <span class="--><?//= $bind_shop; ?><!--">--><?php //echo $bind_shop_goods_code; ?><!--</span>-->
+<!--                                    <img style="width: 816px;" src="/static/imgs/binding/--><?php //echo $bind_shop;?><!--.png" />-->
+<!--                                    <br /><br />-->
+<!--                                    <p>2、再将这个商品的详情页链接，复制到下面输入框</p>-->
+<!--                                    <p>提示：店铺绑定成功后，商品标题中添加的验证码可以去掉；</p>-->
+<!--                                </div>-->
+<!--                            --><?php //endif; ?>
                             <div class="bind_div_list">
                                 <label>商品网址（URL）：</label>
                                 <input type="text" class="form-control good_url" />

@@ -487,8 +487,10 @@ class Trade extends Ext_Controller
 //            $order_fee_obj->base_reward = $order_fee_obj->base_reward + 2;
 //        }
 
-        $order_fee_obj->total_fee = $order_fee_obj->total_fee - SUB_SELLER_PRICE;
-        $order_fee_obj->base_reward = $order_fee_obj->base_reward - SUB_BUYER_PRICE;
+        if (in_array($trade_info->plat_id, [1 ,2])) {
+            $order_fee_obj->total_fee = $order_fee_obj->total_fee - SUB_SELLER_PRICE;
+            $order_fee_obj->base_reward = $order_fee_obj->base_reward - SUB_BUYER_PRICE;
+        }
 
 
         if (empty($order_fee_obj)) {
@@ -1314,8 +1316,10 @@ class Trade extends Ext_Controller
         $is_phone = $phone_taobao ? 1 : 0;
         $order_fee_obj = $this->fee->order_fee_obj($trade_info->trade_type, $price * $buy_num);
 
-        $order_fee_obj->total_fee = $order_fee_obj->total_fee - SUB_SELLER_PRICE;
-        $order_fee_obj->base_reward = $order_fee_obj->base_reward - SUB_BUYER_PRICE;
+        if (in_array($trade_info->plat_id, [1 ,2])) {
+            $order_fee_obj->total_fee = $order_fee_obj->total_fee - SUB_SELLER_PRICE;
+            $order_fee_obj->base_reward = $order_fee_obj->base_reward - SUB_BUYER_PRICE;
+        }
 
         if (empty($order_fee_obj)) {
             echo json_encode(['code' => 7, 'msg' => '系统错误']);
@@ -1755,9 +1759,9 @@ class Trade extends Ext_Controller
         } else {
             if ($trade_info->plat_id == 4 || $trade_info->plat_id == 14) {
                 $list = [
-                    'sto' => ['name' => '申通快递', 'price' => 3, 'default' => 1, 'is_show' => 1],
+                    'sto' => ['name' => '申通快递', 'price' => 3, 'default' => 0, 'is_show' => 1],
                     'yunda' => ['name' => '韵达快递', 'price' => 3, 'default' => 0, 'is_show' => 0],
-                    'zto' => ['name' => '中通快递', 'price' => 3, 'default' => 0, 'is_show' => 1],
+                    'zto' => ['name' => '中通快递', 'price' => 3, 'default' => 1, 'is_show' => 1],
                     'self' => ['name' => '自发快递赠送小礼品', 'price' => 0, 'default' => 0, 'is_show' => 1],
                 ];
                 $data['shipping_type_list'] = $list;
@@ -3256,8 +3260,10 @@ class Trade extends Ext_Controller
         $is_phone = $phone_taobao ? 1 : 0;
         $order_fee_obj = $this->fee->order_fee_obj($trade_info->trade_type, $price * $buy_num);
 
-        $order_fee_obj->total_fee = $order_fee_obj->total_fee - SUB_SELLER_PRICE;
-        $order_fee_obj->base_reward = $order_fee_obj->base_reward - SUB_BUYER_PRICE;
+        if (in_array($trade_info->plat_id, [1 ,2])) {
+            $order_fee_obj->total_fee = $order_fee_obj->total_fee - SUB_SELLER_PRICE;
+            $order_fee_obj->base_reward = $order_fee_obj->base_reward - SUB_BUYER_PRICE;
+        }
 
         if (empty($order_fee_obj)) {
             echo json_encode(['code' => 7, 'msg' => '系统错误']);
@@ -5070,8 +5076,10 @@ class Trade extends Ext_Controller
             $order_fee_obj = $this->fee->order_fee_obj('2', $price * $buy_num);
         }
 
-        $order_fee_obj->total_fee = $order_fee_obj->total_fee - SUB_SELLER_PRICE;
-        $order_fee_obj->base_reward = $order_fee_obj->base_reward - SUB_BUYER_PRICE;
+        if (in_array($trade_info->plat_id, [1 ,2])) {
+            $order_fee_obj->total_fee = $order_fee_obj->total_fee - SUB_SELLER_PRICE;
+            $order_fee_obj->base_reward = $order_fee_obj->base_reward - SUB_BUYER_PRICE;
+        }
 
         if (empty($order_fee_obj)) {
             echo json_encode(['code' => 7, 'msg' => '系统错误']);
@@ -6914,8 +6922,10 @@ class Trade extends Ext_Controller
         $is_phone = $phone_taobao ? 1 : 0;
         $order_fee_obj = $this->fee->order_fee_obj($trade_info->trade_type, $price * $buy_num);
 
-        $order_fee_obj->total_fee = $order_fee_obj->total_fee - SUB_SELLER_PRICE;
-        $order_fee_obj->base_reward = $order_fee_obj->base_reward - SUB_BUYER_PRICE;
+        if (in_array($trade_info->plat_id, [1 ,2])) {
+            $order_fee_obj->total_fee = $order_fee_obj->total_fee - SUB_SELLER_PRICE;
+            $order_fee_obj->base_reward = $order_fee_obj->base_reward - SUB_BUYER_PRICE;
+        }
 
         if (empty($order_fee_obj)) {
             echo json_encode(['code' => 7, 'msg' => '系统错误']);
@@ -8482,8 +8492,10 @@ class Trade extends Ext_Controller
         $is_phone = $phone_taobao ? 1 : 0;
         $order_fee_obj = $this->fee->order_fee_obj($trade_info->trade_type, $price * $buy_num);
 
-        $order_fee_obj->total_fee = $order_fee_obj->total_fee - SUB_SELLER_PRICE;
-        $order_fee_obj->base_reward = $order_fee_obj->base_reward - SUB_BUYER_PRICE;
+        if (in_array($trade_info->plat_id, [1 ,2])) {
+            $order_fee_obj->total_fee = $order_fee_obj->total_fee - SUB_SELLER_PRICE;
+            $order_fee_obj->base_reward = $order_fee_obj->base_reward - SUB_BUYER_PRICE;
+        }
 
         if (empty($order_fee_obj)) {
             exit(json_encode(['code' => 7, 'msg' => '系统错误']));
@@ -8619,8 +8631,10 @@ class Trade extends Ext_Controller
         $is_phone = $phone_taobao ? 1 : 0;
         $order_fee_obj = $this->fee->order_fee_obj($trade_info->trade_type, $price * $buy_num);
 
-        $order_fee_obj->total_fee = $order_fee_obj->total_fee - SUB_SELLER_PRICE;
-        $order_fee_obj->base_reward = $order_fee_obj->base_reward - SUB_BUYER_PRICE;
+        if (in_array($trade_info->plat_id, [1 ,2])) {
+            $order_fee_obj->total_fee = $order_fee_obj->total_fee - SUB_SELLER_PRICE;
+            $order_fee_obj->base_reward = $order_fee_obj->base_reward - SUB_BUYER_PRICE;
+        }
 
         if (empty($order_fee_obj)) {
             exit(json_encode(['code' => 7, 'msg' => '系统错误']));
@@ -9405,8 +9419,10 @@ class Trade extends Ext_Controller
             $order_fee_obj->base_reward = $order_fee_obj->base_reward - 1;
         }
 
-        $order_fee_obj->total_fee = $order_fee_obj->total_fee - SUB_SELLER_PRICE;
-        $order_fee_obj->base_reward = $order_fee_obj->base_reward - SUB_BUYER_PRICE;
+        if (in_array($trade_info->plat_id, [1 ,2])) {
+            $order_fee_obj->total_fee = $order_fee_obj->total_fee - SUB_SELLER_PRICE;
+            $order_fee_obj->base_reward = $order_fee_obj->base_reward - SUB_BUYER_PRICE;
+        }
 
         if (empty($order_fee_obj)) {
             echo json_encode(['code' => 7, 'msg' => '系统错误']);
@@ -10492,9 +10508,6 @@ class Trade extends Ext_Controller
         }
         // 任务单计费
         $order_fee_obj = $this->fee->order_fee_obj($trade_info->trade_type, $price * $buy_num);
-
-        $order_fee_obj->total_fee = $order_fee_obj->total_fee - SUB_SELLER_PRICE;
-        $order_fee_obj->base_reward = $order_fee_obj->base_reward - SUB_BUYER_PRICE;
 
         if (empty($order_fee_obj)) {
             echo json_encode(['code' => 7, 'msg' => '系统错误']);

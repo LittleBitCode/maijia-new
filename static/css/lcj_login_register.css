@@ -24,7 +24,7 @@ body a.hover{text-decoration:none;}
 .border_wrap input[type=text].pwd,.border_wrap input[type=text].pwds{width: 189px;height: 33px;padding-left: 5px;padding-right: 54px;}
 .input_wrap>p{padding-left: 5px;color: #f00;}
 
-.get_code{position: absolute;top: 0;right: 20px;display: block;width: 100px;height: 33px;margin: 0 auto;margin-bottom: 10px;border: 1px solid #4495e0;border-radius: 4px;background: #4495e0;text-align: center;line-height: 33px;font-size: 14px;color: #fff;}
+.get_code{position: absolute;top: 0;right: 20px;display: block;width: 100px;height: 33px;margin: 0 auto;margin-bottom: 10px;border: 1px solid #FF6347;border-radius: 4px;background: #FF6347;text-align: center;line-height: 33px;font-size: 14px;color: #fff;}
 .get_code_dis{background: #BBBBBB;border: 1px solid #BBBBBB;}
 
 .login_btn,.register_btn{display: block;width: 384px;height: 40px;margin: 0 auto;margin-bottom: 10px;border: 1px solid #4495e0;border-radius: 4px;background: #4495e0;text-align: center;line-height: 40px;font-size: 18px;color: #fff;}
@@ -83,12 +83,12 @@ body a.hover{text-decoration:none;}
 .prompt .close{position: absolute;top: 4px;right: 4px;cursor: pointer;}
 .prompt .source{padding-left: 20px;border-bottom: 1px solid #ddd;font-size: 14px;color: #000;}
 .prompt_content{height: 40px;margin-bottom: 5px;padding-left: 20px;line-height: 30px;font-size: 14px;}
-.prompt .true_prompt_btn{display: block;width: 68px;height: 28px;margin: 0 auto;border: 1px solid #FF7E00;border-radius: 4px;background: #4495e0;text-align: center;line-height: 28px;color: #fff;}
+.prompt .true_prompt_btn{display: block;width: 68px;height: 28px;margin: 0 auto;border: 1px solid #FF7E00;border-radius: 4px;background: #FF6347;text-align: center;line-height: 28px;color: #fff;}
 
 
 .find_pwd_titele{clear: both;height: 30px;border-bottom: 1px solid #ccc;font-size: 14px;}
-.find_pwd_titele span{color: #4495e0;}
-.find_pwd_titele a{float: right;color: #1F9CD8;}
+.find_pwd_titele span{color: #FF6347;}
+.find_pwd_titele a{float: right;color: #FF6347;}
 
 .find_pwd_step{width: 900px;height: 70px;margin: 0 auto;margin-bottom: 30px;padding-top: 40px;text-align: center;}
 .find_pwd_step li{float: left;width: 300px;position: relative;}
@@ -97,9 +97,9 @@ body a.hover{text-decoration:none;}
 .find_pwd_step_item .find_pwd_step_bg{position: absolute;top: 10px;left: 0;z-index: 5;width: 300px;height: 4px;background: #CCCCCC;}
 .find_pwd_step_item .find_pwd_step_title{padding-top: 5px;color: #000;}
 
-.find_pwd_step_item.active .find_pwd_step_number{background-color: #4495e0;}
-.find_pwd_step_item.active .find_pwd_step_bg{background-color: #4495e0;}
-.find_pwd_step_item.active .find_pwd_step_title{color: #4495e0;}
+.find_pwd_step_item.active .find_pwd_step_number{background-color: #FF6347;}
+.find_pwd_step_item.active .find_pwd_step_bg{background-color: #FF6347;}
+.find_pwd_step_item.active .find_pwd_step_title{color: #FF6347;}
 
 .find_pwd_phone{padding-left:30px;font-size: 14px;color: #000;}
 
@@ -107,7 +107,7 @@ body a.hover{text-decoration:none;}
 .find_pwd_wrap .data_item>span i{float: none;}
 .find_pwd_wrap .data_item>span{width: 95px;}
 
-.next_find_pwd{display: block;width: 358px;height: 36px;margin-left: 20px;border: 1px solid #4495e0;border-radius: 4px;background: #4495e0;text-align: center;line-height: 36px;font-size: 16px;color: #fff;}
+.next_find_pwd{display: block;width: 358px;height: 36px;margin-left: 20px;border: 1px solid #FF6347;border-radius: 4px;background: #FF6347;text-align: center;line-height: 36px;font-size: 16px;color: #fff;}
 
 /* 找回密码成功页面 */
 .find_pwd_true{padding-top: 120px;}

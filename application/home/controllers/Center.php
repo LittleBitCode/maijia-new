@@ -808,8 +808,8 @@ class Center extends Ext_Controller {
             if (empty($shop_id)) {
                 exit(json_encode(array('is_success' => 0, 'msg' => '店铺名称主旺旺不能为空')));
             }
-            $check_sql2 = 'select count(1) cnt from rqf_bind_shop where shop_ww = ?';
-            $res2 = $this->db->query($check_sql2, array($shop_id))->row();
+            $check_sql2 = 'select count(1) cnt from rqf_bind_shop where shop_ww = ? and user_id = ?';
+            $res2 = $this->db->query($check_sql2, array($shop_id, $user_id))->row();
             if ($res2->cnt > 0) {
                 exit(json_encode(array('is_success' => 0, 'msg' => '该旺旺名称已被绑定！！')));
             }
@@ -817,10 +817,13 @@ class Center extends Ext_Controller {
             preg_match('/<META\s+name="microscope-data"\s+content="([\w\W]*?)"/si', $content,$meta);
             $shop_info = $meta[1];
             if (empty($shop_info)) {
-                exit(json_encode(array('is_success' => 0, 'msg' => '未获取到店铺信息')));
+                exit(json_encode(array('is_success' => 0, 'msg' => '请填写【店铺首页】的链接！')));
             }
             $info_list = explode('userId=', $shop_info);
             $shop_user_id = $info_list[1];
+            if (empty($shop_user_id)) {
+                exit(json_encode(array('is_success' => 0, 'msg' => '请填写【店铺首页】的链接！')));
+            }
         } else {
             $shop_id = '';
             $shop_user_id = 0;
@@ -837,9 +840,9 @@ class Center extends Ext_Controller {
             exit(json_encode(array('is_success' => 0, 'msg' => '绑定店铺超过十个！')));
         }
         if (in_array($plat_type, array('taobao', 'tmall'))) {
-            $check_sql = "select count(1) cnt from rqf_bind_shop where shop_name = '{$shop_name}'";//天猫和淘宝的店铺名验重复
+            $check_sql = "select count(1) cnt from rqf_bind_shop where shop_name = '{$shop_name}' and user_id = '{$user_id}'";//天猫和淘宝的店铺名验重复
         } else {
-            $check_sql = "select count(1) cnt from rqf_bind_shop where shop_name = '{$shop_name}' and plat_name = '{$plat_type}'";
+            $check_sql = "select count(1) cnt from rqf_bind_shop where shop_name = '{$shop_name}' and plat_name = '{$plat_type}' and user_id = '{$user_id}'";
         }
         $res = $this->db->query($check_sql);
         if ($res) {
@@ -851,7 +854,7 @@ class Center extends Ext_Controller {
         if (in_array($plat_type, array('taobao', 'tmall', 'jd', 'pdd'))) {
             $result = $this->check_bind_shop_params($copy_code, $goods_url);
             if ($result == false) {
-                exit(json_encode(array('is_success' => 0, 'msg' => '验证页面标题中未找到匹配的验证码！')));
+//                exit(json_encode(array('is_success' => 0, 'msg' => '验证页面标题中未找到匹配的验证码！')));
             }
         }
 

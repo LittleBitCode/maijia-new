@@ -114,10 +114,10 @@ define('STATIC_URL', 'http://shangjia.renqizhuli.com');
 // STATIC域名
 define('MD5_SALT', 'LOP5^$.%90+*%%$@rqf');
 
-define('VERSION_TXT', '1.0.0.2');
+define('VERSION_TXT', '1.0.0.3');
 
 // 帮助中心
-define('HELP_CENTER_URL', 'http://help.tao525.com');
+define('HELP_CENTER_URL', 'http://zhidao.vytao.com');
 // 快递服务
 define('POST_SERVICE_URL', 'http://vip.taoyoui.com');
 
@@ -162,10 +162,10 @@ define('PHONE_REWARD', 0.3);
 define('DEFAULT_PAY_ID', 7);
 
 // 较之前系统减少商家收费
-define('SUB_SELLER_PRICE', 3);
+define('SUB_SELLER_PRICE', 2);
 
 // 较之前系统减少买家佣金
-define('SUB_BUYER_PRICE', 1);
+define('SUB_BUYER_PRICE', 0.7);
 
 /******************************************************
  * 增值服务相关常量

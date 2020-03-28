@@ -77,8 +77,8 @@
 <div class="right">
     <ul>
         <li><img src="/static/imgs/icon/notice.png"/></li>
-        <li><p>平台</p><p>公告</p></li>
-        <li><p>常见</p><p>问题</p></li>
+<!--        <li><p>平台</p><p>公告</p></li>-->
+<!--        <li><p>常见</p><p>问题</p></li>-->
         <li><a href="http://wpa.b.qq.com/cgi/wpa.php?ln=1&key=XzgwMDgzMDEyM180ODM4NDBfODAwODMwMTIzXzJf" target="_blank"><p>联系</p><p>客服</p></a></li>
         <li class="bdqrcode"><a href="javascript:;" target="_blank"><p>联系</p><p>运营</p></a><img src="/static/imgs/bd_qrcode.jpg" alt="联系运营" /></li>
         <li class="top"><span class="glyphicon glyphicon-chevron-up"></span></li>

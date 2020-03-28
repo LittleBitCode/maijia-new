@@ -264,8 +264,8 @@
 <div class="right">
     <ul>
         <li><img src="/static/imgs/icon/notice.png"/></li>
-        <li><p>平台</p><p>公告</p></li>
-        <li><p>常见</p><p>问题</p></li>
+<!--        <li><p>平台</p><p>公告</p></li>-->
+<!--        <li><p>常见</p><p>问题</p></li>-->
         <!--<li><a href="http://www.baidu.com"><p>联系</p><p>客服</p></a></li>-->
         <li class="bdqrcode"><a href="javascript:;" target="_blank"><p>联系</p><p>客服</p></a><img src="/static/imgs/ke.jpg" alt="联系客服" /></li>
         <li class="bdqrcode"><a href="javascript:;" target="_blank"><p>联系</p><p>运营</p></a><img src="/static/imgs/bd_qrcode.jpg" alt="联系运营" /></li>

@@ -270,8 +270,8 @@ class Trade_Model extends CI_Model {
 
         $trade_select['shop_name'] = $bind_shop->shop_name;
         // 默认圆通快递
-        //$trade_select['shipping_type'] = $bind_shop->shipping_type;
-        $trade_select['shipping_type'] = 'yto';
+//        $trade_select['shipping_type'] = $bind_shop->shipping_type;
+        $trade_select['shipping_type'] = 'zto';
         // 活动类型
         $trade_type_list = $this->conf->trade_type_list($trade_info->plat_id);
 

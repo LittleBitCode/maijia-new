@@ -451,31 +451,31 @@ class User extends MY_Controller
         }
 
         // 判断用户是否处于冻结状态
-        if ($userinfo->frozen_status == '1') {  // 已冻结
-            echo json_encode(['code'=>2, 'msg'=>'网站暂时无法使用，请联系客服！']);
-            return;
-        } else {
-            $this->write_db = $this->load->database('write', true);
-            // 超过7天未发布任务，不让登陆
-            $sql = "SELECT MAX(pay_time) pay_time FROM `rqf_trade_info` WHERE user_id = '.$userinfo->id.' AND trade_status IN (1,2,3)";
-            $query = $this->db->query($sql)->row();
-            $last_task_time = $query->pay_time;
-            $limit_days = 7;
-            if (empty($last_task_time) || $last_task_time < strtotime("-{$limit_days} day")) {
-                // 解冻时间超过7天(包括首次)
-                if ($userinfo->reg_time <= strtotime("-{$limit_days} day") && $userinfo->unfrozen_time <= strtotime("-{$limit_days} day")) {
-                    if ($userinfo->user_deposit == 0 && $userinfo->frozen_deposit == 0 && $userinfo->user_point == 0 && $userinfo->frozen_point == 0) {
-                        $this->write_db->update('rqf_users', [
-                            'frozen_status' => 1,
-                            'frozen_times' => intval($userinfo->frozen_times) + 1,
-                            'frozen_reason' => '超过' . $limit_days . '天，未发布过任务'
-                        ], ['id' => $userinfo->id]);
-                        echo json_encode(['code'=>2, 'msg'=>'网站暂时无法使用，请联系客服！']);
-                        return;
-                    }
-                }
-            }
-        }
+//        if ($userinfo->frozen_status == '1') {  // 已冻结
+//            echo json_encode(['code'=>2, 'msg'=>'网站暂时无法使用，请联系客服！']);
+//            return;
+//        } else {
+//            $this->write_db = $this->load->database('write', true);
+//            // 超过7天未发布任务，不让登陆
+//            $sql = "SELECT MAX(pay_time) pay_time FROM `rqf_trade_info` WHERE user_id = '.$userinfo->id.' AND trade_status IN (1,2,3)";
+//            $query = $this->db->query($sql)->row();
+//            $last_task_time = $query->pay_time;
+//            $limit_days = 7;
+//            if (empty($last_task_time) || $last_task_time < strtotime("-{$limit_days} day")) {
+//                // 解冻时间超过7天(包括首次)
+//                if ($userinfo->reg_time <= strtotime("-{$limit_days} day") && $userinfo->unfrozen_time <= strtotime("-{$limit_days} day")) {
+//                    if ($userinfo->user_deposit == 0 && $userinfo->frozen_deposit == 0 && $userinfo->user_point == 0 && $userinfo->frozen_point == 0) {
+//                        $this->write_db->update('rqf_users', [
+//                            'frozen_status' => 1,
+//                            'frozen_times' => intval($userinfo->frozen_times) + 1,
+//                            'frozen_reason' => '超过' . $limit_days . '天，未发布过任务'
+//                        ], ['id' => $userinfo->id]);
+//                        echo json_encode(['code'=>2, 'msg'=>'网站暂时无法使用，请联系客服！']);
+//                        return;
+//                    }
+//                }
+//            }
+//        }
 
         $encrypt_password = md5(md5($password) . $userinfo->salt);
         if ($encrypt_password != $userinfo->login_password) {

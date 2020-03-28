@@ -81,7 +81,7 @@
                         <li class="canChoice bank <?= ('bank' == $type) ? 'active' : ''; ?>" data-type="bank">银行转账</li>
                         <li class="canChoice unionpay <?= ('unionpay' == $type) ? 'active' : ''; ?>" data-type="unionpay">网银支付</li>
                     </ul>-->
-                    <ul class="nav nav-tabs nav-tabs recharge_nav flex" id="myTab">
+                    <ul class="nav nav-tabs nav-tabs recharge_nav flex" id="myTab" style="display: none">
 						<!--<a href="/taoindex/member/recharge">
 							<img src="/static/imgs/icon/charge_nav_1.png" alt="">
 							<li>金币充值</li>
