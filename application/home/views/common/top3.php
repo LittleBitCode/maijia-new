@@ -77,24 +77,9 @@
 <div class="right">
     <ul>
         <li><img src="/static/imgs/icon/notice.png"/></li>
-<!--        <li><p>平台</p><p>公告</p></li>-->
-<!--        <li><p>常见</p><p>问题</p></li>-->
         <li><a href="http://wpa.b.qq.com/cgi/wpa.php?ln=1&key=XzgwMDgzMDEyM180ODM4NDBfODAwODMwMTIzXzJf" target="_blank"><p>联系</p><p>客服</p></a></li>
         <li class="bdqrcode"><a href="javascript:;" target="_blank"><p>联系</p><p>运营</p></a><img src="/static/imgs/bd_qrcode.jpg" alt="联系运营" /></li>
         <li class="top"><span class="glyphicon glyphicon-chevron-up"></span></li>
-        <div>
-            <div class="questions1 questions"></div>
-            <div class="questions1 questions">
-                <?php foreach ($bus_notice_list as $key => $item): ?>
-                    <p class="ellipsis"><a href="<?= $item->url ?>" target="_blank"><?= ($key + 1) . '、' . $item->contents; ?></a></p>
-                <?php endforeach; ?>
-            </div>
-            <div class="questions2 questions">
-                <?php foreach ($bus_question_list as $key => $item): ?>
-                    <p class="ellipsis"><a href="<?= $item->url ?>" target="_blank"><?= ($key + 1) . '、' . $item->contents; ?></a></p>
-                <?php endforeach; ?>
-            </div>
-        </div>
     </ul>
 </div>
 <script type="text/javascript" src="/static/js/jquery-1.12.4.min.js?v=<?= VERSION_TXT ?>"></script>
