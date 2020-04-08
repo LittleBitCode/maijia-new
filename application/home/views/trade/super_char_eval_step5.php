@@ -185,19 +185,19 @@
             <h3 class="tit_img"><img src="/static/imgs/icon/ic3.png" />定时发布</h3>
             <div class="time_task_box step4_white">
                 <label>
-                    <h5><input style="margin-right: 5px;" type="checkbox" data-discount="<?= isset($discount['set_time']) ? $discount['set_time'] : 100; ?>" value="3" name="time_task" <?php if ($has_set_time): ?>checked<?php endif; ?> />定时发布：<span>选择此服务后，<?php echo PROJECT_NAME; ?>将会按照您设置的时间来报名活动</span></h5>
+                    <h5><input style="margin-right: 5px;" type="checkbox" data-discount="<?= isset($discount['set_time']) ? $discount['set_time'] : 100; ?>" value="<?= SET_TIME_PRICE; ?>" name="time_task" <?php if ($has_set_time): ?>checked<?php endif; ?> />定时发布：<span>选择此服务后，<?php echo PROJECT_NAME; ?>将会按照您设置的时间来报名活动</span></h5>
                 </label>
                 <div>
                     <label>报名活动时间</label>
-                    <input type="text" name="set_time_val" onclick="WdatePicker({minDate:'%y-%M-#{%d} #{%H+2}',dateFmt:'yyyy-MM-dd HH:mm:00'})" value="<?php echo $set_time_val; ?>" style="padding-left: 4px;" />（3金币）<span>发布时间、与当前时间至少错开两个小时</span><br>
+                    <input type="text" name="set_time_val" onclick="WdatePicker({minDate:'%y-%M-#{%d} #{%H+2}',dateFmt:'yyyy-MM-dd HH:mm:00'})" value="<?php echo $set_time_val; ?>" style="padding-left: 4px;" />（<?= SET_TIME_PRICE; ?>金币）<span>发布时间、与当前时间至少错开两个小时</span><br>
                 </div>
                 <p><span class="red">温馨提示：</span>客服审核时间为9:00 - 22:00，请在本时间段内报名活动，否则无法按照您设置的时间定时发布</p>
                 <label>
-                    <h5><input style="margin-right: 5px;" type="checkbox" data-discount="<?= isset($discount['set_over_time']) ? $discount['set_over_time'] : 100; ?>" value="2" name="time_over_task" <?php if ($has_set_over_time): ?>checked<?php endif; ?> />定时结束：<span>选择此服务后，<?php echo PROJECT_NAME; ?>将会按照您设置的时间来结束活动</span></h5>
+                    <h5><input style="margin-right: 5px;" type="checkbox" data-discount="<?= isset($discount['set_over_time']) ? $discount['set_over_time'] : 100; ?>" value="<?= SET_OVER_TIME_PRICE; ?>" name="time_over_task" <?php if ($has_set_over_time): ?>checked<?php endif; ?> />定时结束：<span>选择此服务后，<?php echo PROJECT_NAME; ?>将会按照您设置的时间来结束活动</span></h5>
                 </label>
                 <div style="margin-bottom:16px;">
                     <label>活动结束时间</label>
-                    <input type="text" name="set_over_time_val" onclick="WdatePicker({minDate:'%y-%M-#{%d} #{%H+2}',dateFmt:'yyyy-MM-dd HH:mm:00'})" value="<?php echo $set_over_time_val; ?>" style="padding-left: 4px;" />（2金币）<span>结束时间、与活动发布时间至少错开一个小时</span><br>
+                    <input type="text" name="set_over_time_val" onclick="WdatePicker({minDate:'%y-%M-#{%d} #{%H+2}',dateFmt:'yyyy-MM-dd HH:mm:00'})" value="<?php echo $set_over_time_val; ?>" style="padding-left: 4px;" />（<?= SET_OVER_TIME_PRICE; ?>金币）<span>结束时间、与活动发布时间至少错开一个小时</span><br>
                 </div>
                 <div class="releaseTime">
                     <label style="padding-left:0"><h5><input style="margin-right: 5px;" type="checkbox" name="releasetime" data-discount="<?= isset($discount['custom_time_price']) ? $discount['custom_time_price'] : 100; ?>" <?php if($custom_time_price): ?>checked<?php endif; ?> value="<?= CUSTOM_TIME_PRICE ?>">分时发布：<small style="font-size:14px;color:#909090">选择此服务平台将收取 <span style="color:#ff4800;"><?= CUSTOM_TIME_PRICE ?></span>个金币</small></h5></label>
@@ -217,7 +217,7 @@
                     <div class="clearfix"></div>
                     <div style="margin:16px 0;"><span style="margin-left:20px;">温馨提示：设置时间单数后请及时付款，否则会导致过期时间段的任务与当前时间单一起发布出去哦~</span></div>
                 </div>
-                <label><h5><input type="checkbox" name="time_interval" data-discount="<?= isset($discount['set_interval']) ? $discount['set_interval'] : 100; ?>" value="6" <?php if ($has_set_interval): ?>checked<?php endif; ?> <?php if ($set_interval_disabled): ?>disabled<?php endif; ?> style="margin-right: 5px;" />间隔发布：<i>选择此项服务后，<?php echo PROJECT_NAME; ?>会将您的活动分批发布，以避免订单过于集中：</i><span class="red f14">为了安全性建议选择此项服务</span></h5></label>
+                <label><h5><input type="checkbox" name="time_interval" data-discount="<?= isset($discount['set_interval']) ? $discount['set_interval'] : 100; ?>" value="<?= SET_INTERVAL_PRICE ?>" <?php if ($has_set_interval): ?>checked<?php endif; ?> <?php if ($set_interval_disabled): ?>disabled<?php endif; ?> style="margin-right: 5px;" />间隔发布：<i>选择此项服务后，<?php echo PROJECT_NAME; ?>会将您的活动分批发布，以避免订单过于集中：</i><span class="red f14">为了安全性建议选择此项服务</span></h5></label>
                 <div style="<?php if ($set_interval_disabled): ?>color: #8D8D8D;<?php endif; ?>">
                     <label style="margin-right:8px;">每隔</label>
                     <select name="set_interval_val" style="width: 108px;" class="blue_input">
@@ -231,7 +231,7 @@
                             <option value="<?php echo $v; ?>" <?php if ($v == $interval_num_val): ?>selected<?php endif; ?>><?php echo $v; ?>单</option>
                         <?php endforeach; ?>
                     </select>
-                    活动（<span>6</span>金币）
+                    活动（<span><?= SET_INTERVAL_PRICE ?></span>金币）
                 </div>
             </div>
             <div class="clearfix"></div>

@@ -177,11 +177,13 @@ define('BUS_REFUND_PERCENT', 0.002);
 define('FIRST_CHECK_PRICE', 5);
 
 // 定时发布价格
-define('SET_TIME_PRICE', 5);
+define('SET_TIME_PRICE', 1);
+// 活动定时结束
+define('SET_OVER_TIME_PRICE', 1);
 // 自定义发布时间
-define('CUSTOM_TIME_PRICE', 6);
+define('CUSTOM_TIME_PRICE', 3);
 // 间隔发布价格
-define('SET_INTERVAL_PRICE', 6);
+define('SET_INTERVAL_PRICE', 0);
 
 // 加赏金币百分比
 define('ADD_REWARD_POINT_PERCENT', 0.5);

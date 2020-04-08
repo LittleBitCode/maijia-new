@@ -1937,7 +1937,7 @@ class Trade extends Ext_Controller
             if (strtotime($set_time_val) <= time()) {
                 exit(json_encode(['error' => 1, 'message' => '设置的定时发布时间应大于当前时间']));
             }
-            $tmp_price = 3;
+            $tmp_price = SET_TIME_PRICE;
             if (array_key_exists('set_time', $discount_list) && $discount_list['set_time'] < 100) {
                 $tmp_price = round(bcmul($tmp_price, $discount_list['set_time'] / 100, 4), 2);
             }
@@ -1966,7 +1966,7 @@ class Trade extends Ext_Controller
             if (strtotime($set_over_time_val) <= $compare_time + 3600) {
                 exit(json_encode(['error' => 1, 'message' => '结束时间、与活动时间至少错开一个小时']));
             }
-            $tmp_price = 2;
+            $tmp_price = SET_OVER_TIME_PRICE;
             if (array_key_exists('set_over_time', $discount_list) && $discount_list['set_over_time'] < 100) {
                 $tmp_price = round(bcmul($tmp_price, $discount_list['set_over_time'] / 100, 4), 2);
             }
@@ -3904,7 +3904,7 @@ class Trade extends Ext_Controller
             if (strtotime($set_time_val) <= time()) {
                 exit(json_encode(['error' => 1, 'message' => '设置的定时发布时间应大于当前时间']));
             }
-            $tmp_price = 3;
+            $tmp_price = SET_TIME_PRICE;
             if (array_key_exists('set_time', $discount_list) && $discount_list['set_time'] < 100) {
                 $tmp_price = round(bcmul($tmp_price, $discount_list['set_time'] / 100, 4), 2);
             }
@@ -3933,7 +3933,7 @@ class Trade extends Ext_Controller
             if (strtotime($set_over_time_val) <= $compare_time + 3600) {
                 exit(json_encode(['error' => 1, 'message' => '结束时间、与活动时间至少错开一个小时']));
             }
-            $tmp_price = 2;
+            $tmp_price = SET_OVER_TIME_PRICE;
             if (array_key_exists('set_over_time', $discount_list) && $discount_list['set_over_time'] < 100) {
                 $tmp_price = round(bcmul($tmp_price, $discount_list['set_over_time'] / 100, 4), 2);
             }
@@ -5750,7 +5750,7 @@ class Trade extends Ext_Controller
             if (strtotime($set_time_val) <= time()) {
                 exit(json_encode(['error' => 1, 'message' => '设置的定时发布时间应大于当前时间']));
             }
-            $tmp_price = 3;
+            $tmp_price = SET_TIME_PRICE;
             if (array_key_exists('set_time', $discount_list) && $discount_list['set_time'] < 100) {
                 $tmp_price = round(bcmul($tmp_price, $discount_list['set_time'] / 100, 4), 2);
             }
@@ -5779,7 +5779,7 @@ class Trade extends Ext_Controller
             if (strtotime($set_over_time_val) <= $compare_time + 3600) {
                 exit(json_encode(['error' => 1, 'message' => '结束时间、与活动时间至少错开一个小时']));
             }
-            $tmp_price = 2;
+            $tmp_price = SET_OVER_TIME_PRICE;
             if (array_key_exists('set_over_time', $discount_list) && $discount_list['set_over_time'] < 100) {
                 $tmp_price = round(bcmul($tmp_price, $discount_list['set_over_time'] / 100, 4), 2);
             }
@@ -7579,7 +7579,7 @@ class Trade extends Ext_Controller
             if (strtotime($set_time_val) <= time()) {
                 exit(json_encode(['error' => 1, 'message' => '设置的定时发布时间应大于当前时间']));
             }
-            $tmp_price = 3;
+            $tmp_price = SET_TIME_PRICE;
             if (array_key_exists('set_time', $discount_list) && $discount_list['set_time'] < 100) {
                 $tmp_price = round(bcmul($tmp_price, $discount_list['set_time'] / 100, 4), 2);
             }
@@ -7608,7 +7608,7 @@ class Trade extends Ext_Controller
             if (strtotime($set_over_time_val) <= $compare_time + 3600) {
                 exit(json_encode(['error' => 1, 'message' => '结束时间、与活动时间至少错开一个小时']));
             }
-            $tmp_price = 2;
+            $tmp_price = SET_OVER_TIME_PRICE;
             if (array_key_exists('set_over_time', $discount_list) && $discount_list['set_over_time'] < 100) {
                 $tmp_price = round(bcmul($tmp_price, $discount_list['set_over_time'] / 100, 4), 2);
             }
@@ -9858,7 +9858,7 @@ class Trade extends Ext_Controller
             if (strtotime($set_time_val) <= time()) {
                 exit(json_encode(['error' => 1, 'message' => '设置的定时发布时间应大于当前时间']));
             }
-            $tmp_price = 3;
+            $tmp_price = SET_TIME_PRICE;
             if (array_key_exists('set_time', $discount_list) && $discount_list['set_time'] < 100) {
                 $tmp_price = round(bcmul($tmp_price, $discount_list['set_time'] / 100, 4), 2);
             }
@@ -9887,7 +9887,7 @@ class Trade extends Ext_Controller
             if (strtotime($set_over_time_val) <= $compare_time + 3600) {
                 exit(json_encode(['error' => 1, 'message' => '结束时间、与活动时间至少错开一个小时']));
             }
-            $tmp_price = 2;
+            $tmp_price = SET_OVER_TIME_PRICE;
             if (array_key_exists('set_over_time', $discount_list) && $discount_list['set_over_time'] < 100) {
                 $tmp_price = round(bcmul($tmp_price, $discount_list['set_over_time'] / 100, 4), 2);
             }
