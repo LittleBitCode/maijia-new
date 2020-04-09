@@ -22,9 +22,9 @@
         <div class="handle_wrap" style="width: 947px;">
             <div class="tab" role="tabpanel" style="display: inline-block;width:100%;">
                 <ul class="nav nav-tabs" role="tablist" id="myTab_two">
-                    <li role="presentation" class="<?= ($t == 1) ? 'active':''; ?>" style="text-align:center;"><a href="/review/traffic_list">所有订单(<?= $order_cnts['all']; ?>)</a></li>
+<!--                    <li role="presentation" class="--><?//= ($t == 1) ? 'active':''; ?><!--" style="text-align:center;"><a href="/review/traffic_list">所有订单(--><?//= $order_cnts['all']; ?><!--)</a></li>-->
                     <li role="presentation" class="<?= ($t == 2) ? 'active':''; ?>" style="text-align:center;"><a href="/review/traffic_list/2" >已提交、待审核(<?= $order_cnts['status_1']; ?>)</a></li>
-                    <li role="presentation" class="<?= ($t == 3) ? 'active':''; ?>" style="text-align:center;"><a href="/review/traffic_list/3" >已审核通过订单(<?= $order_cnts['status_2']; ?>)</a></li>
+<!--                    <li role="presentation" class="--><?//= ($t == 3) ? 'active':''; ?><!--" style="text-align:center;"><a href="/review/traffic_list/3" >已审核通过订单(--><?//= $order_cnts['status_2']; ?><!--)</a></li>-->
                     <li role="presentation" class="<?= ($t == 4) ? 'active':''; ?>" style="text-align:center;"><a href="/review/traffic_list/4" >审核不通过订单(<?= $order_cnts['status_3']; ?>)</a></li>
                     <li role="presentation" class="<?= ($t == 6) ? 'active':''; ?>" style="text-align:center;"><a href="/review/traffic_list/6" >已取消(<?= $order_cnts['status_9']; ?>)</a></li>
                 </ul>

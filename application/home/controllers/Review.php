@@ -394,7 +394,7 @@ class Review extends Ext_Controller {
     {
         $data = $this->data;
         $t = intval($this->uri->segment(3));
-        $t = in_array($t, [1, 2, 3, 4, 6]) ? $t : 1;
+        $t = in_array($t, [1, 2, 3, 4, 6]) ? $t : 2;
         $user_id = intval($this->session->userdata('user_id'));
         // 平台
         $plat_list = $this->bind->bind_shop_cnt_list($user_id);
