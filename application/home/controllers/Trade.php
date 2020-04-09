@@ -2636,23 +2636,25 @@ class Trade extends Ext_Controller
                 redirect('center');
                 return;
             }
-            $show_ww = $shop_info->shop_ww;
-            $auth_info2 = $this->db->get_where('rqf_shop_auth_info', ['shop_ww' => $show_ww, 'auth_type' => 2])->row();
-            if (empty($auth_info2)) {
-                $auth_info = $this->db->get_where('rqf_shop_auth_info', ['shop_ww' => $show_ww, 'auth_type' => 1])->row();
-                if (empty($auth_info)) {
-                    error_back('请先购买服务');
-                    return;
+            if ($trade_info->trade_type != 10) {
+                $show_ww = $shop_info->shop_ww;
+                $auth_info2 = $this->db->get_where('rqf_shop_auth_info', ['shop_ww' => $show_ww, 'auth_type' => 2])->row();
+                if (empty($auth_info2)) {
+                    $auth_info = $this->db->get_where('rqf_shop_auth_info', ['shop_ww' => $show_ww, 'auth_type' => 1])->row();
+                    if (empty($auth_info)) {
+                        error_back('请先购买服务');
+                        return;
+                    } else {
+                        if ($auth_info->expires_time < time()) {
+                            error_back('授权过期，需要重新授权');
+                            return;
+                        }
+                    }
                 } else {
-                    if ($auth_info->expires_time < time()) {
+                    if ($auth_info2->expires_time < time()) {
                         error_back('授权过期，需要重新授权');
                         return;
                     }
-                }
-            } else {
-                if ($auth_info2->expires_time < time()) {
-                    error_back('授权过期，需要重新授权');
-                    return;
                 }
             }
         }
