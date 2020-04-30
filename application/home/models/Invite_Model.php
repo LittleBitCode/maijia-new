@@ -558,6 +558,34 @@ class Invite_Model extends CI_Model
 
     }
 
+    /**
+     * 获取所有会员
+     */
+    public function get_all_data($user_id)
+    {
+        $sql = 'SELECT *,AES_DECRYPT(qq_decode,salt) qq_decode FROM rqf_users WHERE pid = ? ORDER BY reg_time DESC';
+
+        $res = $this->db->query($sql, [$user_id])->result();
+
+        $time = time();
+        $line_time = strtotime('-30 day');
+
+        foreach ($res as $k => $v) {
+            if ($v->expire_time == 0) {
+                $res[$k]->title = '未获得会员';
+            } else if($v->expire_time > 0 && $v->expire_time < $time) {
+                $res[$k]->title = '会员已过期';
+            } else if($v->last_task_time > 0 && $v->last_task_time < $line_time) {
+                if ($v->user_type == 1) {
+                    $res[$k]->title = '超过30天没有发活动';
+                } else {
+                    $res[$k]->title = '超过30天没有接活动';
+                }
+            }
+        }
+
+        return $res;
+    }
 
     /**
      * 还未购买VIP的会员

@@ -151,11 +151,7 @@ class Invite extends Ext_Controller
 
         switch ($type) {
             case 'all':
-                $all = array_merge(
-                    $this->invite->get_novip_data($user_id),
-                    $this->invite->get_expired_data($user_id),
-                    $this->invite->get_days_30_data($user_id)
-                );
+                $all = $this->invite->get_all_data($user_id);
                 break;
             case 'novip':
                 $novip = $this->invite->get_novip_data($user_id);
@@ -168,14 +164,7 @@ class Invite extends Ext_Controller
                 break;
         }
 
-        if (isset($all) && !empty($all)) {
-            $all = array_chunk($all, $per_page);
-            $data['all'] = $all[$page - 1];
-        } else {
-            $all = false;
-            $data['all'] = false;
-        }
-        //$data['all']     = $all;
+        $data['all'] = isset($all) ? $all : false;
         $data['novip'] = isset($novip) ? $novip : false;
         $data['expired'] = isset($expired) ? $expired : false;
         $data['days_30'] = isset($days_30) ? $days_30 : false;
